@@ -1,0 +1,220 @@
+---
+title: "Excess deaths in Poland in 2020/21. An exploratory analysis"
+author:
+  - name: "Tomasz Przechlewski"
+    email:  t.plata-przechlewski@psw.kwidzyn.edu.pl
+    affiliation: "Powiślańska Szkoła Wyższa (Kwidzyn/Poland)"
+description: (c) Tomasz Przechlewski / CC-BY license
+date: "May 2021"
+output:
+  html_document
+---
+
+## Introduction
+
+There were a significant number of excess deaths in Poland in 2020
+and still more were registerd in 2021. The phenomena is analyzed using statistical 
+exploratory analysis (Tukey 1980) and charts in particular. 
+We do not pretend to provide answers, we try to find
+interesting or strange patters and ask questions...
+
+## The scale of the problem
+
+Assessing change in the number of deaths  as a difference
+between 2015--2019 average and the current value one can easily find
+that approx 80,000 more people died in Poland in connection
+with or due to COVID19 (which present an unprecedented increase by 20%).
+At the same time 29095 people died in connection with COVID19 in 2020,
+with 27069 deaths in September--December alone (17 weeks or weeks number 36--52).
+In the first 14 weeks of 2021 more 29309 were registerd. This gives
+1711 and 2039 deaths per week respectively (in 2021 on the average there were
+20% more deaths than in september-december 2020. BTW there were 
+1254559 new cases in weeks 1--14 of 2021, and 1248165 new cases in weeks 36--52 of 2020
+(89,5 vs 73,4/week or approx 20% increase)
+
+## The data
+
+We analyse two  datasets: deaths (highly reliable) and covid deaths (somehow reliable).
+
+Deaths statistics come from the Eurostat database (table demo_r_mweek3: Deaths by week,
+sex, 5-year age group and NUTS 3 region). The last reported week is 14th (starting Monday 2021-04-05).
+COVID19 deaths statistics come from the announcements of the Ministry of Health
+published at https://www.gov.pl/web/koronawirus/. Polish HM do not provide any database (sic!)
+with COVID related data and until January 2021, 
+the messages were not even archived. 
+We archived them on our own. 
+Our data differs from the official ones because
+our database is a copy of the daily messages and the Ministry of Health data
+is corrected in the so-called in the meantime, often without any explanation or backtracking.
+However the difference of number of deaths, is insignificantly small (according to our
+base number of deaths classified as COVID19 victims as of April 30, 2021 is
+67575 and according to the MZ 67501 messages
+https://www.gov.pl/web/koronawirus/wykaz-zarazen-koronawirusem-sars-cov-2; difference
+74 deaths or 0.1%). 
+
+Population data comes from *Bank Danych Lokalnych* (provided Central Statistical Office or CSOPL;
+https://bdl.stat.gov.pl/BDL/dane/podgrup/temat.)
+GDP data comes from Bank Danych Makroekonomicznych (provided by CSOPL;
+https://stat.gov.pl/obszary-tematyczne/rachunki-narodowe/rachunki-regionalne/wstepne-szacunki-produktu-krajowego-brutto-w-przekrój-regionow-w-2019-roku,8,3.html)
+
+NOTE1: There are 16 provinces in Poland (according to *National Register of Territorial Divisions of the Country* or TERYT) but 17 regions (EU NUTS classification) because the biggest 
+Polish **województwo Mazowieckie** (TERYT) is divided into two macroregions in NUTS. 
+Deaths statistics are published by GUS/Eurostat according to NUTS but COVID according to TERYT. To get
+the common denominator we combined PL91 and PL92 macroregions (NUTS) back to
+województwo Mazowieckie.
+More information on NUTS is here
+https://stat.gov.pl/en/regional-statistics/classification-of-territorial-units/classification-of-territorial-units-for-statistics-nuts/the-nuts-classification-in-poland/
+
+NOTE2: As one can expect the provinces differs with area, population size, GDP/per capita, 
+health services availability, etc. 
+The biggest is Mazowieckie for example and it has the  highest
+GDP per capita. The short summary of Polish provinces (for foreigners) is here:
+
+
+```{r, warning=FALSE, message=F, echo=F}
+library("knitr")
+library("dplyr")
+p <- read.csv(file='ludnosc_2019.csv', sep=';', header=T)
+l <- read.csv(file='lekarze2019.csv', sep=';', header=T)
+o <- read.csv(file='pkb_pc_2018.csv', sep=';', header=T)
+
+p <- p %>% left_join(l, by="geo") %>% left_join(o, by="geo") %>%
+  select (geo, pop, lekarze_pracujący_wg_podstawowego_miejsca_pracy, pkb) %>% as.data.frame()
+
+
+#carsNo2019 <- sum(o$y2019)
+#carsNo2016 <- sum(o$y2016)
+#print (carsNo2019)
+#o <- o %>% mutate(y2019f = y2019/carsNo2019 *100, y2016f = y2016/carsNo2016 *100 )
+kable(p,
+      col.names = c('name', 'population', 'doctors/per 10ths', 'GDP (% of average)'))
+##o
+```
+
+BTW: province in Polish is *prowincja* (due to both are from Latin) but actually 
+Polish administrative provice is called "województwo", from "wodzić" -- ie commanding (the armed 
+troops in this context).  This is an old term/custom from the 14th century, 
+where Poland was divided into provinces (every province
+ruled by a "wojewoda" ie chief of that province). More can be found
+at Wikipedia (cf [Administrative divisions of Poland](https://en.wikipedia.org/wiki/Administrative_divisions_of_Poland))
+
+
+## Numer of deaths related to COVID by province
+
+![](COVID_by_woj.png)
+
+## Weekly number of deaths in Poland (2015--2021)
+
+![](COVID_PL_polar.png)
+
+BTW we resort to the same trick (polar coordinates) as used by Nightingale (1958) in her famous
+book on Crimean War deaths.
+
+
+## Number of deaths in Poland by province
+
+Before 2020 slow linear increase in (almost; łódzkie/lubelskie are exceptions probably
+due to migration) all provinces. 
+Sharp increase in 2020.
+
+![](zgony_PL_x1r.png)
+
+## Excess deaths by province
+
+As mentioned earlier we measure **excess deaths** (or mortality)
+as the difference between 2015–2019 average and the number of deaths registered
+in relevant weeks in 2020 and 2021. This simple measure is commonly used,
+ie https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Excess_mortality_-_statistics
+(On the right covid deaths for easy comparison.)
+
+![](exd_by_province.png)
+
+Provinces with problems (PwP):  świętokrzyskie, donośląskie, małopolskie, kujawsko-pomorskie, warmińsko-mazurskie.
+
+![](pop_dens.png)
+
+There is a theory that is number of cases (and deaths)
+is related to (high) population density and reversely related to 
+separation but obviously they did not know about that in Podkarpackie and Warmińsko-mazurskie...
+
+
+## Number of deaths in Poland 2020/21 by age groups
+
+We can observe the pattern by various age gropus in the 
+following chart (note different Y-scales)
+
+![](PL_deaths_by_agegrps.png)
+
+## Overall number of deaths in Poland 2020/21
+
+Weekly total deaths as **percent of 2015--2019 province average**. Green vertical line denotes
+week #47 (22-28/11/2020)
+
+![](zgony_PL_by_woj_O.png)
+
+Augmented version of the above.
+Weekly Covid-related deaths as **percent of province average for 2020W36--2021W14** 
+vs weekly total deaths
+as **percent of 2015--2019 province average**. Green vertical line denotes
+week #47 (22-28/11/2020)
+
+![](zgony_PL_by_woj_Ozz.png)
+
+Question#1: why peaks of COVID/general deaths curves are shifted horizontally?
+
+Question#2: Podkarpackie and Małopolskie recorded highest relative excess deaths in fatal late November weeks (over 250% of 2015-2019 average) yet both rank
+low in all-time-loses table
+(Podkarpackie #6, Małopolskie #15). Małopolskie even ranks last in the
+number of excess deaths table.
+HC failure or measurement artefact?
+
+## COVID/excess deaths ratio
+
+**Covid related deaths as % of excess deaths** (values of this ratio are increasing significantly. 
+Because better tests are applied? :-) )
+
+![](zgony_PL_by_province_1.png)
+
+**Question#3**: why rate of COVID-related deaths to total of excess deaths increases with no obvious
+relation to the stages/levels of COVID epidemics (as depicted below)?
+To be precise: the rate was well below 50% in 2nd wave, very high between 2nd--3rd waves
+(2021W7) and during 3rd wave...
+
+
+![](zgony_PL_covid_O.png)
+
+## Excess Deaths vs GDP/access to healthcare 
+
+Any correlation with GDP or health care availability? The measure of HC availibility is
+*number of doctors per 10 ths population* 
+(lekarze pracujący wg podstawowego miejsca pracy na 10 tys. ludności
+doctors employed by the primary workplace per 10 thous. population; cf: https://bdl.stat.gov.pl/BDL/metadane/cechy/3173)
+
+![](zgony_vs_lekarze_gdp.png)
+Doctors vs ED:  coefficient = 14.874 (probab 0,053 barely significant and R² = 24%) 
+GDP vs ED: coefficient -2,39 (prob 0,23 and R² = 10%)
+
+One additional doctor/10 ths or 100 additional doctors per 1 mln population saves 14 lives,
+so at least statistically it is worth to invest in HC :-)
+
+## Technical remarks
+
+This document is an abridged version of a report 
+prepared as R-markdown document (Xie 2021). 
+The source file and the data are available at author's github repo
+here: 
+
+## Bibliography
+
+Nightingale Florence,
+*Mortality of the British Army, at Home and Abroad, 
+and During the Russian War as Compared with the Civil Population in England*, Harrison&Sons, London 1858, (https://archive.org/details/mortalityofbriti00lond)
+
+Tukey John W., We Need Both Exploratory and Confirmatory
+*The American Statistician*
+Vol. 34, No. 1 (Feb., 1980), pp. 23-25 (3 pages)
+
+Xie Yihui, Allaire J.J,  Grolemund Garrett,
+*R Markdown: The Definitive Guide*
+https://bookdown.org/yihui/rmarkdown/
+2021-04-09
