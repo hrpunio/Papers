@@ -18,6 +18,9 @@ exploratory analysis (Tukey 1980) and charts in particular.
 We do not pretend to provide answers, we try to find
 interesting or strange patters and ask questions...
 
+Document URL: 
+https://bookdown.org/rudolf_von_ems/excess_deaths_in_poland_in_202021_an_exploratory_analysis/exd.html
+
 ## The scale of the problem
 
 Assessing change in the number of deaths  as a difference
@@ -34,7 +37,7 @@ In the first 14 weeks of 2021 more 29309 were registerd. This gives
 
 ## The data
 
-We analyse two  datasets: deaths (highly reliable) and covid deaths (somehow reliable).
+We analyse **two  datasets**: deaths (**highly reliable**) and covid deaths (**somehow reliable**).
 
 Deaths statistics come from the Eurostat database (table demo_r_mweek3: Deaths by week,
 sex, 5-year age group and NUTS 3 region). The last reported week is 14th (starting Monday 2021-04-05).
@@ -99,17 +102,19 @@ ruled by a "wojewoda" ie chief of that province). More can be found
 at Wikipedia (cf [Administrative divisions of Poland](https://en.wikipedia.org/wiki/Administrative_divisions_of_Poland))
 
 
-## Numer of deaths related to COVID by province
+## Numer of deaths related to COVID 
 
 ![](COVID_by_woj.png)
 
+BTW media rarely use rates, they prefer simple totals. So (almost) always Mazowieckie is #1 and
+Śląskie is #2 which seems obvious as they are two most populated...
+
 ## Weekly number of deaths in Poland (2015--2021)
 
-![](COVID_PL_polar.png)
-
-BTW we resort to the same trick (polar coordinates) as used by Nightingale (1958) in her famous
+We use the same trick (polar coordinates) as applied by Nightingale (1858) in her famous
 book on Crimean War deaths.
 
+![](COVID_PL_polar.png)
 
 ## Number of deaths in Poland by province
 
@@ -137,6 +142,8 @@ There is a theory that is number of cases (and deaths)
 is related to (high) population density and reversely related to 
 separation but obviously they did not know about that in Podkarpackie and Warmińsko-mazurskie...
 
+**Question#1**: Is excess deaths phenomenon in 2020--21 in Poland caused by COVID
+or only somehow related to?
 
 ## Number of deaths in Poland 2020/21 by age groups
 
@@ -148,7 +155,7 @@ following chart (note different Y-scales)
 ## Overall number of deaths in Poland 2020/21
 
 Weekly total deaths as **percent of 2015--2019 province average**. Green vertical line denotes
-week #47 (22-28/11/2020)
+week #47 which was particularly disastrius (22-28/11/2020, why?)
 
 ![](zgony_PL_by_woj_O.png)
 
@@ -160,9 +167,9 @@ week #47 (22-28/11/2020)
 
 ![](zgony_PL_by_woj_Ozz.png)
 
-Question#1: why peaks of COVID/general deaths curves are shifted horizontally?
+Question#2: why peaks of COVID/general deaths curves are shifted horizontally?
 
-Question#2: Podkarpackie and Małopolskie recorded highest relative excess deaths in fatal late November weeks (over 250% of 2015-2019 average) yet both rank
+Question#3: Podkarpackie and Małopolskie recorded highest relative excess deaths in fatal late November weeks (over 250% of 2015-2019 average) yet both rank
 low in all-time-loses table
 (Podkarpackie #6, Małopolskie #15). Małopolskie even ranks last in the
 number of excess deaths table.
@@ -175,7 +182,7 @@ Because better tests are applied? :-) )
 
 ![](zgony_PL_by_province_1.png)
 
-**Question#3**: why rate of COVID-related deaths to total of excess deaths increases with no obvious
+**Question#4**: why rate of COVID-related deaths to total of excess deaths increases with no obvious
 relation to the stages/levels of COVID epidemics (as depicted below)?
 To be precise: the rate was well below 50% in 2nd wave, very high between 2nd--3rd waves
 (2021W7) and during 3rd wave...
@@ -194,15 +201,16 @@ doctors employed by the primary workplace per 10 thous. population; cf: https://
 Doctors vs ED:  coefficient = 14.874 (probab 0,053 barely significant and R² = 24%) 
 GDP vs ED: coefficient -2,39 (prob 0,23 and R² = 10%)
 
-One additional doctor/10 ths or 100 additional doctors per 1 mln population saves 14 lives,
-so at least statistically it is worth to invest in HC :-)
+One additional doctor/10 ths or 100 additional doctors per 1 mln population causes extra 14
+deaths (per 1 mln population), 
+so at least statistically **it is not worth to invest in HC** 😜😜
 
 ## Technical remarks
 
 This document is an abridged version of a report 
 prepared as R-markdown document (Xie 2021). 
 The source file and the data are available at author's github repo
-here: 
+here: https://github.com/hrpunio/Papers/tree/main/PSW_2021
 
 ## Bibliography
 
