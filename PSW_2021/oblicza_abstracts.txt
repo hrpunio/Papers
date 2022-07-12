@@ -1,0 +1,34 @@
+     Abstract
+
+     There were a significant number of excess deaths in Poland in
+     2020 and still more were registered in 2021. In this chapter, the
+     phenomena is analyzed using statistical exploratory analysis
+     [Tukey 1980, pp. 23-25]. We do not pretend to provide answers, we
+     try to find interesting or strange patterns and ask questions.
+     
+     The main results are the following ones:
+     1) There is a significant variation in excess death rates between
+     provinces; 2) provinces with the highest total death rates are not at
+     the top in excess deaths ranking; 3) High population density is not
+     correlated with COVID-related deaths (at province level);
+     4) Peak values for weekly number of COVID deaths 
+     and total deaths curves are shifted by 2--3 weeks for most provinces;
+     5) Ratio of COVID-related deaths to total deaths is increasing.
+
+     Streszczenie
+
+     W latach 2020--2021 zarejestrowano znaczącą liczbę zgonów nadliczbowych
+     w Polsce. W niniejszej praca przeprowadzono eksloracyjną analizę zjawiska
+     [Tukey 1980 s 23--25]. Nie objaśniamy przyczyn. Szukamy
+     wartości odstających, interesujących/dziwnych zależności
+     oraz zadajemy pytania. 
+
+     Ważniejsze wyniki analizy:
+     1) wystąpiły znaczące różnice w liczbie zgonów nadliczbowych 
+     pomiędzy województwami; 2) województwa o najwyższej licznie zgonów
+     niekoniecznie były tymi gdzie obserwowano największą liczbę zgonów
+     nadliczbowych; 3) gęstość zaludnienia nie była skorelowana z liczbą
+     zgonów COVIDowych (na poziomie województw);
+     4) szczyty tygodniowych liczb zgonów COVIDowych oraz zgonów ogółem 
+     były przesunięte o 2--3 tygodnie w przypadku większości województw;
+     5) współczynnik zgonów COVIDowych do zgonów ogółem nieustannie rósł.
