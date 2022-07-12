@@ -155,7 +155,7 @@ covid_by_province <- zc1m %>%
    ggplot(aes(x = reorder(woj, ccp ))) +
    geom_bar(aes(y = cc), stat="identity", alpha=.25, fill=default_violet ) +
    xlab(label="") +
-   ylab(label="") +
+   ylab(label="deaths per 1 mln") +
    ## remove title
    ##ggtitle("Deaths per 1mln 2020--2021 by province", subtitle='last week reported 14/2021') +
    ##
@@ -168,7 +168,8 @@ covid_by_province_p <- zc1m %>%
    ggplot(aes(x = reorder(woj, ccp ))) +
    geom_bar(aes(y = ccp), stat="identity", alpha=.25, fill=default_violet ) +
    xlab(label="") +
-   ylab(label="") +
+   ##ylab(label="") +
+   ylab("%") +
    ggtitle("Deaths per 1mln 2020--2021 by province (as % of overall average)", 
            subtitle='last week reported 14/2021') +
    geom_hline(yintercept = 100, color='red1', alpha=.4, size=.4) +
@@ -192,6 +193,8 @@ zc.total.PL <- zc %>%
 zc.total.PL.p <- zc.total.PL %>% 
    ggplot(aes(x=as.Date(date), y=newd), color=farbe19) +
    geom_line(color=farbe19) +
+   xlab("") +
+   ylab("total deaths (Poland)") +
    scale_x_date( labels = date_format("%y/%m/%d"), breaks ="6 weeks") +
    geom_point(size=.5, color=farbe19)
 
@@ -200,6 +203,8 @@ zc.total.PL.p
 ## ### RYS[1]
 p12 <- ggarrange(p1, zc.total.PL.p,  ncol = 1, nrow=2 )
 ggsave(plot=p12, filename="COVID_by_woj.pdf", height = 6)
+
+p12
 
 ###################################################
 ##
@@ -265,6 +270,7 @@ p2.a <- z_Woj_T_sumr %>% filter ( year < 2021) %>%
    #facet_wrap( ~geo, scales = "free_y") +
    xlab(label="") +
    ylab(label="") +
+   labs(color='') +
    scale_x_date( labels = date_format("%Y"), breaks ="2 years") +
    ###ggtitle("Deaths per 1mln by province" ) +
    theme(plot.subtitle=element_text(size=9), legend.position="right")
@@ -367,7 +373,8 @@ p3 <- zz_xx_diff %>%
    ggplot(aes(x = reorder(name, exdp1m ))) +
    geom_bar(aes(y = exdp1m), stat="identity", alpha=.25, fill=default_violet ) +
    xlab(label="") +
-   ylab(label="") +
+   ##ylab(label="") +
+   ylab("excess deaths per 1mln") +
    #ggtitle("Excessive deaths per 1mln 2020--2021 by province", 
    #        subtitle='last week reported 14/2021') +
    geom_hline(yintercept = exd_ave_PL, color='red1', alpha=.4, size=.4) +
@@ -457,6 +464,7 @@ ggsave(plot=p4, "PL_deaths_by_agegrps.pdf", width=picWd)
 
 ###[W4]
 ### Deaths by age groups
+## NOT INCLUDED IN THE PAPER
 p4
 
 #######################################################
@@ -527,10 +535,10 @@ ggsave(plot=p5, "zgony_PL_by_woj_O.pdf", height = 5)
 p5
 
 
-ggsave(plot=p4, "zgony_PL_by_woj_O.pdf", width=picWd, height = picHt)
+### ggsave(plot=p4, "zgony_PL_by_woj_O.pdf", width=picWd, height = picHt)
 ###
 ##[W5]
-p5
+##p5
 ###
 zc.mean <- zc %>% select (year, dow, woj, newd) %>%
    filter ((year == 2021 & dow < 15) | (year == 2020 & dow > 35)) %>%
@@ -608,7 +616,7 @@ zc.pp <- left_join(zc, zc.mean, by="woj") %>%
 ## dodaj do info o zgonach
 zz1zz <- bind_rows(zz1p, zc.pp)  %>%  filter (name != 'Polska')
 
-p6 <- ggplot(zz1zz, aes(x=week, y=vv, group=year, color=year)) +
+p6.x <- ggplot(zz1zz, aes(x=week, y=vv, group=year, color=year)) +
    geom_smooth(method="loess", se=F, span=spanV, size=.4) +
    geom_point(size=.4, alpha=.5) +
    #facet_wrap( ~name, scales = "free_y") +
@@ -620,15 +628,17 @@ p6 <- ggplot(zz1zz, aes(x=week, y=vv, group=year, color=year)) +
    ##theme_nikw()+
    scale_y_log10()+
    ##labs(caption=source) +
+  scale_x_continuous(breaks=seq(1, 52, by=5)) +
    theme(plot.subtitle=element_text(size=9), legend.position="top")
    #scale_color_manual(name="Year: ", labels = c("2020", "2021", "c20", "c21"), 
    #                   values = c("t20p"=farbe20, "t21p"=farbe21, "c19"=farbe19 )) +
    #ggtitle("Deaths in Poland by province (weekly)")
 
 ## [W6]
-ggsave(plot=p6, "zgony_PL_by_woj_Ozz.pdf", width=picWd, height = picHt)
+## NIE DOŁĄCZONE
+ggsave(plot=p6.x, "zgony_PL_by_woj_Ozz.pdf", width=picWd, height = picHt)
 ## 
-p6
+p6.x
 ###########################
 ###########################
 
@@ -651,6 +661,8 @@ zz_xx <- left_join(zz_15, zz_x, by = c('week'='week', 'geo' = 'geo')) %>%
    as.data.frame()
 zz_xx <- left_join(zz_xx, n, by='geo')
 
+
+###
 p7 <- zz_xx %>% filter (geo != "Polska") %>%
    mutate(cdeaths = replace(cdeaths, which( cdeaths > 100 | cdeaths < -100), NA)) %>%
    ggplot(aes(x=as.Date(date), y=cdeaths, color=name)) +
@@ -658,6 +670,7 @@ p7 <- zz_xx %>% filter (geo != "Polska") %>%
    geom_point(size=.8) +
    xlab(label="yy/ww") +
    ylab(label="") +
+  labs(color="") +
    scale_x_date( labels = date_format("%y/%W"), breaks ="2 weeks") +
    ##coord_cartesian(ylim = c(0, 100)) +
    theme(plot.subtitle=element_text(size=7), legend.position="right")
