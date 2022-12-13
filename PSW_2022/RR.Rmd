@@ -1,0 +1,201 @@
+---
+title: "Reproducible research: basic concepts & tools"
+author: "Tomasz Przechlewski"
+description: (c) Tomasz Przechlewski / CC-BY license 
+date: "Jan. 2021"
+output:
+  slidy_presentation:
+    css: scrollable_slides.css
+    smaller: yes
+  html_document:
+    df_print: paged
+  ioslides_presentation: default
+---
+
+## There is a life without speadsheet too: R and Rstudio
+
+R is both *programming language*  for statistical computing and graphics, and 
+a software (ie application) to execute programs written in R.
+R was developed in mid 90s  at the University of Auckland 
+(New Zealand).
+
+Since then R has become one of the dominant software environments for data analysis and is used by a variety of scientific disciplines.
+
+BTW why it is called so strange (R)? Long time ago it was popular to use short names for computer languages
+(C for example). At AT&T Bell Labs (John Chambers) in mid 70s a language oriented towards statistical
+computing was developed and called S (from Statistics). R is one letter before S in an alphabet.
+
+Rstudio is an *environment* through which to use R. In Rstudio one can simultaneously write code, execute
+code it, manage data, get help, view plots. Rstudio is a commercial product distributed
+under dual-license system by RStudio, Inc. Key developer of RStudio is Hadley Wickham 
+another brilliant New Zealander (cf [Hadley Wickham](https://en.wikipedia.org/wiki/Hadley_Wickham) )
+
+Microsoft invest heavily into R development recently. It bought Revolution Analytics a key 
+developer of R and provider of commercial versions of the system. With MS support the system
+is expected to gain more popularity (for example 
+by integrating it with popular MS products)
+
+## Reproducible research or how to make statistical computations more meaningfu
+    
+Abandoning the habit of secrecy in favor of process transparency and
+peer review was the crucial step by which alchemy became chemistry.
+Eric S. Raymond, E. S. The art of UNIX programming: Addison-Wesley.
+
+**Replicability**: independent experiment targetting the same question
+will produce a result consistent with the original study.
+**Reproducibility**: ability to repeat
+the experiment with exactly the same outcome as
+originally reported [description of method/code/data is needed to do so].
+
+Computational science is facing a credibility crisis: it's impossible
+to verify most of the computational results presented at conferences
+and in papers today. (Donoho D. et al 2009)
+
+Hot topic: google: `"reproducible research"` = 649000 (January/2021)
+
+## Australopithecus (Current practices)
+
+* Enter data in Excel/OOCalc to clean and/or make explanatory analysis.
+[Excel handles missing data inconsistently and sometimes incorrectly
+Many common functions are poor or missing in Excel. Poor quality graphics]
+
+* Import data from Spreadsheet into SPSS/SAS/Stata for serious analysis
+[Using SPSS/SAS/Stata in point-and-click mode for serious
+statistical analyses.]
+
+* Prepare report/paper
+[Copy/paste output from SPSS/SAS/Stata to Word/OpenOffice, add description.
+ Send to publisher]
+ 
+* Repeat 1--4 [revision/recomputation etc...]
+
+### Benefits
+
+* Easy to learn (in theory)
+  
+### Problems
+
+* Tedious/time-wasting/costly.
+
+* Even small data/method change requires
+extensive recomputation effort/careful report/paper revision and update.
+
+* Error-prone: difficult to record/remember a 'click history'.
+
+Famous example: Reinhart and Rogoff controversy
+Countries very high GDP--debt ratio suffer from low growth. However the study
+suffers serious, but easy identifiable flaws which were discovered when
+RR published the dataset they used in their analysis
+(cf [Growth_in_a_Time_of_Debt](https://en.wikipedia.org/wiki/Growth_in_a_Time_of_Debt))
+  
+## Homo habilis (Enhanced current practices)
+
+* Abandon spreadsheets.
+
+* Abandon point-and-click mode. Use statistical scripting
+languages and run program/scripts.
+
+### Benefits
+
+* Improved: reliability, transparency, automation, maintanability.
+Lower costs (in the long run).
+
+
+### Problems
+
+* Steeper learning curve.
+
+* Perhaps higher costs in short run.
+
+* Duplication of effort (or mess if scripts/programs are poorly documented).
+
+
+## Homo Erectus (Literate statistical programming)
+
+Literate programming concept:
+Code and description in one document. Create software as
+works of literature, by embedding source code inside
+descriptive text, rather than the reverse (as in most programming
+languages), in an order that is convenient for human readers.
+
+A program is like a WEB tangled and weaved (turned into a document),
+with relations and connections in the program parts.  We express a
+program as a *web of ideas*.  WEB is a combination of
+-- a document formatting language and -- a program language.
+
+General idea of Literate statistical programming mimics Knuth's WEB system.
+
+Statistical computing code is embedded inside descriptive
+text. Literate statistical program is weaved (turned) into
+report/paper by executing code and inserting the results
+obtained. data/method changes.
+
+### LSP: Benefits
+
+* Reliability: Easier to find/fix bugs.
+The results produced will not change when recomputed (in theory at least).
+
+* Efficiency: Reuse allows to avoid duplication of effort (Payoff in the long run.)
+
+* Transparency: increased citation rate, broader impact, improved institutional memory
+
+* Institutional memory is a collective set of facts, concepts, experiences and know-how 
+held by a group of people. 
+
+* Flexibility: When you don't 'point-and-click' you gain many new analytic options.
+
+### LSP: Problems
+
+Many incl. costs and learning curve
+
+### LSP workflow
+
+* **Document formatting language**:  Markdown (lightweight document markup language based
+on email text formatting. Easy to write, read and publish as-is.)
+https://docs.microsoft.com/ru-ru/contribute/markdown-reference
+
+* **Dedicated Program language**: R
+https://cran.r-project.org/
+
+* **Tool to process 1 and 2**: RStudio
+https://www.rstudio.com/
+
+
+## Github for the uninitiated
+
+The basic idea is that instead of manually registering 
+changes one has made to data, documents etc, one can use software to
+help him manage the whole process.
+Such software is called **Version Control Systems** or VCS
+
+VCS not only manages content, registering each modification of it, but 
+control access to the content as well. Thus many individuals can
+work on common project (compare this to common scenario of mailing
+spreadsheets to each other--highly inefficient at least)
+
+There are highly reliable and publicly available VCS services
+and GitHub is the most popular of them.
+
+GitHub is owned by Microsoft (do not use if you boycott MS :-))
+
+I use GitHub as an educational tool: to distribute learning content
+to my students and to store content they produce for me (ie projects)
+
+The free GitHub account is public. It is OK for me. If it is not OK
+for you, you can buy a license for commercial account or
+do not use GitHub.
+
+## Learning resources
+
+* [Rstudio](https://www.rstudio.com/resources/cheatsheets/)
+
+* [Making Data Meaningful](https://www.unece.org/stats/documents/writing/)
+
+* [bookdown: Authoring Books and Technical Documents with R Markdown](https://bookdown.org/yihui/bookdown/)
+
+
+<!--
+Local variables:
+ ispell-local-dictionary: "english"
+End:
+-->

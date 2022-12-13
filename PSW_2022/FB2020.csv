@@ -1,0 +1,190 @@
+rank;name;worth;age;country;company;branch
+1;Jeff Bezos;113;56;United States;Amazon ;Technology
+2;Bill Gates;98;64;United States;Microsoft ;Technology
+3;Bernard Arnault & family;76;71;France;LVMH ;Fashion & Retail
+4;Warren Buffett;67.5;89;United States;Berkshire Hathaway ;Finance & Investments
+5;Larry Ellison;59;75;United States;software ;Technology
+6;Amancio Ortega;55.1;84;Spain;Zara ;Fashion & Retail
+7;Mark Zuckerberg;54.7;35;United States;Facebook ;Technology
+8;Jim Walton;54.6;71;United States;Walmart ;Fashion & Retail
+9;Alice Walton;54.4;70;United States;Walmart ;Fashion & Retail
+10;Rob Walton;54.1;75;United States;Walmart ;Fashion & Retail
+11;Steve Ballmer;52.7;64;United States;Microsoft ;Technology
+12;Carlos Slim Helu & family;52.1;80;Mexico;telecom ;Telecom
+13;Larry Page;50.9;47;United States;Google ;Technology
+14;Sergey Brin;49.1;46;United States;Google ;Technology
+15;Francoise Bettencourt Meyers & family;48.9;66;France;L'Oreal ;Fashion & Retail
+17;Jack Ma;38.8;55;China;e-commerce ;Technology
+18;Charles Koch;38.2;84;United States;Koch Industries ;Diversified
+18;Julia Koch & family;38.2;57;United States;Koch Industries ;Diversified
+20;Ma Huateng;38.1;48;China;internet media ;Technology
+21;Mukesh Ambani;36.8;62;India;petrochemicals, oil & gas ;Energy
+22;MacKenzie Scott;36;50;United States;Amazon.com ;Technology
+23;Beate Heister & Karl Albrecht Jr.;33.3;NA;Germany;supermarkets ;Fashion & Retail
+24;David Thomson & family;31.6;62;Canada;media ;Media & Entertainment
+25;Phil Knight & family;29.5;82;United States;Nike ;Fashion & Retail
+26;Lee Shau Kee;28.1;92;Hong Kong;real estate ;Real Estate
+27;François Pinault & family;27;83;France;luxury goods ;Fashion & Retail
+28;Sheldon Adelson;26.8;86;United States;casinos ;Gambling & Casinos
+29;Jacqueline Mars;24.7;80;United States;candy, pet food ;Food & Beverage
+29;John Mars;24.7;84;United States;candy, pet food ;Food & Beverage
+32;Giovanni Ferrero;24.5;55;Italy;Nutella, chocolates ;Food & Beverage
+33;Michael Dell;22.9;55;United States;Dell computers ;Technology
+34;Hui Ka Yan;21.8;61;China;real estate ;Real Estate
+35;Li Ka-shing;21.7;91;Hong Kong;diversified ;Diversified
+36;He Xiangjian;21.6;77;China;home appliances ;Manufacturing
+36;Jim Simons;21.6;81;United States;hedge funds ;Finance & Investments
+38;Yang Huiyan & family;20.3;38;China;real estate ;Real Estate
+39;Joseph Safra;19.9;81;Brazil;banking ;Finance & Investments
+40;Dieter Schwarz;19.8;80;Germany;retail ;Fashion & Retail
+41;Vladimir Potanin;19.7;59;Russia;metals ;Metals & Mining
+41;Tadashi Yanai & family;19.7;71;Japan;fashion retail ;Fashion & Retail
+43;Qin Yinglin & family;18.5;54;China;pig breeding ;Food & Beverage
+44;Lukas Walton;18.4;33;United States;Walmart ;Fashion & Retail
+45;Vladimir Lisin;18.1;63;Russia;steel, transport ;Metals & Mining
+47;Takemitsu Takizaki;17.4;74;Japan;sensors ;Manufacturing
+48;Leonid Mikhelson;17.1;64;Russia;gas, chemicals ;Energy
+48;Alain Wertheimer;17.1;71;France;Chanel ;Fashion & Retail
+48;Gerard Wertheimer;17.1;69;France;Chanel ;Fashion & Retail
+51;Theo Albrecht, Jr. & family;17;69;Germany;Aldi, Trader Joe's ;Fashion & Retail
+51;Len Blavatnik;17;62;United States;diversified ;Diversified
+51;William Lei Ding;17;48;China;online games ;Technology
+54;Susanne Klatten;16.8;57;Germany;BMW, pharmaceuticals ;Automotive
+54;Alexey Mordashov & family;16.8;54;Russia;steel, investments ;Metals & Mining
+56;Masayoshi Son;16.6;62;Japan;internet, telecom ;Telecom
+57;Colin Zheng Huang;16.5;40;China;e-commerce ;Technology
+57;Dietrich Mateschitz;16.5;75;Austria;Red Bull ;Food & Beverage
+59;Joseph Lau;16.4;68;Hong Kong;real estate ;Real Estate
+59;Laurene Powell Jobs & family;16.4;56;United States;Apple, Disney ;Technology
+62;Leonardo Del Vecchio & family;16.1;84;Italy;eyeglasses ;Fashion & Retail
+63;Donald Bren;15.5;87;United States;real estate ;Real Estate
+64;Stephen Schwarzman;15.4;73;United States;investments ;Finance & Investments
+65;Vagit Alekperov;15.2;69;Russia;oil ;Energy
+65;Lee Man Tat;15.2;90;Hong Kong;food ;Food & Beverage
+65;Wang Wei;15.2;50;China;package delivery ;Service
+68;Petr Kellner;14.9;55;Czechia;finance, telecommunications ;Finance & Investments
+68;Rupert Murdoch & family;14.9;89;United States;newspapers, TV network ;Media & Entertainment
+70;Leonard Lauder;14.6;83;United States;Estee Lauder ;Fashion & Retail
+70;Zhong Huijuan;14.6;59;China;pharmaceuticals ;Healthcare
+72;Gennady Timchenko;14.4;67;Russia;oil, gas ;Energy
+73;Thomas Peterffy;14.3;75;United States;discount brokerage ;Finance & Investments
+74;Klaus-Michael Kuehne;14.2;82;Germany;shipping ;Logistics
+75;Lee Kun-hee;14.1;78;South Korea;Samsung ;Diversified
+77;Steve Cohen;13.9;63;United States;hedge funds ;Finance & Investments
+78;Radhakishan Damani & family;13.8;65;India;retail, investments ;Fashion & Retail
+78;Carl Icahn;13.8;84;United States;investments ;Finance & Investments
+80;R. Budi Hartono;13.6;79;Indonesia;banking, tobacco ;Finance & Investments
+81;Dhanin Chearavanont;13.5;80;Thailand;diversified ;Diversified
+81;Stefan Persson;13.5;72;Sweden;H&M ;Fashion & Retail
+83;Alisher Usmanov;13.4;66;Russia;steel, telecom, investments ;Metals & Mining
+84;Eric Schmidt;13.2;64;United States;Google ;Technology
+85;Gina Rinehart;13.1;66;Australia;mining ;Metals & Mining
+86;Walter P.J. Droege;13;67;Germany;consulting ;Service
+86;Mikhail Fridman;13;55;Russia;oil, banking, telecom ;Energy
+86;Michael Hartono;13;80;Indonesia;banking, tobacco ;Manufacturing
+86;Dietmar Hopp & family;13;79;Germany;software ;Technology
+86;Zhang Zhidong;13;48;China;internet media ;Technology
+91;Hinduja brothers;12.9;NA;United Kingdom;diversified;Diversified
+91;Heinz Hermann Thiele & family;12.9;79;Germany;brakes ;Construction & Engineering
+93;Charlene de Carvalho-Heineken & family;12.8;65;Netherlands;Heineken ;Food & Beverage
+94;Emmanuel Besnier;12.7;49;France;cheese ;Food & Beverage
+95;Andrey Melnichenko;12.5;48;Russia;coal, fertilizers ;Energy
+96;Li Shufu;12.4;56;China;automobiles ;Automotive
+96;Hasso Plattner & family;12.4;76;Germany;software ;Technology
+98;Liu Yonghao & family;12.3;68;China;agribusiness ;Service
+98;Stefan Quandt;12.3;53;Germany;BMW ;Automotive
+100;Ken Griffin;12.1;51;United States;hedge funds ;Finance & Investments
+101;David Tepper;12;62;United States;hedge funds ;Finance & Investments
+101;Wu Yajun & family;12;56;China;real estate ;Real Estate
+103;Kwong Siu-hing;11.9;90;Hong Kong;real estate ;Real Estate
+103;Shiv Nadar;11.9;74;India;software services ;Technology
+105;Sun Piaoyang;11.8;61;China;pharmaceuticals ;Healthcare
+106;Ricardo Salinas Pliego & family;11.7;64;Mexico;retail, media ;Fashion & Retail
+108;Li Xiting;11.6;69;Singapore;medical devices ;Healthcare
+108;Reinhold Wuerth & family;11.6;84;Germany;fasteners ;Manufacturing
+110;John Menard, Jr.;11.5;80;United States;home improvement stores ;Fashion & Retail
+110;Pang Kang;11.5;64;China;soy sauce ;Food & Beverage
+110;Peter Woo;11.5;73;Hong Kong;real estate ;Real Estate
+113;Roman Abramovich;11.3;53;Russia;steel, investments ;Diversified
+113;Udo & Harald Tschira;11.3;NA;Germany;software;Technology
+115;Mikhail Prokhorov;11.2;54;Russia;investments ;Finance & Investments
+115;Xu Hang;11.2;53;Hong Kong;medical devices ;Healthcare
+117;Pallonji Mistry;11.1;90;Ireland;construction ;Construction & Engineering
+118;Philip Anschutz;11;80;United States;investments ;Finance & Investments
+118;German Larrea Mota Velasco & family;11;66;Mexico;mining ;Metals & Mining
+118;Pierre Omidyar;11;52;United States;eBay, PayPal ;Technology
+118;Zhang Yong;11;49;Singapore;restaurants ;Food & Beverage
+123;Robert & Philip Ng;10.9;NA;Singapore;real estate ;Real Estate
+124;Iris Fontbona & family;10.8;77;Chile;mining ;Metals & Mining
+124;Abigail Johnson;10.8;58;United States;money management ;Finance & Investments
+124;Donald Newhouse;10.8;90;United States;media ;Media & Entertainment
+127;Graeme Hart;10.5;64;New Zealand;investments ;Finance & Investments
+127;Viktor Vekselberg;10.5;62;Russia;metals, energy ;Energy
+129;Goh Cheng Liang;10.4;92;Singapore;paints ;Manufacturing
+129;Uday Kotak;10.4;61;India;banking ;Finance & Investments
+129;Jorge Paulo Lemann & family;10.4;80;Brazil;beer ;Food & Beverage
+132;Jorn Rausing;10.3;60;Sweden;packaging ;Food & Beverage
+133;Hank & Doug Meijer;10.2;NA;United States;supermarkets;Fashion & Retail
+133;Stefano Pessina;10.2;78;Italy;drugstores ;Fashion & Retail
+135;Suleiman Kerimov & family;10;54;Russia;investments ;Finance & Investments
+135;Joseph Tsai;10;56;Canada;e-commerce ;Technology
+138;Gordon Moore;9.8;91;United States;Intel ;Technology
+139;Jan Koum;9.7;44;United States;WhatsApp ;Technology
+139;Robin Zeng;9.7;51;Hong Kong;batteries ;Energy
+141;John Fredriksen;9.6;75;Cyprus;shipping ;Logistics
+141;Robert Kuok;9.6;96;Malaysia;palm oil, shipping, property ;Diversified
+141;Andreas Struengmann & family;9.6;70;Germany;pharmaceuticals ;Healthcare
+141;Thomas Struengmann & family;9.6;70;Germany;pharmaceuticals ;Healthcare
+145;Hui Wing Mau;9.5;69;Hong Kong;real estate ;Real Estate
+146;Dustin Moskovitz;9.3;35;United States;Facebook ;Technology
+147;Lei Jun;9.2;50;China;smartphones ;Technology
+147;Quek Leng Chan;9.2;78;Malaysia;banking, property ;Diversified
+147;Sun Hongbin;9.2;57;United States;real estate ;Real Estate
+150;Finn Rausing;9.1;65;Sweden;packaging ;Food & Beverage
+150;Charoen Sirivadhanabhakdi;9.1;75;Thailand;alcohol, real estate ;Food & Beverage
+153;Stewart and Lynda Resnick;9;NA;United States;agriculture, water ;Food & Beverage
+153;Luis Carlos Sarmiento;9;87;Colombia;banking ;Finance & Investments
+155;Gautam Adani;8.9;57;India;commodities, ports ;Diversified
+155;Christy Walton;8.9;71;United States;Walmart ;Fashion & Retail
+157;Sunil Mittal & family;8.8;62;India;telecom ;Telecom
+157;Zhang Bangxin;8.8;40;China;education ;Service
+159;Anthony Pratt;8.7;59;Australia;manufacturing ;Manufacturing
+160;German Khan;8.5;58;Russia;oil, banking, telecom ;Energy
+161;Eduardo Saverin;8.4;38;Brazil;Facebook ;Technology
+162;Aliko Dangote;8.3;62;Nigeria;cement, sugar ;Manufacturing
+162;George Soros;8.3;89;United States;hedge funds ;Finance & Investments
+162;Zong Qinghou;8.3;74;China;beverages ;Food & Beverage
+165;Richard Qiangdong Liu;8.2;46;China;e-commerce ;Technology
+165;Lu Zhongfang;8.2;77;China;education ;Automotive
+165;Cyrus Poonawalla;8.2;78;India;vaccines ;Healthcare
+169;Ernesto Bertarelli;8;54;Switzerland;biotech, investments ;Healthcare
+169;Mike Cannon-Brookes;8;40;Australia;software ;Technology
+169;Carl Cook;8;57;United States;medical devices ;Healthcare
+169;Scott Farquhar;8;40;Australia;software ;Technology
+169;Gong Hongjia & family;8;55;Hong Kong;video surveillance ;Finance & Investments
+169;Jerry Jones;8;77;United States;Dallas Cowboys ;Sports
+169;Michael Platt;8;52;United Kingdom;hedge funds ;Finance & Investments
+169;Anders Holch Povlsen;8;47;Denmark;fashion retail ;Fashion & Retail
+169;Eric Wittouck;8;73;Belgium;Investments ;Finance & Investments
+169;Xu Shihui;8;62;China;snacks, beverages ;Food & Beverage
+179;Andrew Beal;7.9;67;United States;banks, real estate ;Finance & Investments
+179;Ann Walton Kroenke;7.9;71;United States;Walmart ;Fashion & Retail
+179;Wang Wenyin;7.9;52;China;mining, copper products ;Metals & Mining
+179;Zhang Fan;7.9;54;China;touch screens ;Technology
+183;Shahid Khan;7.8;69;United States;auto parts ;Automotive
+184;Zhang Jindong;7.7;57;China;appliance retailer ;Fashion & Retail
+185;Kumar Birla;7.6;52;India;commodities ;Diversified
+185;Chen Bang;7.6;54;China;hospitals ;Healthcare
+185;David Geffen;7.6;77;United States;movies, record labels ;Media & Entertainment
+185;Jiang Rensheng & family;7.6;66;China;vaccines ;Healthcare
+185;Jim Kennedy;7.6;72;United States;media, automotive ;Media & Entertainment
+185;Blair Parry-Okeden;7.6;69;United States;media, automotive ;Media & Entertainment
+185;Stephen Ross;7.6;79;United States;real estate ;Real Estate
+185;August von Finck;7.6;90;Germany;investments ;Finance & Investments
+193;David Duffield;7.5;79;United States;business software ;Technology
+193;Thomas Frist, Jr. & family;7.5;81;United States;hospitals ;Healthcare
+193;Eyal Ofer;7.5;69;Israel;real estate, shipping ;Diversified
+196;Niels Peter Louis-Hansen;7.4;72;Denmark;medical devices ;Healthcare
+196;Lakshmi Mittal;7.4;69;India;steel ;Metals & Mining
+196;Nicky Oppenheimer & family;7.4;74;South Africa;diamonds ;Metals & Mining
+200;John Doerr;7.3;68;United States;venture capital ;Technology

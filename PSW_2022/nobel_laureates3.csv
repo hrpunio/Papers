@@ -1,0 +1,935 @@
+id;firstname;surname;born;died;bornCountry;bornCountryCode;bornCity;diedCountry;diedCountryCode;diedCity;gender;year;category;overallMotivation;share;;name;city;country;age
+1;Wilhelm Conrad;Röntgen;1845-03-27;1923-02-10;Prussia (now Germany);DE;Lennep (now Remscheid);Germany;DE;Munich;male;1901;physics;;1;;Munich University;Munich;Germany;56
+2;Hendrik Antoon;Lorentz;1853-07-18;1928-02-04;the Netherlands;NL;Arnhem;the Netherlands;NL;;male;1902;physics;;2;;Leiden University;Leiden;the Netherlands;49
+3;Pieter;Zeeman;1865-05-25;1943-10-09;the Netherlands;NL;Zonnemaire;the Netherlands;NL;Amsterdam;male;1902;physics;;2;;Amsterdam University;Amsterdam;the Netherlands;37
+4;Antoine Henri;Becquerel;1852-12-15;1908-08-25;France;FR;Paris;France;FR;;male;1903;physics;;2;;École Polytechnique;Paris;France;51
+5;Pierre;Curie;1859-05-15;1906-04-19;France;FR;Paris;France;FR;Paris;male;1903;physics;;4;;École municipale de physique et de chimie industrielles (Municipal School of Industrial Physics and Chemistry);Paris;France;44
+6;Marie;Curie, née Sklodowska;1867-11-07;1934-07-04;Russian Empire (now Poland);PL;Warsaw;France;FR;Sallanches;female;1911;chemistry;;1;;Sorbonne University;Paris;France;44
+8;Lord Rayleigh;(John William Strutt);1842-11-12;1919-06-30;United Kingdom;GB;Langford Grove, Maldon, Essex;United Kingdom;GB;;male;1904;physics;;1;;Royal Institution of Great Britain;London;United Kingdom;62
+9;Philipp Eduard Anton;von Lenard;1862-06-07;1947-05-20;Hungary (now Slovakia);SK;Pressburg (now Bratislava);Germany;DE;Messelhausen;male;1905;physics;;1;;Kiel University;Kiel;Germany;43
+10;Joseph John;Thomson;1856-12-18;1940-08-30;United Kingdom;GB;Cheetham Hill, near Manchester;United Kingdom;GB;Cambridge;male;1906;physics;;1;;University of Cambridge;Cambridge;United Kingdom;50
+11;Albert Abraham;Michelson;1852-12-19;1931-05-09;Prussia (now Poland);PL;Strelno (now Strzelno);USA;US;Pasadena, CA;male;1907;physics;;1;;University of Chicago;Chicago, IL;USA;55
+12;Gabriel;Lippmann;1845-08-16;1921-07-13;Luxembourg;LU;Hollerich;;;;male;1908;physics;;1;;Sorbonne University;Paris;France;63
+13;Guglielmo;Marconi;1874-04-25;1937-07-20;Italy;IT;Bologna;Italy;IT;Rome;male;1909;physics;;2;;Marconi Wireless Telegraph Co. Ltd.;London;United Kingdom;35
+14;Karl Ferdinand;Braun;1850-06-06;1918-04-20;Hesse-Kassel (now Germany);DE;Fulda;USA;US;Brooklyn, NY;male;1909;physics;;2;;Strasbourg University;Strasbourg;Alsace (then Germany, now France);59
+15;Johannes Diderik;van der Waals;1837-11-23;1923-03-08;the Netherlands;NL;Leiden;the Netherlands;NL;Amsterdam;male;1910;physics;;1;;Amsterdam University;Amsterdam;the Netherlands;73
+16;Wilhelm;Wien;1864-01-13;1928-08-30;Prussia (now Russia);RU;Gaffken (now Parusnoye);Germany;DE;Munich;male;1911;physics;;1;;Würzburg University;Würzburg;Germany;47
+17;Nils Gustaf;Dalén;1869-11-30;1937-12-09;Sweden;SE;Stenstorp;Sweden;SE;Stockholm;male;1912;physics;;1;;Swedish Gas-Accumulator Co.;Lidingö-Stockholm;Sweden;43
+18;Heike;Kamerlingh Onnes;1853-09-21;1926-02-21;the Netherlands;NL;Groningen;the Netherlands;NL;Leiden;male;1913;physics;;1;;Leiden University;Leiden;the Netherlands;60
+19;Max;von Laue;1879-10-09;1960-04-23;Germany;DE;Pfaffendorf;West Germany (now Germany);DE;Berlin;male;1914;physics;;1;;Frankfurt-on-the-Main University;Frankfurt-on-the-Main;Germany;35
+20;Sir William Henry;Bragg;1862-07-02;1942-03-12;United Kingdom;GB;Wigton;United Kingdom;GB;London;male;1915;physics;;2;;University College;London;United Kingdom;53
+21;William Lawrence;Bragg;1890-03-31;1971-07-01;Australia;AU;Adelaide;United Kingdom;GB;Ipswich;male;1915;physics;;2;;Victoria University;Manchester;United Kingdom;25
+22;Charles Glover;Barkla;1877-06-07;1944-10-23;United Kingdom;GB;Widnes;Scotland;GB;Edinburgh;male;1917;physics;;1;;Edinburgh University;Edinburgh;United Kingdom;40
+23;Max Karl Ernst Ludwig;Planck;1858-04-23;1947-10-04;Schleswig (now Germany);DE;Kiel;West Germany (now Germany);DE;Göttingen;male;1918;physics;;1;;Berlin University;Berlin;Germany;60
+24;Johannes;Stark;1874-04-15;1957-06-21;Germany;DE;Schickenhof;West Germany (now Germany);DE;Traunstein;male;1919;physics;;1;;Greifswald University;Greifswald;Germany;45
+25;Charles Edouard;Guillaume;1861-02-15;1938-06-13;Switzerland;CH;Fleurier;France;FR;Sèvres;male;1920;physics;;1;;Bureau International des Poids et Mesures (International Bureau of Weights and Measures);Sèvres;France;59
+26;Albert;Einstein;1879-03-14;1955-04-18;Germany;DE;Ulm;USA;US;Princeton, NJ;male;1921;physics;;1;;Kaiser-Wilhelm-Institut (now Max-Planck-Institut) für Physik;Berlin;Germany;42
+27;Niels Henrik David;Bohr;1885-10-07;1962-11-18;Denmark;DK;Copenhagen;Denmark;DK;Copenhagen;male;1922;physics;;1;;Copenhagen University;Copenhagen;Denmark;37
+28;Robert Andrews;Millikan;1868-03-22;1953-12-19;USA;US;Morrison, IL;USA;US;San Marino, CA;male;1923;physics;;1;;California Institute of Technology (Caltech);Pasadena, CA;USA;55
+29;Karl Manne Georg;Siegbahn;1886-12-03;1978-09-26;Sweden;SE;Örebro;Sweden;SE;Stockholm;male;1924;physics;;1;;Uppsala University;Uppsala;Sweden;38
+30;James;Franck;1882-08-26;1964-05-21;Germany;DE;Hamburg;West Germany (now Germany);DE;Göttingen;male;1925;physics;;2;;Goettingen University;Göttingen;Germany;43
+31;Gustav Ludwig;Hertz;1887-07-22;1975-10-30;Germany;DE;Hamburg;East Germany;DE;Berlin;male;1925;physics;;2;;Halle University;Halle;Germany;38
+32;Jean Baptiste;Perrin;1870-09-30;1942-04-17;France;FR;Lille;USA;US;New York, NY;male;1926;physics;;1;;Sorbonne University;Paris;France;56
+33;Arthur Holly;Compton;1892-09-10;1962-03-15;USA;US;Wooster, OH;USA;US;Berkeley, CA;male;1927;physics;;2;;University of Chicago;Chicago, IL;USA;35
+34;Charles Thomson Rees;Wilson;1869-02-14;1959-11-15;Scotland;GB;Glencorse;Scotland;GB;Carlops;male;1927;physics;;2;;University of Cambridge;Cambridge;United Kingdom;58
+35;Owen Willans;Richardson;1879-04-26;1959-02-15;United Kingdom;GB;Dewsbury;United Kingdom;GB;Alton;male;1928;physics;;1;;London University;London;United Kingdom;49
+36;Prince Louis-Victor Pierre Raymond;de Broglie;1892-08-15;1987-03-19;France;FR;Dieppe;France;FR;Paris;male;1929;physics;;1;;Sorbonne University, Institut Henri Poincaré;Paris;France;37
+37;Sir Chandrasekhara Venkata;Raman;1888-11-07;1970-11-21;India;IN;Tiruchirappalli;India;IN;Bangalore;male;1930;physics;;1;;Calcutta University;Calcutta;India;42
+38;Werner Karl;Heisenberg;1901-12-05;1976-02-01;Germany;DE;Würzburg;West Germany (now Germany);DE;Munich;male;1932;physics;;1;;Leipzig University;Leipzig;Germany;31
+39;Erwin;Schrödinger;1887-08-12;1961-01-04;Austria;AT;Vienna;Austria;AT;Vienna;male;1933;physics;;2;;Berlin University;Berlin;Germany;46
+40;Paul Adrien Maurice;Dirac;1902-08-08;1984-10-20;United Kingdom;GB;Bristol;USA;US;Tallahassee, FL;male;1933;physics;;2;;University of Cambridge;Cambridge;United Kingdom;31
+41;James;Chadwick;1891-10-20;1974-07-24;United Kingdom;GB;Manchester;United Kingdom;GB;Cambridge;male;1935;physics;;1;;Liverpool University;Liverpool;United Kingdom;44
+42;Victor Franz;Hess;1883-06-24;1964-12-17;Austria;AT;Peggau;USA;US;Mount Verno, NY;male;1936;physics;;2;;Innsbruck University;Innsbruck;Austria;53
+43;Carl David;Anderson;1905-09-03;1991-01-11;USA;US;New York, NY;USA;US;San Marino, CA;male;1936;physics;;2;;California Institute of Technology (Caltech);Pasadena, CA;USA;31
+44;Clinton Joseph;Davisson;1881-10-22;1958-02-01;USA;US;Bloomington, IL;USA;US;Charlottesville, VA;male;1937;physics;;2;;Bell Telephone Laboratories;New York, NY;USA;56
+45;George Paget;Thomson;1892-05-03;1975-09-10;United Kingdom;GB;Cambridge;United Kingdom;GB;Cambridge;male;1937;physics;;2;;London University;London;United Kingdom;45
+46;Enrico;Fermi;1901-09-29;1954-11-28;Italy;IT;Rome;USA;US;Chicago, IL;male;1938;physics;;1;;Rome University;Rome;Italy;37
+47;Ernest Orlando;Lawrence;1901-08-08;1958-08-27;USA;US;Canton, SD;USA;US;Palo Alto, CA;male;1939;physics;;1;;University of California;Berkeley, CA;USA;38
+48;Otto;Stern;1888-02-17;1969-08-17;Germany (now Poland);PL;Sorau (now Zory);USA;US;Berkeley, CA;male;1943;physics;;1;;Carnegie Institute of Technology;Pittsburgh, PA;USA;55
+49;Isidor Isaac;Rabi;1898-07-29;1988-01-11;Austria-Hungary (now Poland);PL;Rymanow;USA;US;New York, NY;male;1944;physics;;1;;Columbia University;New York, NY;USA;46
+50;Wolfgang;Pauli;1900-04-25;1958-12-15;Austria;AT;Vienna;Switzerland;CH;Zurich;male;1945;physics;;1;;Princeton University;Princeton, NJ;USA;45
+51;Percy Williams;Bridgman;1882-04-21;1961-08-20;USA;US;Cambridge, MA;USA;US;Randolph, NH;male;1946;physics;;1;;Harvard University;Cambridge, MA;USA;64
+52;Sir Edward Victor;Appleton;1892-09-06;1965-04-21;United Kingdom;GB;Bradford;Scotland;GB;Edinburgh;male;1947;physics;;1;;Department of Scientific and Industrial Research;London;United Kingdom;55
+53;Patrick Maynard Stuart;Blackett;1897-11-18;1974-07-13;United Kingdom;GB;London;United Kingdom;GB;London;male;1948;physics;;1;;Victoria University;Manchester;United Kingdom;51
+54;Hideki;Yukawa;1907-01-23;1981-09-08;Japan;JP;Tokyo;Japan;JP;Kyoto;male;1949;physics;;1;;Columbia University;New York, NY;USA;42
+55;Cecil Frank;Powell;1903-12-05;1969-08-09;United Kingdom;GB;Tonbridge;Italy;IT;;male;1950;physics;;1;;Bristol University;Bristol;United Kingdom;47
+56;Sir John Douglas;Cockcroft;1897-05-27;1967-09-18;United Kingdom;GB;Todmorden;United Kingdom;GB;Cambridge;male;1951;physics;;2;;Atomic Energy Research Establishment;Harwell, Berkshire;United Kingdom;54
+57;Ernest Thomas Sinton;Walton;1903-10-06;1995-06-25;Ireland;IE;Dungarvan;Northern Ireland;GB;Belfast;male;1951;physics;;2;;Trinity College;Dublin;Ireland;48
+58;Felix;Bloch;1905-10-23;1983-09-10;Switzerland;CH;Zurich;Switzerland;CH;Zurich;male;1952;physics;;2;;Stanford University;Stanford, CA;USA;47
+59;Edward Mills;Purcell;1912-08-30;1997-03-07;USA;US;Taylorville, IL;USA;US;Cambridge, MA;male;1952;physics;;2;;Harvard University;Cambridge, MA;USA;40
+60;Frits;Zernike;1888-07-16;1966-03-10;the Netherlands;NL;Amsterdam;the Netherlands;NL;Groningen;male;1953;physics;;1;;Groningen University;Groningen;the Netherlands;65
+61;Max;Born;1882-12-11;1970-01-05;Germany (now Poland);PL;Breslau (now Wroclaw);West Germany (now Germany);DE;Göttingen;male;1954;physics;;2;;Edinburgh University;Edinburgh;United Kingdom;72
+62;Walther;Bothe;1891-01-08;1957-02-08;Germany;DE;Oranienburg;West Germany (now Germany);DE;Heidelberg;male;1954;physics;;2;;Max-Planck-Institut für medizinische Forschung;Heidelberg;Federal Republic of Germany;63
+63;Willis Eugene;Lamb;1913-07-12;2008-05-15;USA;US;Los Angeles, CA;USA;US;Tucson, AZ;male;1955;physics;;2;;Stanford University;Stanford, CA;USA;42
+64;Polykarp;Kusch;1911-01-26;1993-03-20;Germany;DE;Blankenburg;USA;US;Dallas, TX;male;1955;physics;;2;;Columbia University;New York, NY;USA;44
+65;William Bradford;Shockley;1910-02-13;1989-08-12;United Kingdom;GB;London;USA;US;Palo Alto, CA;male;1956;physics;;3;;Semiconductor Laboratory of Beckman Instruments, Inc.;Mountain View, CA;USA;46
+66;John;Bardeen;1908-05-23;1991-01-30;USA;US;Madison, WI;USA;US;Boston, MA;male;1972;physics;;3;;University of Illinois;Urbana, IL;USA;64
+67;Walter Houser;Brattain;1902-02-10;1987-10-13;China;CN;Amoy;USA;US;Seattle, WA;male;1956;physics;;3;;Bell Telephone Laboratories;Murray Hill, NJ;USA;54
+68;Chen Ning;Yang;1922-09-22;0000-00-00;China;CN;Hofei, Anhwei;;;;male;1957;physics;;2;;Institute for Advanced Study;Princeton, NJ;USA;35
+69;Tsung-Dao (T.D.);Lee;1926-11-24;0000-00-00;China;CN;Shanghai;;;;male;1957;physics;;2;;Columbia University;New York, NY;USA;31
+70;Pavel Alekseyevich;Cherenkov;1904-07-28;1990-01-06;Russia;RU;Novaya Chigla;USSR;RU;;male;1958;physics;;3;;P.N. Lebedev Physical Institute;Moscow;USSR;54
+71;Igor Yevgenyevich;Tamm;1895-07-08;1971-04-12;Russia;RU;Vladivostok;USSR (now Russia);RU;Moscow;male;1958;physics;;3;;P.N. Lebedev Physical Institute;Moscow;USSR;63
+72;Emilio Gino;Segrè;1905-02-01;1989-04-22;Italy;IT;Tivoli;USA;US;Lafayette, CA;male;1959;physics;;2;;University of California;Berkeley, CA;USA;54
+73;Owen;Chamberlain;1920-07-10;2006-02-28;USA;US;San Francisco, CA;USA;US;Berkeley, CA;male;1959;physics;;2;;University of California;Berkeley, CA;USA;39
+74;Donald Arthur;Glaser;1926-09-21;2013-02-28;USA;US;Cleveland, OH;USA;US;Berkeley, CA;male;1960;physics;;1;;University of California;Berkeley, CA;USA;34
+75;Robert;Hofstadter;1915-02-05;1990-11-17;USA;US;New York, NY;USA;US;Stanford, CA;male;1961;physics;;2;;Stanford University;Stanford, CA;USA;46
+76;Rudolf Ludwig;Mössbauer;1929-01-31;2011-09-14;Germany;DE;Munich;;;;male;1961;physics;;2;;California Institute of Technology (Caltech);Pasadena, CA;USA;32
+77;Lev Davidovich;Landau;1908-01-22;1968-04-01;Russian Empire (now Azerbaijan);AZ;Baku;USSR (now Russia);RU;Moscow;male;1962;physics;;1;;Academy of Sciences;Moscow;USSR;54
+78;Eugene Paul;Wigner;1902-11-17;1995-01-01;Austria-Hungary (now Hungary);HU;Budapest;USA;US;Princeton, NJ;male;1963;physics;;2;;Princeton University;Princeton, NJ;USA;61
+79;Maria;Goeppert Mayer;1906-06-28;1972-02-20;Germany (now Poland);PL;Kattowitz (now Katowice);USA;US;San Diego, CA;female;1963;physics;;4;;University of California;San Diego, CA;USA;57
+80;J. Hans D.;Jensen;1907-06-25;1973-02-11;Germany;DE;Hamburg;West Germany (now Germany);DE;Heidelberg;male;1963;physics;;4;;University of Heidelberg;Heidelberg;Federal Republic of Germany;56
+81;Charles Hard;Townes;1915-07-28;2015-01-27;USA;US;Greenville, SC;USA;US;Berkeley, CA;male;1964;physics;;2;;Massachusetts Institute of Technology (MIT);Cambridge, MA;USA;49
+82;Nicolay Gennadiyevich;Basov;1922-12-14;2001-07-01;USSR (now Russia);RU;Usman;Russia;RU;Moscow;male;1964;physics;;4;;P.N. Lebedev Physical Institute;Moscow;USSR;42
+83;Aleksandr Mikhailovich;Prokhorov;1916-07-11;2002-01-08;Australia;AU;Atherton;Russia;RU;Moscow;male;1964;physics;;4;;P.N. Lebedev Physical Institute;Moscow;USSR;48
+84;Sin-Itiro;Tomonaga;1906-03-31;1979-07-08;Japan;JP;Kyoto;Japan;JP;Tokyo;male;1965;physics;;3;;Tokyo University of Education;Tokyo;Japan;59
+85;Julian;Schwinger;1918-02-12;1994-07-16;USA;US;New York, NY;USA;US;Los Angeles, CA;male;1965;physics;;3;;Harvard University;Cambridge, MA;USA;47
+86;Richard P.;Feynman;1918-05-11;1988-02-15;USA;US;New York, NY;USA;US;Los Angeles, CA;male;1965;physics;;3;;California Institute of Technology (Caltech);Pasadena, CA;USA;47
+87;Alfred;Kastler;1902-05-03;1984-01-07;Germany (now France);FR;Guebwiller;France;FR;Bandol;male;1966;physics;;1;;École Normale Supérieure;Paris;France;64
+88;Hans Albrecht;Bethe;1906-07-02;2005-03-06;Germany (now France);FR;Strassburg (now Strasbourg);USA;US;Ithaca, NY;male;1967;physics;;1;;Cornell University;Ithaca, NY;USA;61
+89;Luis Walter;Alvarez;1911-06-13;1988-09-01;USA;US;San Francisco, CA;USA;US;Berkeley, CA;male;1968;physics;;1;;University of California;Berkeley, CA;USA;57
+90;Murray;Gell-Mann;1929-09-15;0000-00-00;USA;US;New York, NY;;;;male;1969;physics;;1;;California Institute of Technology (Caltech);Pasadena, CA;USA;40
+91;Hannes Olof Gösta;Alfvén;1908-05-30;1995-04-02;Sweden;SE;Norrköping;Sweden;SE;Djursholm;male;1970;physics;;2;;Royal Institute of Technology;Stockholm;Sweden;62
+92;Louis Eugène Félix;Néel;1904-11-22;2000-11-17;France;FR;Lyon;France;FR;Brive-Corrèze;male;1970;physics;;2;;University of Grenoble;Grenoble;France;66
+93;Dennis;Gabor;1900-06-05;1979-02-08;Hungary;HU;Budapest;United Kingdom;GB;London;male;1971;physics;;1;;Imperial College;London;United Kingdom;71
+95;Leon Neil;Cooper;1930-02-28;0000-00-00;USA;US;New York, NY;;;;male;1972;physics;;3;;Brown University;Providence, RI;USA;42
+96;John Robert;Schrieffer;1931-05-31;0000-00-00;USA;US;Oak Park, IL;;;;male;1972;physics;;3;;University of Pennsylvania;Philadelphia, PA;USA;41
+97;Leo;Esaki;1925-03-12;0000-00-00;Japan;JP;Osaka;;;;male;1973;physics;;4;;IBM Thomas J. Watson Research Center;Yorktown Heights, NY;USA;48
+98;Ivar;Giaever;1929-04-05;0000-00-00;Norway;NO;Bergen;;;;male;1973;physics;;4;;General Electric Company;Schenectady, NY;USA;44
+99;Brian David;Josephson;1940-01-04;0000-00-00;United Kingdom;GB;Cardiff;;;;male;1973;physics;;2;;University of Cambridge;Cambridge;United Kingdom;33
+100;Sir Martin;Ryle;1918-09-27;1984-10-14;United Kingdom;GB;Brighton;United Kingdom;GB;Cambridge;male;1974;physics;;2;;University of Cambridge;Cambridge;United Kingdom;56
+101;Antony;Hewish;1924-05-11;0000-00-00;United Kingdom;GB;Fowey;;;;male;1974;physics;;2;;University of Cambridge;Cambridge;United Kingdom;50
+102;Aage Niels;Bohr;1922-06-19;2009-09-08;Denmark;DK;Copenhagen;Denmark;DK;Copenhagen;male;1975;physics;;3;;Niels Bohr Institute;Copenhagen;Denmark;53
+103;Ben Roy;Mottelson;1926-07-09;0000-00-00;USA;US;Chicago, IL;;;;male;1975;physics;;3;;Nordita;Copenhagen;Denmark;49
+104;Leo James;Rainwater;1917-12-09;1986-03-31;USA;US;Council, ID;USA;US;Yonkers, NY;male;1975;physics;;3;;Columbia University;New York, NY;USA;58
+105;Burton;Richter;1931-03-22;2018-07-18;USA;US;Brooklyn, NY;USA;US;Stanford, CA;male;1976;physics;;2;;Stanford Linear Accelerator Center;Stanford, CA;USA;45
+106;Samuel Chao Chung;Ting;1936-01-27;0000-00-00;USA;US;Ann Arbor, MI;;;;male;1976;physics;;2;;Massachusetts Institute of Technology (MIT);Cambridge, MA;USA;40
+107;Philip Warren;Anderson;1923-12-13;0000-00-00;USA;US;Indianapolis, IN;;;;male;1977;physics;;3;;Bell Telephone Laboratories;Murray Hill, NJ;USA;54
+108;Sir Nevill Francis;Mott;1905-09-30;1996-08-08;United Kingdom;GB;Leeds;United Kingdom;GB;Milton Keynes;male;1977;physics;;3;;University of Cambridge;Cambridge;United Kingdom;72
+109;John Hasbrouck;van Vleck;1899-03-13;1980-10-27;USA;US;Middletown, CT;USA;US;Cambridge, MA;male;1977;physics;;3;;Harvard University;Cambridge, MA;USA;78
+110;Pyotr Leonidovich;Kapitsa;1894-07-09;1984-04-08;Russian Empire (now Russia);RU;Kronshtadt;USSR (now Russia);RU;Moscow;male;1978;physics;;2;;Academy of Sciences;Moscow;USSR;84
+111;Arno Allan;Penzias;1933-04-26;0000-00-00;Germany;DE;Munich;;;;male;1978;physics;;4;;Bell Laboratories;Holmdel, NJ;USA;45
+112;Robert Woodrow;Wilson;1936-01-10;0000-00-00;USA;US;Houston, TX;;;;male;1978;physics;;4;;Bell Laboratories;Holmdel, NJ;USA;42
+113;Sheldon Lee;Glashow;1932-12-05;0000-00-00;USA;US;New York, NY;;;;male;1979;physics;;3;;Harvard University, Lyman Laboratory;Cambridge, MA;USA;47
+114;Abdus;Salam;1926-01-29;1996-11-21;India (now Pakistan);PK;Jhang Maghi&#257$$na;United Kingdom;GB;Oxford;male;1979;physics;;3;;Imperial College;London;United Kingdom;53
+115;Steven;Weinberg;1933-05-03;0000-00-00;USA;US;New York, NY;;;;male;1979;physics;;3;;Harvard University;Cambridge, MA;USA;46
+116;James Watson;Cronin;1931-09-29;2016-08-25;USA;US;Chicago, IL;USA;US;St. Paul, MN;male;1980;physics;;2;;University of Chicago;Chicago, IL;USA;49
+117;Val Logsdon;Fitch;1923-03-10;2015-02-05;USA;US;Merriman, NE;USA;US;Princeton, NJ;male;1980;physics;;2;;Princeton University;Princeton, NJ;USA;57
+118;Nicolaas;Bloembergen;1920-03-11;2017-09-05;the Netherlands;NL;Dordrecht;USA;US;Tucson, AZ;male;1981;physics;;4;;Harvard University;Cambridge, MA;USA;61
+119;Arthur Leonard;Schawlow;1921-05-05;1999-04-28;USA;US;Mount Verno, NY;USA;US;Palo Alto, CA;male;1981;physics;;4;;Stanford University;Stanford, CA;USA;60
+120;Kai M.;Siegbahn;1918-04-20;2007-07-20;Sweden;SE;Lund;Sweden;SE;Ängelholm;male;1981;physics;;2;;Uppsala University;Uppsala;Sweden;63
+121;Kenneth G.;Wilson;1936-06-08;2013-06-15;USA;US;Waltham, MA;USA;US;Saco, ME;male;1982;physics;;1;;Cornell University;Ithaca, NY;USA;46
+122;Subramanyan;Chandrasekhar;1910-10-19;1995-08-21;India (now Pakistan);PK;Lahore;USA;US;Chicago, IL;male;1983;physics;;2;;University of Chicago;Chicago, IL;USA;73
+123;William Alfred;Fowler;1911-08-09;1995-03-14;USA;US;Pittsburgh, PA;USA;US;Pasadena, CA;male;1983;physics;;2;;California Institute of Technology (Caltech);Pasadena, CA;USA;72
+124;Carlo;Rubbia;1934-03-31;0000-00-00;Italy;IT;Gorizia;Switzerland;CH;Geneva;male;1984;physics;;2;;CERN;Geneva;Switzerland;50
+125;Simon;van der Meer;1925-11-24;2011-03-04;the Netherlands;NL;the Hague;Switzerland;CH;Geneva;male;1984;physics;;2;;CERN;Geneva;Switzerland;59
+126;Klaus;von Klitzing;1943-06-28;0000-00-00;German-occupied Poland (now Poland);PL;Schroda;;;;male;1985;physics;;1;;Max-Planck-Institut für Festkörperforschung;Stuttgart;Federal Republic of Germany;42
+127;Ernst;Ruska;1906-12-25;1988-05-27;Germany;DE;Heidelberg;Germany;DE;West Berlin;male;1986;physics;;2;;Fritz-Haber-Institut der Max-Planck-Gesellschaft;Berlin;Federal Republic of Germany;80
+128;Gerd;Binnig;1947-07-20;0000-00-00;West Germany (now Germany);DE;Frankfurt-on-the-Main;;;;male;1986;physics;;4;;IBM Zurich Research Laboratory;Rüschlikon;Switzerland;39
+129;Heinrich;Rohrer;1933-06-06;2013-05-16;Switzerland;CH;Buchs;Switzerland;CH;Wollerau;male;1986;physics;;4;;IBM Zurich Research Laboratory;Rüschlikon;Switzerland;53
+130;J. Georg;Bednorz;1950-05-16;0000-00-00;West Germany (now Germany);DE;Neuenkirchen;;;;male;1987;physics;;2;;IBM Zurich Research Laboratory;Rüschlikon;Switzerland;37
+131;K. Alexander;Müller;1927-04-20;0000-00-00;Switzerland;CH;Basel;;;;male;1987;physics;;2;;IBM Zurich Research Laboratory;Rüschlikon;Switzerland;60
+132;Leon M.;Lederman;1922-07-15;2018-10-03;USA;US;New York, NY;USA;US;Rexburg, ID;male;1988;physics;;3;;Fermi National Accelerator Laboratory;Batavia, IL;USA;66
+133;Melvin;Schwartz;1932-11-02;2006-08-28;USA;US;New York, NY;USA;US;Twin Falls, ID;male;1988;physics;;3;;Digital Pathways, Inc.;Mountain View, CA;USA;56
+134;Jack;Steinberger;1921-05-25;0000-00-00;Germany;DE;Bad Kissingen;;;;male;1988;physics;;3;;CERN;Geneva;Switzerland;67
+135;Norman F.;Ramsey;1915-08-27;2011-11-04;USA;US;Washington, DC;USA;US;Wayland, MA;male;1989;physics;;2;;Harvard University;Cambridge, MA;USA;74
+136;Hans G.;Dehmelt;1922-09-09;2017-03-07;Prussia (now Germany);DE;Görlitz;USA;US;Seattle, WA;male;1989;physics;;4;;University of Washington;Seattle, WA;USA;67
+137;Wolfgang;Paul;1913-08-10;1993-12-07;Germany;DE;Lorenzkirch;Germany;DE;Bonn;male;1989;physics;;4;;University of Bonn;Bonn;Federal Republic of Germany;76
+138;Jerome I.;Friedman;1930-03-28;0000-00-00;USA;US;Chicago, IL;;;;male;1990;physics;;3;;Massachusetts Institute of Technology (MIT);Cambridge, MA;USA;60
+139;Henry W.;Kendall;1926-12-09;1999-02-15;USA;US;Boston, MA;USA;US;Wakulla Springs State Park, FL;male;1990;physics;;3;;Massachusetts Institute of Technology (MIT);Cambridge, MA;USA;64
+140;Richard E.;Taylor;1929-11-02;2018-02-22;Canada;CA;Medicine Hat, Alberta;USA;US;Stanford, CA;male;1990;physics;;3;;Stanford University;Stanford, CA;USA;61
+141;Pierre-Gilles;de Gennes;1932-10-24;2007-05-18;France;FR;Paris;France;FR;Orsay;male;1991;physics;;1;;Collège de France;Paris;France;59
+142;Georges;Charpak;1924-08-01;2010-09-29;Poland;PL;Dabrovica;France;FR;Paris;male;1992;physics;;1;;CERN;Geneva;Switzerland;68
+143;Russell A.;Hulse;1950-11-28;0000-00-00;USA;US;New York, NY;;;;male;1993;physics;;2;;Princeton University;Princeton, NJ;USA;43
+144;Joseph H.;Taylor Jr.;1941-03-29;0000-00-00;USA;US;Philadelphia, PA;;;;male;1993;physics;;2;;Princeton University;Princeton, NJ;USA;52
+145;Bertram N.;Brockhouse;1918-07-15;2003-10-13;Canada;CA;Lethbridge, Alberta;Canada;CA;Hamilton, Ontario;male;1994;physics;"""for pioneering contributions to the development of neutron scattering techniques for studies of condensed matter""";2;;McMaster University;Hamilton, Ontario;Canada;76
+146;Clifford G.;Shull;1915-09-23;2001-03-31;USA;US;Pittsburgh, PA;USA;US;Medford, MA;male;1994;physics;"""for pioneering contributions to the development of neutron scattering techniques for studies of condensed matter""";2;;Massachusetts Institute of Technology (MIT);Cambridge, MA;USA;79
+147;Martin L.;Perl;1927-06-24;2014-09-30;USA;US;New York, NY;USA;US;Palo Alto, CA;male;1995;physics;"""for pioneering experimental contributions to lepton physics""";2;;Stanford University;Stanford, CA;USA;68
+148;Frederick;Reines;1918-03-16;1998-08-26;USA;US;Paterson, NJ;USA;US;Orange, CA;male;1995;physics;"""for pioneering experimental contributions to lepton physics""";2;;University of California;Irvine, CA;USA;77
+149;David M.;Lee;1931-01-20;0000-00-00;USA;US;Rye, NY;;;;male;1996;physics;;3;;Cornell University;Ithaca, NY;USA;65
+150;Douglas D.;Osheroff;1945-08-01;0000-00-00;USA;US;Aberdeen, WA;;;;male;1996;physics;;3;;Stanford University;Stanford, CA;USA;51
+151;Robert C.;Richardson;1937-06-26;2013-02-19;USA;US;Washington, DC;USA;US;Ithaca, NY;male;1996;physics;;3;;Cornell University;Ithaca, NY;USA;59
+152;Steven;Chu;1948-02-28;0000-00-00;USA;US;St. Louis, MO;;;;male;1997;physics;;3;;Stanford University;Stanford, CA;USA;49
+153;Claude;Cohen-Tannoudji;1933-04-01;0000-00-00;French Algeria (now Algeria);DZ;Constantine;;;;male;1997;physics;;3;;École Normale Supérieure;Paris;France;64
+154;William D.;Phillips;1948-11-05;0000-00-00;USA;US;Wilkes-Barre, PA;;;;male;1997;physics;;3;;National Institute of Standards and Technology;Gaithersburg, MD;USA;49
+155;Robert B.;Laughlin;1950-11-01;0000-00-00;USA;US;Visalia, CA;;;;male;1998;physics;;3;;Stanford University;Stanford, CA;USA;48
+156;Horst L.;Störmer;1949-04-06;0000-00-00;West Germany (now Germany);DE;Frankfurt-on-the-Main;;;;male;1998;physics;;3;;Columbia University;New York, NY;USA;49
+157;Daniel C.;Tsui;1939-02-28;0000-00-00;China;CN;Henan;;;;male;1998;physics;;3;;Princeton University;Princeton, NJ;USA;59
+158;Gerardus;'t Hooft;1946-07-05;0000-00-00;the Netherlands;NL;Den Helder;;;;male;1999;physics;;2;;Utrecht University;Utrecht;the Netherlands;53
+159;Martinus J.G.;Veltman;1931-06-27;0000-00-00;the Netherlands;NL;Waalwijk;;;;male;1999;physics;;2;;;Bilthoven;the Netherlands;68
+160;Jacobus Henricus;van 't Hoff;1852-08-30;1911-03-01;the Netherlands;NL;Rotterdam;Germany;DE;Berlin;male;1901;chemistry;;1;;Berlin University;Berlin;Germany;49
+161;Hermann Emil;Fischer;1852-10-09;1919-07-15;Prussia (now Germany);DE;Euskirchen;Germany;DE;Berlin;male;1902;chemistry;;1;;Berlin University;Berlin;Germany;50
+162;Svante August;Arrhenius;1859-02-19;1927-10-02;Sweden;SE;Vik;Sweden;SE;Stockholm;male;1903;chemistry;;1;;Stockholm University;Stockholm;Sweden;44
+163;Sir William;Ramsay;1852-10-02;1916-07-23;Scotland;GB;Glasgow;United Kingdom;GB;High Wycombe;male;1904;chemistry;;1;;University College;London;United Kingdom;52
+164;Johann Friedrich Wilhelm Adolf;von Baeyer;1835-10-31;1917-08-20;Prussia (now Germany);DE;Berlin;Germany;DE;Starnberg;male;1905;chemistry;;1;;Munich University;Munich;Germany;70
+165;Henri;Moissan;1852-09-28;1907-02-20;France;FR;Paris;France;FR;Paris;male;1906;chemistry;;1;;Sorbonne University;Paris;France;54
+166;Eduard;Buchner;1860-05-20;1917-08-13;Bavaria (now Germany);DE;Munich;Romania;RO;Focsani;male;1907;chemistry;;1;;Landwirtschaftliche Hochschule (Agricultural College);Berlin;Germany;47
+167;Ernest;Rutherford;1871-08-30;1937-10-19;New Zealand;NZ;Nelson;United Kingdom;GB;Cambridge;male;1908;chemistry;;1;;Victoria University;Manchester;United Kingdom;37
+168;Wilhelm;Ostwald;1853-09-02;1932-04-04;Russian Empire (now Latvia);LV;Riga;Germany;DE;Leipzig;male;1909;chemistry;;1;;Leipzig University;Leipzig;Germany;56
+169;Otto;Wallach;1847-03-27;1931-02-26;Germany (now Russia);RU;Koenigsberg (now Kaliningrad);Germany;DE;Göttingen;male;1910;chemistry;;1;;Goettingen University;Göttingen;Germany;63
+172;Victor;Grignard;1871-05-06;1935-12-13;France;FR;Cherbourg;France;FR;Lyon;male;1912;chemistry;;2;;Nancy University;Nancy;France;41
+173;Paul;Sabatier;1854-11-05;1941-08-14;France;FR;Carcassonne;France;FR;Toulouse;male;1912;chemistry;;2;;Toulouse University;Toulouse;France;58
+174;Alfred;Werner;1866-12-12;1919-11-15;France;FR;Mulhouse;Switzerland;CH;Zurich;male;1913;chemistry;;1;;University of Zurich;Zurich;Switzerland;47
+175;Theodore William;Richards;1868-01-31;1928-04-02;USA;US;Germantown, PA;USA;US;Cambridge, MA;male;1914;chemistry;;1;;Harvard University;Cambridge, MA;USA;46
+176;Richard Martin;Willstätter;1872-08-13;1942-08-03;Germany;DE;Karlsruhe;Switzerland;CH;Locarno;male;1915;chemistry;;1;;Munich University;Munich;Germany;43
+177;Fritz;Haber;1868-12-09;1934-01-29;Prussia (now Poland);PL;Breslau (now Wroclaw);Switzerland;CH;Basel;male;1918;chemistry;;1;;Kaiser-Wilhelm-Institut (now Fritz-Haber-Institut) für physikalische Chemie und Electrochemie;Berlin-Dahlem;Germany;50
+178;Walther Hermann;Nernst;1864-06-25;1941-11-18;Prussia (now Germany);DE;Briesen;Germany;DE;Muskau;male;1920;chemistry;;1;;Berlin University;Berlin;Germany;56
+179;Frederick;Soddy;1877-09-02;1956-09-22;United Kingdom;GB;Eastbourne;United Kingdom;GB;Brighton;male;1921;chemistry;;1;;University of Oxford;Oxford;United Kingdom;44
+180;Francis William;Aston;1877-09-01;1945-11-20;United Kingdom;GB;Harborne;United Kingdom;GB;Cambridge;male;1922;chemistry;;1;;University of Cambridge;Cambridge;United Kingdom;45
+181;Fritz;Pregl;1869-09-03;1930-12-13;Austria-Hungary (now Slovenia);SI;Laibach (now Ljubljana);Austria;AT;Graz;male;1923;chemistry;;1;;Graz University;Graz;Austria;54
+182;Richard Adolf;Zsigmondy;1865-04-01;1929-09-24;Austrian Empire (now Austria);AT;Vienna;Germany;DE;Göttingen;male;1925;chemistry;;1;;Goettingen University;Göttingen;Germany;60
+183;The (Theodor);Svedberg;1884-08-30;1971-02-25;Sweden;SE;Fleräng;Sweden;SE;Örebro;male;1926;chemistry;;1;;Uppsala University;Uppsala;Sweden;42
+184;Heinrich Otto;Wieland;1877-06-04;1957-08-05;Germany;DE;Pforzheim;West Germany (now Germany);DE;Munich;male;1927;chemistry;;1;;Munich University;Munich;Germany;50
+185;Adolf Otto Reinhold;Windaus;1876-12-25;1959-06-09;Germany;DE;Berlin;West Germany (now Germany);DE;Göttingen;male;1928;chemistry;;1;;Goettingen University;Göttingen;Germany;52
+186;Arthur;Harden;1865-10-12;1940-06-17;United Kingdom;GB;Manchester;United Kingdom;GB;Bourne;male;1929;chemistry;;2;;London University;London;United Kingdom;64
+187;Hans Karl August Simon;von Euler-Chelpin;1873-02-15;1964-11-06;Germany;DE;Augsburg;Sweden;SE;Stockholm;male;1929;chemistry;;2;;Stockholm University;Stockholm;Sweden;56
+188;Hans;Fischer;1881-07-27;1945-03-31;Germany;DE;Hoechst;Germany;DE;Munich;male;1930;chemistry;;1;;Technische Hochschule (Institute of Technology);Munich;Germany;49
+189;Carl;Bosch;1874-08-27;1940-04-26;Germany;DE;Cologne;Germany;DE;Heidelberg;male;1931;chemistry;;2;;I.G. Farbenindustrie A.G.;Heidelberg;Germany;57
+190;Friedrich;Bergius;1884-10-11;1949-03-30;Germany (now Poland);PL;Goldschmieden, near Breslau;Argentina;AR;Buenos Aires;male;1931;chemistry;;2;;I.G. Farbenindustrie A.G.;Mannheim-Rheinau;Germany;47
+191;Irving;Langmuir;1881-01-31;1957-08-16;USA;US;Brooklyn, NY;USA;US;Falmouth, MA;male;1932;chemistry;;1;;General Electric Company;Schenectady, NY;USA;51
+192;Harold Clayton;Urey;1893-04-29;1981-01-05;USA;US;Walkerton, IN;USA;US;La Jolla, CA;male;1934;chemistry;;1;;Columbia University;New York, NY;USA;41
+193;Frédéric;Joliot;1900-03-19;1958-08-14;France;FR;Paris;France;FR;Paris;male;1935;chemistry;;2;;Institut du Radium;Paris;France;35
+194;Irène;Joliot-Curie;1897-09-12;1956-03-17;France;FR;Paris;France;FR;Paris;female;1935;chemistry;;2;;Institut du Radium;Paris;France;38
+195;Petrus (Peter) Josephus Wilhelmus;Debye;1884-03-24;1966-11-02;the Netherlands;NL;Maastricht;USA;US;Ithaca, NY;male;1936;chemistry;;1;;Kaiser-Wilhelm-Institut (now Max-Planck-Institut) für Physik;Berlin;Germany;52
+196;Walter Norman;Haworth;1883-03-19;1950-03-19;United Kingdom;GB;Chorley;United Kingdom;GB;Birmingham;male;1937;chemistry;;2;;Birmingham University;Birmingham;United Kingdom;54
+197;Paul;Karrer;1889-04-21;1971-06-18;Russia;RU;Moscow;Switzerland;CH;Zurich;male;1937;chemistry;;2;;University of Zurich;Zurich;Switzerland;48
+198;Richard;Kuhn;1900-12-03;1967-07-31;Austria-Hungary (now Austria);AT;Vienna;West Germany (now Germany);DE;Heidelberg;male;1938;chemistry;;1;;University of Heidelberg;Heidelberg;Germany;38
+199;Adolf Friedrich Johann;Butenandt;1903-03-24;1995-01-18;Germany;DE;Bremerhaven-Lehe;Germany;DE;Munich;male;1939;chemistry;;2;;Berlin University;Berlin;Germany;36
+200;Leopold;Ruzicka;1887-09-13;1976-09-26;Austria-Hungary (now Croatia);HR;Vukovar;Switzerland;CH;Zurich;male;1939;chemistry;;2;;Eidgenössische Technische Hochschule (Swiss Federal Institute of Technology);Zurich;Switzerland;52
+201;George;de Hevesy;1885-08-01;1966-07-05;Austria-Hungary (now Hungary);HU;Budapest;West Germany (now Germany);DE;Freiburg im Breisgau;male;1943;chemistry;;1;;Stockholm University;Stockholm;Sweden;58
+202;Otto;Hahn;1879-03-08;1968-07-28;Germany;DE;Frankfurt-on-the-Main;West Germany (now Germany);DE;Göttingen;male;1944;chemistry;;1;;Kaiser-Wilhelm-Institut (now Max-Planck Institut) für Chemie;Berlin-Dahlem;Germany;65
+203;Artturi Ilmari;Virtanen;1895-01-15;1973-11-11;Russian Empire (now Finland);FI;Helsinki;Finland;FI;Helsinki;male;1945;chemistry;;1;;University of Helsinki;Helsinki;Finland;50
+204;James Batcheller;Sumner;1887-11-19;1955-08-12;USA;US;Canton, MA;USA;US;Buffalo, NY;male;1946;chemistry;;2;;Cornell University;Ithaca, NY;USA;59
+205;John Howard;Northrop;1891-07-05;1987-05-27;USA;US;Yonkers, NY;USA;US;Wickenberg, AZ;male;1946;chemistry;;4;;Rockefeller Institute for Medical Research;Princeton, NJ;USA;55
+206;Wendell Meredith;Stanley;1904-08-16;1971-06-15;USA;US;Ridgeville, IN;Spain;ES;Salamanca;male;1946;chemistry;;4;;Rockefeller Institute for Medical Research;Princeton, NJ;USA;42
+207;Sir Robert;Robinson;1886-09-13;1975-02-08;United Kingdom;GB;Rufford, near Chesterfield;United Kingdom;GB;Great Missenden;male;1947;chemistry;;1;;University of Oxford;Oxford;United Kingdom;61
+208;Arne Wilhelm Kaurin;Tiselius;1902-08-10;1971-10-29;Sweden;SE;Stockholm;Sweden;SE;Uppsala;male;1948;chemistry;;1;;Uppsala University;Uppsala;Sweden;46
+209;William Francis;Giauque;1895-05-12;1982-03-28;Canada;CA;Niagara Falls;USA;US;Berkeley, CA;male;1949;chemistry;;1;;University of California;Berkeley, CA;USA;54
+210;Otto Paul Hermann;Diels;1876-01-23;1954-03-07;Germany;DE;Hamburg;West Germany (now Germany);DE;Kiel;male;1950;chemistry;;2;;Kiel University;Kiel;Federal Republic of Germany;74
+211;Kurt;Alder;1902-07-10;1958-06-20;Prussia (now Poland);PL;Königshütte (now Chorzów);West Germany (now Germany);DE;Cologne;male;1950;chemistry;;2;;Cologne University;Cologne;Federal Republic of Germany;48
+212;Edwin Mattison;McMillan;1907-09-18;1991-09-07;USA;US;Redondo Beach, CA;USA;US;El Cerrito, CA;male;1951;chemistry;;2;;University of California;Berkeley, CA;USA;44
+213;Glenn Theodore;Seaborg;1912-04-19;1999-02-25;USA;US;Ishpeming, MI;USA;US;Lafayette, CA;male;1951;chemistry;;2;;University of California;Berkeley, CA;USA;39
+214;Archer John Porter;Martin;1910-03-01;2002-07-28;United Kingdom;GB;London;United Kingdom;GB;Llangarron;male;1952;chemistry;;2;;National Institute for Medical Research;London;United Kingdom;42
+215;Richard Laurence Millington;Synge;1914-10-28;1994-08-18;United Kingdom;GB;Liverpool;United Kingdom;GB;Norwich;male;1952;chemistry;;2;;Rowett Research Institute;Bucksburn (Scotland);United Kingdom;38
+216;Hermann;Staudinger;1881-03-23;1965-09-08;Germany;DE;Worms;West Germany (now Germany);DE;Freiburg im Breisgau;male;1953;chemistry;;1;;Staatliches Institut für makromolekulare Chemie (State Research Institute for Macromolecular Chemistry), Freiburg;Breisgau;Federal Republic of Germany;72
+217;Linus Carl;Pauling;1901-02-28;1994-08-19;USA;US;Portland, OR;USA;US;Big Sur, CA;male;1962;peace;;1;;California Institute of Technology (Caltech);Pasadena, CA;USA;61
+218;Vincent;du Vigneaud;1901-05-18;1978-12-11;USA;US;Chicago, IL;USA;US;White Plains, NY;male;1955;chemistry;;1;;Cornell University;Ithaca, NY;USA;54
+219;Sir Cyril Norman;Hinshelwood;1897-05-19;1967-10-09;United Kingdom;GB;London;United Kingdom;GB;London;male;1956;chemistry;;2;;University of Oxford;Oxford;United Kingdom;59
+220;Nikolay Nikolaevich;Semenov;1896-04-03;1986-09-25;Russia;RU;Saratov;USSR;RU;Moscow;male;1956;chemistry;;2;;Institute for Chemical Physics of the Academy of Sciences of the USSR;Moscow;USSR;60
+221;Lord (Alexander R.);Todd;1907-10-02;1997-01-10;Scotland;GB;Glasgow;United Kingdom;GB;Cambridge;male;1957;chemistry;;1;;University of Cambridge;Cambridge;United Kingdom;50
+222;Frederick;Sanger;1918-08-13;2013-11-19;United Kingdom;GB;Rendcombe;United Kingdom;GB;Cambridge;male;1980;chemistry;;4;;MRC Laboratory of Molecular Biology;Cambridge;United Kingdom;62
+223;Jaroslav;Heyrovsky;1890-12-20;1967-03-27;Austria-Hungary (now Czech Republic);CZ;Prague;Czechoslovakia;CZ;Prague;male;1959;chemistry;;1;;Polarographic Institute of the Czechoslovak Academy of Science;Prague;Czechoslovakia;69
+224;Willard Frank;Libby;1908-12-17;1980-09-08;USA;US;Grand Valley, CO;USA;US;Los Angeles, CA;male;1960;chemistry;;1;;University of California;Los Angeles, CA;USA;52
+225;Melvin;Calvin;1911-04-08;1997-01-08;USA;US;St. Paul, MN;USA;US;Berkeley, CA;male;1961;chemistry;;1;;University of California;Berkeley, CA;USA;50
+226;Max Ferdinand;Perutz;1914-05-19;2002-02-06;Austria;AT;Vienna;United Kingdom;GB;Cambridge;male;1962;chemistry;;2;;MRC Laboratory of Molecular Biology;Cambridge;United Kingdom;48
+227;John Cowdery;Kendrew;1917-03-24;1997-08-23;United Kingdom;GB;Oxford;United Kingdom;GB;Cambridge;male;1962;chemistry;;2;;MRC Laboratory of Molecular Biology;Cambridge;United Kingdom;45
+228;Karl;Ziegler;1898-11-26;1973-08-12;Germany;DE;Helsa;West Germany (now Germany);DE;Mülheim;male;1963;chemistry;;2;;Max-Planck-Institut für Kohlenforschung (Max-Planck-Institute for Carbon Research);Mülheim/Ruhr;Federal Republic of Germany;65
+229;Giulio;Natta;1903-02-26;1979-05-02;Italy;IT;Imperia;Italy;IT;Bergamo;male;1963;chemistry;;2;;Institute of Technology;Milan;Italy;60
+230;Dorothy Crowfoot;Hodgkin;1910-05-12;1994-07-29;Egypt;EG;Cairo;United Kingdom;GB;Shipston-on-Stour;female;1964;chemistry;;1;;University of Oxford, Royal Society;Oxford;United Kingdom;54
+231;Robert Burns;Woodward;1917-04-10;1979-07-08;USA;US;Boston, MA;USA;US;Cambridge, MA;male;1965;chemistry;;1;;Harvard University;Cambridge, MA;USA;48
+232;Robert S.;Mulliken;1896-06-07;1986-10-31;USA;US;Newburyport, MA;USA;US;Arlington, VA;male;1966;chemistry;;1;;University of Chicago;Chicago, IL;USA;70
+233;Manfred;Eigen;1927-05-09;0000-00-00;Germany;DE;Bochum;;;;male;1967;chemistry;;2;;Max-Planck-Institut für Physikalische Chemie;Göttingen;Federal Republic of Germany;40
+234;Ronald George Wreyford;Norrish;1897-11-09;1978-06-07;United Kingdom;GB;Cambridge;United Kingdom;GB;Cambridge;male;1967;chemistry;;4;;Institute of Physical Chemistry;Cambridge;United Kingdom;70
+235;George;Porter;1920-12-06;2002-08-31;United Kingdom;GB;Stainforth;United Kingdom;GB;Canterbury;male;1967;chemistry;;4;;Royal Institution of Great Britain;London;United Kingdom;47
+236;Lars;Onsager;1903-11-27;1976-10-05;Norway;NO;Kristiania (now Oslo);USA;US;Coral Gables, FL;male;1968;chemistry;;1;;Yale University;New Haven, CT;USA;65
+237;Derek H. R.;Barton;1918-09-08;1998-03-16;United Kingdom;GB;Gravesend;USA;US;College Station, TX;male;1969;chemistry;;2;;Imperial College;London;United Kingdom;51
+238;Odd;Hassel;1897-05-17;1981-05-11;Norway;NO;Kristiania (now Oslo);Norway;NO;Oslo;male;1969;chemistry;;2;;University of Oslo;Oslo;Norway;72
+239;Luis F.;Leloir;1906-09-06;1987-12-02;France;FR;Paris;Argentina;AR;Buenos Aires;male;1970;chemistry;;1;;Institute for Biochemical Research;Buenos Aires;Argentina;64
+240;Gerhard;Herzberg;1904-12-25;1999-03-03;Germany;DE;Hamburg;Canada;CA;Ottawa;male;1971;chemistry;;1;;National Research Council of Canada;Ottawa;Canada;67
+241;Christian B.;Anfinsen;1916-03-26;1995-05-14;USA;US;Monessen, PA;USA;US;Randallstown, MD;male;1972;chemistry;;2;;National Institutes of Health;Bethesda, MD;USA;56
+242;Stanford;Moore;1913-09-04;1982-08-23;USA;US;Chicago, IL;USA;US;New York, NY;male;1972;chemistry;;4;;Rockefeller University;New York, NY;USA;59
+243;William H.;Stein;1911-06-25;1980-02-02;USA;US;New York, NY;USA;US;New York, NY;male;1972;chemistry;;4;;Rockefeller University;New York, NY;USA;61
+244;Ernst Otto;Fischer;1918-11-10;2007-07-23;Germany;DE;Munich;Germany;DE;Munich;male;1973;chemistry;;2;;Technical University;Munich;Federal Republic of Germany;55
+245;Geoffrey;Wilkinson;1921-07-14;1996-09-26;United Kingdom;GB;Todmorden;United Kingdom;GB;London;male;1973;chemistry;;2;;Imperial College;London;United Kingdom;52
+246;Paul J.;Flory;1910-06-19;1985-09-08;USA;US;Sterling, IL;USA;US;Big Sur, CA;male;1974;chemistry;;1;;Stanford University;Stanford, CA;USA;64
+247;John Warcup;Cornforth;1917-09-07;2013-12-08;Australia;AU;Sydney;;;;male;1975;chemistry;;2;;University of Sussex;Brighton;United Kingdom;58
+248;Vladimir;Prelog;1906-07-23;1998-01-07;Austria-Hungary (now Bosnia and Herzegovina);BA;Sarajevo;Switzerland;CH;Zurich;male;1975;chemistry;;2;;Eidgenössische Technische Hochschule (Swiss Federal Institute of Technology);Zurich;Switzerland;69
+249;William N.;Lipscomb;1919-12-09;2011-04-14;USA;US;Cleveland, OH;USA;US;Cambridge, MA;male;1976;chemistry;;1;;Harvard University;Cambridge, MA;USA;57
+250;Ilya;Prigogine;1917-01-25;2003-05-28;Russia;RU;Moscow;Belgium;BE;Brussels;male;1977;chemistry;;1;;University of Texas;Austin, TX;USA;60
+251;Peter D.;Mitchell;1920-09-29;1992-04-10;United Kingdom;GB;Mitcham;United Kingdom;GB;Bodmin;male;1978;chemistry;;1;;Glynn Research Laboratories;Bodmin;United Kingdom;58
+252;Herbert C.;Brown;1912-05-22;2004-12-19;United Kingdom;GB;London;USA;US;Lafayette, IN;male;1979;chemistry;;2;;Purdue University;West Lafayette, IN;USA;67
+253;Georg;Wittig;1897-06-16;1987-08-26;Germany;DE;Berlin;West Germany (now Germany);DE;Heidelberg;male;1979;chemistry;;2;;University of Heidelberg;Heidelberg;Federal Republic of Germany;82
+254;Paul;Berg;1926-06-30;0000-00-00;USA;US;New York, NY;;;;male;1980;chemistry;;2;;Stanford University;Stanford, CA;USA;54
+255;Walter;Gilbert;1932-03-21;0000-00-00;USA;US;Boston, MA;;;;male;1980;chemistry;;4;;Harvard University, Biological Laboratories;Cambridge, MA;USA;48
+257;Kenichi;Fukui;1918-10-04;1998-01-09;Japan;JP;Nara;Japan;JP;Kyoto;male;1981;chemistry;;2;;Kyoto University;Kyoto;Japan;63
+258;Roald;Hoffmann;1937-07-18;0000-00-00;Poland (now Ukraine);UA;Zloczov;;;;male;1981;chemistry;;2;;Cornell University;Ithaca, NY;USA;44
+259;Aaron;Klug;1926-08-11;0000-00-00;Lithuania;LT;Zelvas;;;;male;1982;chemistry;;1;;MRC Laboratory of Molecular Biology;Cambridge;United Kingdom;56
+260;Henry;Taube;1915-11-30;2005-11-16;Canada;CA;Neudorf;USA;US;Stanford, CA;male;1983;chemistry;;1;;Stanford University;Stanford, CA;USA;68
+261;Robert Bruce;Merrifield;1921-07-15;2006-05-14;USA;US;Fort Worth, TX;USA;US;Cresskill, NJ;male;1984;chemistry;;1;;Rockefeller University;New York, NY;USA;63
+262;Herbert A.;Hauptman;1917-02-14;2011-10-23;USA;US;New York, NY;USA;US;Buffalo, NY;male;1985;chemistry;;2;;The Medical Foundation of Buffalo;Buffalo, NY;USA;68
+263;Jerome;Karle;1918-06-18;2013-06-06;USA;US;New York, NY;;;;male;1985;chemistry;;2;;US Naval Research Laboratory;Washington, DC;USA;67
+264;Dudley R.;Herschbach;1932-06-18;0000-00-00;USA;US;San José, CA;;;;male;1986;chemistry;;3;;Harvard University;Cambridge, MA;USA;54
+265;Yuan T.;Lee;1936-11-19;0000-00-00;Taiwan;TW;Hsinchu;;;;male;1986;chemistry;;3;;University of California;Berkeley, CA;USA;50
+266;John C.;Polanyi;1929-01-23;0000-00-00;Germany;DE;Berlin;;;;male;1986;chemistry;;3;;University of Toronto;Toronto;Canada;57
+267;Donald J.;Cram;1919-04-22;2001-06-17;USA;US;Chester, VT;USA;US;Palm Desert, CA;male;1987;chemistry;;3;;University of California;Los Angeles, CA;USA;68
+268;Jean-Marie;Lehn;1939-09-30;0000-00-00;France;FR;Rosheim;;;;male;1987;chemistry;;3;;Collège de France;Paris;France;48
+269;Charles J.;Pedersen;1904-10-03;1989-10-26;Korea (now South Korea);KR;Pusan;USA;US;Salem, NJ;male;1987;chemistry;;3;;Du Pont;Wilmington, DE;USA;83
+270;Johann;Deisenhofer;1943-09-30;0000-00-00;Germany;DE;Zusamaltheim;;;;male;1988;chemistry;;3;;Howard Hughes Medical Institute;;;45
+271;Robert;Huber;1937-02-20;0000-00-00;Germany;DE;Munich;;;;male;1988;chemistry;;3;;Max-Planck-Institut für Biochemie;Martinsried;Federal Republic of Germany;51
+272;Hartmut;Michel;1948-07-18;0000-00-00;West Germany (now Germany);DE;Ludwigsburg;;;;male;1988;chemistry;;3;;Max-Planck-Institut für Biophysik;Frankfurt-on-the-Main;Federal Republic of Germany;40
+273;Sidney;Altman;1939-05-07;0000-00-00;Canada;CA;Montreal;;;;male;1989;chemistry;;2;;Yale University;New Haven, CT;USA;50
+274;Thomas R.;Cech;1947-12-08;0000-00-00;USA;US;Chicago, IL;;;;male;1989;chemistry;;2;;University of Colorado;Boulder, CO;USA;42
+275;Elias James;Corey;1928-07-12;0000-00-00;USA;US;Methuen, MA;;;;male;1990;chemistry;;1;;Harvard University;Cambridge, MA;USA;62
+276;Richard R.;Ernst;1933-08-14;0000-00-00;Switzerland;CH;Winterthur;;;;male;1991;chemistry;;1;;Eidgenössische Technische Hochschule (Swiss Federal Institute of Technology);Zurich;Switzerland;58
+277;Rudolph A.;Marcus;1923-07-21;0000-00-00;Canada;CA;Montreal;;;;male;1992;chemistry;;1;;California Institute of Technology (Caltech);Pasadena, CA;USA;69
+278;Kary B.;Mullis;1944-12-28;0000-00-00;USA;US;Lenoir, NC;;;;male;1993;chemistry;"""for contributions to the developments of methods within DNA-based chemistry""";2;;;La Jolla, CA;USA;49
+279;Michael;Smith;1932-04-26;2000-10-04;United Kingdom;GB;Blackpool;Canada;CA;Vancouver;male;1993;chemistry;"""for contributions to the developments of methods within DNA-based chemistry""";2;;University of British Columbia;Vancouver;Canada;61
+280;George A.;Olah;1927-05-22;2017-03-08;Hungary;HU;Budapest;USA;US;Los Angeles, CA;male;1994;chemistry;;1;;University of Southern California;Los Angeles, CA;USA;67
+281;Paul J.;Crutzen;1933-12-03;0000-00-00;the Netherlands;NL;Amsterdam;;;;male;1995;chemistry;;3;;Max-Planck-Institut für Chemie;Mainz;Federal Republic of Germany;62
+282;Mario J.;Molina;1943-03-19;0000-00-00;Mexico;MX;Mexico City;;;;male;1995;chemistry;;3;;Massachusetts Institute of Technology (MIT);Cambridge, MA;USA;52
+283;F. Sherwood;Rowland;1927-06-28;2012-03-10;USA;US;Delaware, OH;USA;US;Corona del Mar, CA;male;1995;chemistry;;3;;University of California;Irvine, CA;USA;68
+284;Robert F.;Curl Jr.;1933-08-23;0000-00-00;USA;US;Alice, TX;;;;male;1996;chemistry;;3;;Rice University;Houston, TX;USA;63
+285;Sir Harold W.;Kroto;1939-10-07;2016-04-30;United Kingdom;GB;Wisbech;United Kingdom;GB;Lewes, East Sussex;male;1996;chemistry;;3;;University of Sussex;Brighton;United Kingdom;57
+286;Richard E.;Smalley;1943-06-06;2005-10-28;USA;US;Akron, OH;USA;US;Houston, TX;male;1996;chemistry;;3;;Rice University;Houston, TX;USA;53
+287;Paul D.;Boyer;1918-07-31;2018-06-02;USA;US;Provo, UT;;;;male;1997;chemistry;;4;;University of California;Los Angeles, CA;USA;79
+288;John E.;Walker;1941-01-07;0000-00-00;United Kingdom;GB;Halifax;;;;male;1997;chemistry;;4;;MRC Laboratory of Molecular Biology;Cambridge;United Kingdom;56
+289;Jens C.;Skou;1918-10-08;2018-05-28;Denmark;DK;Lemvig;;;;male;1997;chemistry;;2;;Aarhus University;Aarhus;Denmark;79
+290;Walter;Kohn;1923-03-09;2016-04-19;Austria;AT;Vienna;USA;US;Santa Barbara, CA;male;1998;chemistry;;2;;University of California;Santa Barbara, CA;USA;75
+291;John A.;Pople;1925-10-31;2004-03-15;United Kingdom;GB;Burnham-on-Sea;USA;US;Chicago, IL;male;1998;chemistry;;2;;Northwestern University;Evanston, IL;USA;73
+292;Ahmed H.;Zewail;1946-02-26;2016-08-02;Egypt;EG;Damanhur;;;;male;1999;chemistry;;1;;California Institute of Technology (Caltech);Pasadena, CA;USA;53
+293;Emil Adolf;von Behring;1854-03-15;1917-03-31;Prussia (now Poland);PL;Hansdorf (now Lawice);Germany;DE;Marburg;male;1901;medicine;;1;;Marburg University;Marburg;Germany;47
+294;Ronald;Ross;1857-05-13;1932-09-16;India;IN;Almora;United Kingdom;GB;Putney Heath;male;1902;medicine;;1;;University College;Liverpool;United Kingdom;45
+295;Niels Ryberg;Finsen;1860-12-15;1904-09-24;Faroe Islands (Denmark);DK;Thorshavn;Denmark;DK;Copenhagen;male;1903;medicine;;1;;Finsen Medical Light Institute;Copenhagen;Denmark;43
+296;Ivan Petrovich;Pavlov;1849-09-14;1936-02-27;Russia;RU;Ryazan;Russia;RU;Leningrad;male;1904;medicine;;1;;Military Medical Academy;St. Petersburg;Russia;55
+297;Robert;Koch;1843-12-11;1910-05-27;Germany;DE;Clausthal (now Clausthal-Zellerfeld);Germany;DE;Baden-Baden;male;1905;medicine;;1;;Institute for Infectious Diseases;Berlin;Germany;62
+298;Camillo;Golgi;1843-07-07;1926-01-21;Italy;IT;Corteno;Italy;IT;Pavia;male;1906;medicine;;2;;Pavia University;Pavia;Italy;63
+299;Santiago;Ramón y Cajal;1852-05-01;1934-10-17;Spain;ES;Petilla de Aragón;Spain;ES;Madrid;male;1906;medicine;;2;;Madrid University;Madrid;Spain;54
+300;Charles Louis Alphonse;Laveran;1845-06-18;1922-05-18;France;FR;Paris;France;FR;Paris;male;1907;medicine;;1;;Institut Pasteur;Paris;France;62
+301;Ilya Ilyich;Mechnikov;1845-05-15;1916-07-15;Russian Empire (now Ukraine);UA;Kharkov (now Kharkiv);France;FR;Paris;male;1908;medicine;;2;;Institut Pasteur;Paris;France;63
+302;Paul;Ehrlich;1854-03-14;1915-08-20;Prussia (now Poland);PL;Strehlen (now Strzelin);Germany;DE;Bad Homburg vor der Höhe;male;1908;medicine;;2;;Königliches Institut für experimentelle Therapie (Royal Institute for Experimental Therapy);Frankfurt-on-the-Main;Germany;54
+303;Emil Theodor;Kocher;1841-08-25;1917-07-27;Switzerland;CH;Berne;Switzerland;CH;Berne;male;1909;medicine;;1;;Berne University;Berne;Switzerland;68
+304;Albrecht;Kossel;1853-09-16;1927-07-05;Mecklenburg (now Germany);DE;Rostock;Germany;DE;Heidelberg;male;1910;medicine;;1;;University of Heidelberg;Heidelberg;Germany;57
+305;Allvar;Gullstrand;1862-06-05;1930-07-28;Sweden;SE;Landskrona;Sweden;SE;Stockholm;male;1911;medicine;;1;;Uppsala University;Uppsala;Sweden;49
+306;Alexis;Carrel;1873-06-28;1944-11-05;France;FR;Sainte-Foy-lès-Lyon;France;FR;Paris;male;1912;medicine;;1;;Rockefeller Institute for Medical Research;New York, NY;USA;39
+307;Charles Robert;Richet;1850-08-26;1935-12-04;France;FR;Paris;France;FR;Paris;male;1913;medicine;;1;;Sorbonne University;Paris;France;63
+308;Robert;Bárány;1876-04-22;1936-04-08;Austria;AT;Vienna;Sweden;SE;Uppsala;male;1914;medicine;;1;;Vienna University;Vienna;Austria;38
+309;Jules;Bordet;1870-06-13;1961-04-06;Belgium;BE;Soignies;Belgium;BE;Brussels;male;1919;medicine;;1;;Brussels University;Brussels;Belgium;49
+310;Schack August Steenberg;Krogh;1874-11-15;1949-09-13;Denmark;DK;Grenå;Denmark;DK;Copenhagen;male;1920;medicine;;1;;Copenhagen University;Copenhagen;Denmark;46
+311;Archibald Vivian;Hill;1886-09-26;1977-06-03;United Kingdom;GB;Bristol;United Kingdom;GB;Cambridge;male;1922;medicine;;2;;London University;London;United Kingdom;36
+312;Otto Fritz;Meyerhof;1884-04-12;1951-10-06;Germany;DE;Hanover;USA;US;Philadelphia, PA;male;1922;medicine;;2;;Kiel University;Kiel;Germany;38
+313;Frederick Grant;Banting;1891-11-14;1941-02-21;Canada;CA;Alliston;Canada;CA;Newfoundland;male;1923;medicine;;2;;University of Toronto;Toronto;Canada;32
+314;John James Rickard;Macleod;1876-09-06;1935-03-16;Scotland;GB;Cluny;Scotland;GB;Aberdeen;male;1923;medicine;;2;;University of Toronto;Toronto;Canada;47
+315;Willem;Einthoven;1860-05-21;1927-09-29;Java, Dutch East Indies (now Indonesia);ID;Semarang;the Netherlands;NL;Leiden;male;1924;medicine;;1;;Leiden University;Leiden;the Netherlands;64
+316;Johannes Andreas Grib;Fibiger;1867-04-23;1928-01-30;Denmark;DK;Silkeborg;Denmark;DK;Copenhagen;male;1926;medicine;;1;;Copenhagen University;Copenhagen;Denmark;59
+317;Julius;Wagner-Jauregg;1857-03-07;1940-09-27;Austria;AT;Wels;Austria;AT;Vienna;male;1927;medicine;;1;;Vienna University;Vienna;Austria;70
+318;Charles Jules Henri;Nicolle;1866-09-21;1936-02-28;France;FR;Rouen;Tunisia;TN;Tunis;male;1928;medicine;;1;;Institut Pasteur;Tunis;;62
+319;Christiaan;Eijkman;1858-08-11;1930-11-05;the Netherlands;NL;Nijkerk;the Netherlands;NL;Utrecht;male;1929;medicine;;2;;Utrecht University;Utrecht;the Netherlands;71
+320;Sir Frederick Gowland;Hopkins;1861-06-20;1947-05-16;United Kingdom;GB;Eastbourne;United Kingdom;GB;Cambridge;male;1929;medicine;;2;;University of Cambridge;Cambridge;United Kingdom;68
+321;Karl;Landsteiner;1868-06-14;1943-06-26;Austrian Empire (now Austria);AT;Vienna;USA;US;New York, NY;male;1930;medicine;;1;;Rockefeller Institute for Medical Research;New York, NY;USA;62
+322;Otto Heinrich;Warburg;1883-10-08;1970-08-01;Germany;DE;Freiburg im Breisgau;West Germany (now Germany);DE;West Berlin;male;1931;medicine;;1;;Kaiser-Wilhelm-Institut (now Max-Planck-Institut) für Biologie;Berlin-Dahlem;Germany;48
+323;Sir Charles Scott;Sherrington;1857-11-27;1952-03-04;United Kingdom;GB;London;United Kingdom;GB;Eastbourne;male;1932;medicine;;2;;University of Oxford;Oxford;United Kingdom;75
+324;Edgar Douglas;Adrian;1889-11-30;1977-08-08;United Kingdom;GB;London;United Kingdom;GB;Cambridge;male;1932;medicine;;2;;University of Cambridge;Cambridge;United Kingdom;43
+325;Thomas Hunt;Morgan;1866-09-25;1945-12-04;USA;US;Lexington, KY;USA;US;Pasadena, CA;male;1933;medicine;;1;;California Institute of Technology (Caltech);Pasadena, CA;USA;67
+326;George Hoyt;Whipple;1878-08-28;1976-02-01;USA;US;Ashland, NH;USA;US;Rochester, NY;male;1934;medicine;;3;;University of Rochester;Rochester, NY;USA;56
+327;George Richards;Minot;1885-12-02;1950-02-25;USA;US;Boston, MA;USA;US;Brookline, MA;male;1934;medicine;;3;;Harvard University;Cambridge, MA;USA;49
+328;William Parry;Murphy;1892-02-06;1987-10-09;USA;US;Stoughton, WI;USA;US;Brookline, MA;male;1934;medicine;;3;;Peter Brent Brigham Hospital;Boston, MA;USA;42
+329;Hans;Spemann;1869-06-27;1941-09-12;W&uuml$$rttemberg (now Germany);DE;Stuttgart;Germany;DE;Freiburg im Breisgau;male;1935;medicine;;1;;University of Freiburg im Breisgau;Breisgau;Germany;66
+330;Sir Henry Hallett;Dale;1875-06-09;1968-07-23;United Kingdom;GB;London;United Kingdom;GB;Cambridge;male;1936;medicine;;2;;National Institute for Medical Research;London;United Kingdom;61
+331;Otto;Loewi;1873-06-03;1961-12-25;Germany;DE;Frankfurt-on-the-Main;USA;US;New York, NY;male;1936;medicine;;2;;Graz University;Graz;Austria;63
+332;Albert;von Szent-Györgyi Nagyrápolt;1893-09-16;1986-10-22;Austria-Hungary (now Hungary);HU;Budapest;USA;US;Woods Hole, MA;male;1937;medicine;;1;;Szeged University;Szeged;Hungary;44
+333;Corneille Jean François;Heymans;1892-03-28;1968-07-18;Belgium;BE;Ghent;Belgium;BE;Knokke;male;1938;medicine;;1;;Ghent University;Ghent;Belgium;46
+334;Gerhard;Domagk;1895-10-30;1964-04-24;Germany (now Poland);PL;Lagow;West Germany (now Germany);DE;Burgberg;male;1939;medicine;;1;;Munster University;Munster;Germany;44
+335;Henrik Carl Peter;Dam;1895-02-21;1976-04-17;Denmark;DK;Copenhagen;Denmark;DK;Copenhagen;male;1943;medicine;;2;;Polytechnic Institute;Copenhagen;Denmark;48
+336;Edward Adelbert;Doisy;1893-11-13;1986-10-23;USA;US;Hume, IL;USA;US;St. Louis, MO;male;1943;medicine;;2;;Saint Louis University;St. Louis, MO;USA;50
+337;Joseph;Erlanger;1874-01-05;1965-12-05;USA;US;San Francisco, CA;USA;US;St. Louis, MO;male;1944;medicine;;2;;Washington University;St. Louis, MO;USA;70
+338;Herbert Spencer;Gasser;1888-07-05;1963-05-11;USA;US;Platteville, WI;USA;US;New York, NY;male;1944;medicine;;2;;Rockefeller Institute for Medical Research;New York, NY;USA;56
+339;Sir Alexander;Fleming;1881-08-06;1955-03-11;Scotland;GB;Lochfield;United Kingdom;GB;London;male;1945;medicine;;3;;London University;London;United Kingdom;64
+340;Ernst Boris;Chain;1906-06-19;1979-08-12;Germany;DE;Berlin;Ireland;IE;Mulrany;male;1945;medicine;;3;;University of Oxford;Oxford;United Kingdom;39
+341;Sir Howard Walter;Florey;1898-09-24;1968-02-21;Australia;AU;Adelaide;United Kingdom;GB;Oxford;male;1945;medicine;;3;;University of Oxford;Oxford;United Kingdom;47
+342;Hermann Joseph;Muller;1890-12-21;1967-04-05;USA;US;New York, NY;;;;male;1946;medicine;;1;;Indiana University;Bloomington, IN;USA;56
+343;Carl Ferdinand;Cori;1896-12-05;1984-10-20;Austria-Hungary (now Czech Republic);CZ;Prague;USA;US;Cambridge, MA;male;1947;medicine;;4;;Washington University;St. Louis, MO;USA;51
+344;Gerty Theresa;Cori, née Radnitz;1896-08-15;1957-10-26;Austria-Hungary (now Czech Republic);CZ;Prague;USA;US;St. Louis, MO;female;1947;medicine;;4;;Washington University;St. Louis, MO;USA;51
+345;Bernardo Alberto;Houssay;1887-04-10;1971-09-21;Argentina;AR;Buenos Aires;Argentina;AR;Buenos Aires;male;1947;medicine;;2;;Instituto de Biologia y Medicina Experimental (Institute for Biology and Experimental Medicine);Buenos Aires;Argentina;60
+346;Paul Hermann;Müller;1899-01-12;1965-10-12;Switzerland;CH;Olten;Switzerland;CH;Basel;male;1948;medicine;;1;;Laboratorium der Farben-Fabriken J.R. Geigy A.G. (Laboratory of the J.R. Geigy Dye-Factory Co.);Basel;Switzerland;49
+347;Walter Rudolf;Hess;1881-03-17;1973-08-12;Switzerland;CH;Frauenfeld;Switzerland;CH;Ascona;male;1949;medicine;;2;;University of Zurich;Zurich;Switzerland;68
+348;Antonio Caetano de Abreu Freire Egas;Moniz;1874-11-29;1955-12-13;Portugal;PT;Avanca;Portugal;PT;Lisbon;male;1949;medicine;;2;;Neurological Institute;Lisbon;Portugal;75
+349;Edward Calvin;Kendall;1886-03-08;1972-05-04;USA;US;South Norwalk, CT;USA;US;Princeton, NJ;male;1950;medicine;;3;;Mayo Clinic;Rochester, MN;USA;64
+350;Tadeus;Reichstein;1897-07-20;1996-08-01;Poland;PL;Wloclawek;Switzerland;CH;Basel;male;1950;medicine;;3;;Basel University;Basel;Switzerland;53
+351;Philip Showalter;Hench;1896-02-28;1965-03-30;USA;US;Pittsburgh, PA;Jamaica;JM;Ocho Rios;male;1950;medicine;;3;;Mayo Clinic;Rochester, MN;USA;54
+352;Max;Theiler;1899-01-30;1972-08-11;South Africa;ZA;Pretoria;USA;US;New Haven, CT;male;1951;medicine;;1;;Laboratories of the Division of Medicine and Public Health, Rockefeller Foundation;New York, NY;USA;52
+353;Selman Abraham;Waksman;1888-07-22;1973-08-16;Russian Empire (now Ukraine);UA;Priluka (now Nova Pryluka);USA;US;Hyannis, MA;male;1952;medicine;;1;;Rutgers University;New Brunswick, NJ;USA;64
+354;Hans Adolf;Krebs;1900-08-25;1981-11-22;Germany;DE;Hildesheim;United Kingdom;GB;Oxford;male;1953;medicine;;2;;Sheffield University;Sheffield;United Kingdom;53
+355;Fritz Albert;Lipmann;1899-06-12;1986-07-24;Germany (now Russia);RU;Koenigsberg (now Kaliningrad);USA;US;Poughkeepsie, NY;male;1953;medicine;;2;;Massachusetts General Hospital;Boston, MA;USA;54
+356;John Franklin;Enders;1897-02-10;1985-09-08;USA;US;West Hartford, CT;USA;US;Waterford, CT;male;1954;medicine;;3;;Research Division of Infectious Diseases, Children's Medical Center;Boston, MA;USA;57
+357;Thomas Huckle;Weller;1915-06-15;2008-08-23;USA;US;Ann Arbor, MI;USA;US;Needham, MA;male;1954;medicine;;3;;Research Division of Infectious Diseases, Children's Medical Center;Boston, MA;USA;39
+358;Frederick Chapman;Robbins;1916-08-25;2003-08-04;USA;US;Auburn, AL;USA;US;Cleveland, OH;male;1954;medicine;;3;;Western Reserve University;Cleveland, OH;USA;38
+359;Axel Hugo Theodor;Theorell;1903-07-06;1982-08-15;Sweden;SE;Linköping;Sweden;SE;Stockholm;male;1955;medicine;;1;;Karolinska Institutet, Nobel Medical Institute;Stockholm;Sweden;52
+360;André Frédéric;Cournand;1895-09-24;1988-02-19;France;FR;Paris;USA;US;Great Barrington, MA;male;1956;medicine;;3;;Columbia University Division, Cardio-Pulmonary Laboratory, Bellevue Hospital;New York, NY;USA;61
+361;Werner;Forssmann;1904-08-29;1979-06-01;Germany;DE;Berlin;West Germany (now Germany);DE;Schopfheim;male;1956;medicine;;3;;;Bad Kreuznach;Federal Republic of Germany;52
+362;Dickinson W.;Richards;1895-10-30;1973-02-23;USA;US;Orange, NJ;USA;US;Lakeville, CT;male;1956;medicine;;3;;Columbia University;New York, NY;USA;61
+363;Daniel;Bovet;1907-03-23;1992-04-08;Switzerland;CH;Neuchâtel;Italy;IT;Rome;male;1957;medicine;;1;;Istituto Superiore di Sanità (Chief Institute of Public Health);Rome;Italy;50
+364;George Wells;Beadle;1903-10-22;1989-06-09;USA;US;Wahoo, NE;USA;US;Pomona, CA;male;1958;medicine;;4;;California Institute of Technology (Caltech);Pasadena, CA;USA;55
+365;Edward Lawrie;Tatum;1909-12-14;1975-11-05;USA;US;Boulder, CO;USA;US;New York, NY;male;1958;medicine;;4;;Rockefeller Institute for Medical Research;New York, NY;USA;49
+366;Joshua;Lederberg;1925-05-23;2008-02-02;USA;US;Montclair, NJ;USA;US;New York, NY;male;1958;medicine;;2;;University of Wisconsin;Madison, WI;USA;33
+367;Severo;Ochoa;1905-09-24;1993-11-01;Spain;ES;Luarca;Spain;ES;Madrid;male;1959;medicine;;2;;New York University, College of Medicine;New York, NY;USA;54
+368;Arthur;Kornberg;1918-03-03;2007-10-26;USA;US;Brooklyn, NY;USA;US;Stanford, CA;male;1959;medicine;;2;;Stanford University;Stanford, CA;USA;41
+369;Sir Frank Macfarlane;Burnet;1899-09-03;1985-08-31;Australia;AU;Traralgon;Australia;AU;Melbourne;male;1960;medicine;;2;;Walter and Eliza Hall Institute for Medical Research;Melbourne;Australia;61
+370;Peter Brian;Medawar;1915-02-28;1987-10-02;Brazil;BR;Rio de Janeiro;United Kingdom;GB;London;male;1960;medicine;;2;;University College;London;United Kingdom;45
+371;Georg;von Békésy;1899-06-03;1972-06-13;Hungary;HU;Budapest;USA;US;Honolulu, HI;male;1961;medicine;;1;;Harvard University;Cambridge, MA;USA;62
+372;Francis Harry Compton;Crick;1916-06-08;2004-07-28;United Kingdom;GB;Northampton;USA;US;San Diego, CA;male;1962;medicine;;3;;MRC Laboratory of Molecular Biology;Cambridge;United Kingdom;46
+373;James Dewey;Watson;1928-04-06;0000-00-00;USA;US;Chicago, IL;;;;male;1962;medicine;;3;;Harvard University;Cambridge, MA;USA;34
+374;Maurice Hugh Frederick;Wilkins;1916-12-15;2004-10-05;New Zealand;NZ;Pongaroa;United Kingdom;GB;London;male;1962;medicine;;3;;London University;London;United Kingdom;46
+375;Sir John Carew;Eccles;1903-01-27;1997-05-02;Australia;AU;Melbourne;Switzerland;CH;Contra;male;1963;medicine;;3;;Australian National University;Canberra;Australia;60
+376;Alan Lloyd;Hodgkin;1914-02-05;1998-12-20;United Kingdom;GB;Banbury;United Kingdom;GB;Cambridge;male;1963;medicine;;3;;University of Cambridge;Cambridge;United Kingdom;49
+377;Andrew Fielding;Huxley;1917-11-22;2012-05-30;United Kingdom;GB;Hampstead;United Kingdom;GB;Grantchester;male;1963;medicine;;3;;University College;London;United Kingdom;46
+378;Konrad;Bloch;1912-01-21;2000-10-15;Germany (now Poland);PL;Neisse (now Nysa);USA;US;Burlington, MA;male;1964;medicine;;2;;Harvard University;Cambridge, MA;USA;52
+379;Feodor;Lynen;1911-04-06;1979-08-06;Germany;DE;Munich;Germany;DE;Munich;male;1964;medicine;;2;;Max-Planck-Institut für Zellchemie;Munich;Federal Republic of Germany;53
+380;François;Jacob;1920-06-17;2013-04-19;France;FR;Nancy;France;FR;Paris;male;1965;medicine;;3;;Institut Pasteur;Paris;France;45
+381;André;Lwoff;1902-05-08;1994-09-30;France;FR;Ainay-le-Château;France;FR;Paris;male;1965;medicine;;3;;Institut Pasteur;Paris;France;63
+382;Jacques;Monod;1910-02-09;1976-05-31;France;FR;Paris;France;FR;Cannes;male;1965;medicine;;3;;Institut Pasteur;Paris;France;55
+383;Peyton;Rous;1879-10-05;1970-02-16;USA;US;Baltimore, MD;USA;US;New York, NY;male;1966;medicine;;2;;Rockefeller University;New York, NY;USA;87
+384;Charles Brenton;Huggins;1901-09-22;1997-01-12;Canada;CA;Halifax;USA;US;Chicago, IL;male;1966;medicine;;2;;University of Chicago, Ben May Laboratory for Cancer Research;Chicago, IL;USA;65
+385;Ragnar;Granit;1900-10-30;1991-03-12;Russian Empire (now Finland);FI;Helsinki;Sweden;SE;Stockholm;male;1967;medicine;;3;;Karolinska Institutet;Stockholm;Sweden;67
+386;Haldan Keffer;Hartline;1903-12-22;1983-03-17;USA;US;Bloomsburg, PA;USA;US;Fallston, MD;male;1967;medicine;;3;;Rockefeller University;New York, NY;USA;64
+387;George;Wald;1906-11-18;1997-04-12;USA;US;New York, NY;USA;US;Cambridge, MA;male;1967;medicine;;3;;Harvard University;Cambridge, MA;USA;61
+388;Robert W.;Holley;1922-01-28;1993-02-11;USA;US;Urbana, IL;USA;US;Los Gatos, CA;male;1968;medicine;;3;;Cornell University;Ithaca, NY;USA;46
+389;Har Gobind;Khorana;1922-01-09;2011-11-09;India;IN;Raipur;USA;US;Concord, MA;male;1968;medicine;;3;;University of Wisconsin;Madison, WI;USA;46
+390;Marshall W.;Nirenberg;1927-04-10;2010-01-15;USA;US;New York, NY;USA;US;New York, NY;male;1968;medicine;;3;;National Institutes of Health;Bethesda, MD;USA;41
+391;Max;Delbrück;1906-09-04;1981-03-09;Germany;DE;Berlin;USA;US;Pasadena, CA;male;1969;medicine;;3;;California Institute of Technology (Caltech);Pasadena, CA;USA;63
+392;Alfred D.;Hershey;1908-12-04;1997-05-22;USA;US;Owosso, MI;USA;US;Syosset, NY;male;1969;medicine;;3;;Carnegie Institution of Washington;Long Island, New York, NY;USA;61
+393;Salvador E.;Luria;1912-08-13;1991-02-06;Italy;IT;Torino;USA;US;Lexington, MA;male;1969;medicine;;3;;Massachusetts Institute of Technology (MIT);Cambridge, MA;USA;57
+394;Sir Bernard;Katz;1911-03-26;2003-04-20;Germany;DE;Leipzig;United Kingdom;GB;London;male;1970;medicine;;3;;University College;London;United Kingdom;59
+395;Ulf;von Euler;1905-02-07;1983-03-09;Sweden;SE;Stockholm;Sweden;SE;Stockholm;male;1970;medicine;;3;;Karolinska Institutet;Stockholm;Sweden;65
+396;Julius;Axelrod;1912-05-30;2004-12-29;USA;US;New York, NY;USA;US;Rockville, MD;male;1970;medicine;;3;;National Institutes of Health;Bethesda, MD;USA;58
+397;Earl W.;Sutherland, Jr.;1915-11-19;1974-03-09;USA;US;Burlingame, KS;USA;US;Miami, FL;male;1971;medicine;;1;;Vanderbilt University;Nashville, TN;USA;56
+398;Gerald M.;Edelman;1929-07-01;2014-05-17;USA;US;New York, NY;USA;US;La Jolla, CA;male;1972;medicine;;2;;Rockefeller University;New York, NY;USA;43
+399;Rodney R.;Porter;1917-10-08;1985-09-06;United Kingdom;GB;Newton-le-Willows;United Kingdom;GB;Winchester;male;1972;medicine;;2;;University of Oxford;Oxford;United Kingdom;55
+400;Karl;von Frisch;1886-11-20;1982-06-12;Austria;AT;Vienna;West Germany (now Germany);DE;Munich;male;1973;medicine;;3;;Zoologisches Institut der Universität München;Munich;Federal Republic of Germany;87
+401;Konrad;Lorenz;1903-11-07;1989-02-27;Austria;AT;Vienna;Austria;AT;Vienna;male;1973;medicine;;3;;Konrad-Lorenz-Institut der Österreichischen Akademie der Wissen­schaften, Forschungsstelle für Ethologie;Altenberg$$ Grünau im Almtal;Austria;70
+402;Nikolaas;Tinbergen;1907-04-15;1988-12-21;the Netherlands;NL;the Hague;United Kingdom;GB;Oxford;male;1973;medicine;;3;;University of Oxford;Oxford;United Kingdom;66
+403;Albert;Claude;1898-08-24;1983-05-22;Belgium;BE;Longlier;Belgium;BE;Brussels;male;1974;medicine;;3;;Université Catholique de Louvain;Louvain;Belgium;76
+404;Christian;de Duve;1917-10-02;2013-05-04;United Kingdom;GB;Thames Ditton;Belgium;BE;Nethen;male;1974;medicine;;3;;Université Catholique de Louvain;Louvain;Belgium;57
+405;George E.;Palade;1912-11-19;2008-10-07;Romania;RO;Iasi;USA;US;Del Mar, CA;male;1974;medicine;;3;;Yale University, School of Medicine;New Haven, CT;USA;62
+406;David;Baltimore;1938-03-07;0000-00-00;USA;US;New York, NY;;;;male;1975;medicine;;3;;Massachusetts Institute of Technology (MIT);Cambridge, MA;USA;37
+407;Renato;Dulbecco;1914-02-22;2012-02-19;Italy;IT;Catanzaro;USA;US;La Jolla, CA;male;1975;medicine;;3;;Imperial Cancer Research Fund Laboratory;London;United Kingdom;61
+408;Howard Martin;Temin;1934-12-10;1994-02-09;USA;US;Philadelphia, PA;USA;US;Madison, WI;male;1975;medicine;;3;;University of Wisconsin;Madison, WI;USA;41
+409;Baruch S.;Blumberg;1925-07-28;2011-04-05;USA;US;New York, NY;USA;US;Moffett Field, CA;male;1976;medicine;;2;;The Institute for Cancer Research;Philadelphia, PA;USA;51
+410;D. Carleton;Gajdusek;1923-09-09;2008-12-12;USA;US;Yonkers, NY;Norway;NO;Tromsø;male;1976;medicine;;2;;National Institutes of Health;Bethesda, MD;USA;53
+411;Roger;Guillemin;1924-01-11;0000-00-00;France;FR;Dijon;;;;male;1977;medicine;;4;;The Salk Institute;San Diego, CA;USA;53
+412;Andrew V.;Schally;1926-11-30;0000-00-00;Poland (now Lithuania);LT;Wilno (now Vilnius);;;;male;1977;medicine;;4;;Veterans Administration Hospital;New Orleans, LA;USA;51
+413;Rosalyn;Yalow;1921-07-19;2011-05-30;USA;US;New York, NY;USA;US;New York, NY;female;1977;medicine;;2;;Veterans Administration Hospital;Bronx, NY;USA;56
+414;Werner;Arber;1929-06-03;0000-00-00;Switzerland;CH;Gränichen;;;;male;1978;medicine;;3;;Biozentrum der Universität;Basel;Switzerland;49
+415;Daniel;Nathans;1928-10-30;1999-11-16;USA;US;Wilmington, DE;USA;US;Baltimore, MD;male;1978;medicine;;3;;Johns Hopkins University School of Medicine;Baltimore, MD;USA;50
+416;Hamilton O.;Smith;1931-08-23;0000-00-00;USA;US;New York, NY;;;;male;1978;medicine;;3;;Johns Hopkins University School of Medicine;Baltimore, MD;USA;47
+417;Allan M.;Cormack;1924-02-23;1998-05-07;South Africa;ZA;Johannesburg;USA;US;Winchester, MA;male;1979;medicine;;2;;Tufts University;Medford, MA;USA;55
+418;Godfrey N.;Hounsfield;1919-08-28;2004-08-12;United Kingdom;GB;Newark;United Kingdom;GB;Kingston upon Thames;male;1979;medicine;;2;;Central Research Laboratories, EMI;London;United Kingdom;60
+419;Baruj;Benacerraf;1920-10-29;2011-08-02;Venezuela;VE;Caracas;USA;US;Boston, MA;male;1980;medicine;;3;;Harvard Medical School;Boston, MA;USA;60
+420;Jean;Dausset;1916-10-19;2009-06-06;France;FR;Toulouse;Spain;ES;Palma, Majorca;male;1980;medicine;;3;;Université de Paris, Laboratoire Immuno-Hématologie;Paris;France;64
+421;George D.;Snell;1903-12-19;1996-06-06;USA;US;Bradford, MA;USA;US;Bar Harbor, ME;male;1980;medicine;;3;;Jackson Laboratory;Bar Harbor, ME;USA;77
+422;Roger W.;Sperry;1913-08-20;1994-04-17;USA;US;Hartford, CT;USA;US;Pasadena, CA;male;1981;medicine;;2;;California Institute of Technology (Caltech);Pasadena, CA;USA;68
+423;David H.;Hubel;1926-02-27;2013-09-22;Canada;CA;Windsor, ON;USA;US;Lincoln, MA;male;1981;medicine;;4;;Harvard Medical School;Boston, MA;USA;55
+424;Torsten N.;Wiesel;1924-06-03;0000-00-00;Sweden;SE;Uppsala;;;;male;1981;medicine;;4;;Harvard Medical School;Boston, MA;USA;57
+425;Sune K.;Bergström;1916-01-10;2004-08-15;Sweden;SE;Stockholm;Sweden;SE;Stockholm;male;1982;medicine;;3;;Karolinska Institutet;Stockholm;Sweden;66
+426;Bengt I.;Samuelsson;1934-05-21;0000-00-00;Sweden;SE;Halmstad;;;;male;1982;medicine;;3;;Karolinska Institutet;Stockholm;Sweden;48
+427;John R.;Vane;1927-03-29;2004-11-19;United Kingdom;GB;Tardebigg;United Kingdom;GB;Farnborough;male;1982;medicine;;3;;The Wellcome Research Laboratories;Beckenham;United Kingdom;55
+428;Barbara;McClintock;1902-06-16;1992-09-02;USA;US;Hartford, CT;USA;US;Huntington, NY;female;1983;medicine;;1;;Cold Spring Harbor Laboratory;Cold Spring Harbor, NY;USA;81
+429;Niels K.;Jerne;1911-12-23;1994-10-07;United Kingdom;GB;London;France;FR;Castillon-du-Gard;male;1984;medicine;;3;;Basel Institute for Immunology;Basel;Switzerland;73
+430;Georges J.F.;Köhler;1946-04-17;1995-03-01;Germany;DE;Munich;Germany;DE;Freiburg im Breisgau;male;1984;medicine;;3;;Basel Institute for Immunology;Basel;Switzerland;38
+431;César;Milstein;1927-10-08;2002-03-24;Argentina;AR;Bahia Blanca;United Kingdom;GB;Cambridge;male;1984;medicine;;3;;MRC Laboratory of Molecular Biology;Cambridge;United Kingdom;57
+432;Michael S.;Brown;1941-04-13;0000-00-00;USA;US;New York, NY;;;;male;1985;medicine;;2;;University of Texas Southwestern Medical Center at Dallas;Dallas, TX;USA;44
+433;Joseph L.;Goldstein;1940-04-18;0000-00-00;USA;US;Sumter, SC;;;;male;1985;medicine;;2;;University of Texas Southwestern Medical Center at Dallas;Dallas, TX;USA;45
+434;Stanley;Cohen;1922-11-17;0000-00-00;USA;US;Brooklyn, NY;;;;male;1986;medicine;;2;;Vanderbilt University School of Medicine;Nashville, TN;USA;64
+435;Rita;Levi-Montalcini;1909-04-22;2012-12-30;Italy;IT;Turin;Italy;IT;Rome;female;1986;medicine;;2;;Institute of Cell Biology of the C.N.R.;Rome;Italy;77
+436;Susumu;Tonegawa;1939-09-05;0000-00-00;Japan;JP;Nagoya;;;;male;1987;medicine;;1;;Massachusetts Institute of Technology (MIT);Cambridge, MA;USA;48
+437;Sir James W.;Black;1924-06-14;2010-03-21;Scotland;GB;Uddingston;;;;male;1988;medicine;;3;;London University, King's College Hospital Medical School;London;United Kingdom;64
+438;Gertrude B.;Elion;1918-01-23;1999-02-21;USA;US;New York, NY;USA;US;Chapel Hill, NC;female;1988;medicine;;3;;Wellcome Research Laboratories;Research Triangle Park, NC;USA;70
+439;George H.;Hitchings;1905-04-18;1998-02-27;USA;US;Hoquiam, WA;USA;US;Chapel Hill, NC;male;1988;medicine;;3;;Wellcome Research Laboratories;Research Triangle Park, NC;USA;83
+440;J. Michael;Bishop;1936-02-22;0000-00-00;USA;US;York, PA;;;;male;1989;medicine;;2;;University of California School of Medicine;San Francisco, CA;USA;53
+441;Harold E.;Varmus;1939-12-18;0000-00-00;USA;US;Oceanside, NY;;;;male;1989;medicine;;2;;University of California School of Medicine;San Francisco, CA;USA;50
+442;Joseph E.;Murray;1919-04-01;2012-11-26;USA;US;Milford, MA;USA;US;Boston, MA;male;1990;medicine;;2;;Brigham and Women's Hospital;Boston, MA;USA;71
+443;E. Donnall;Thomas;1920-03-15;2012-10-20;USA;US;Mart, TX;USA;US;Seattle, WA;male;1990;medicine;;2;;Fred Hutchinson Cancer Research Center;Seattle, WA;USA;70
+444;Erwin;Neher;1944-03-20;0000-00-00;Germany;DE;Landsberg;;;;male;1991;medicine;;2;;Max-Planck-Institut für Biophysikalische Chemie;Göttingen;Federal Republic of Germany;47
+445;Bert;Sakmann;1942-06-12;0000-00-00;Germany;DE;Stuttgart;;;;male;1991;medicine;;2;;Max-Planck-Institut für medizinische Forschung;Heidelberg;Federal Republic of Germany;49
+446;Edmond H.;Fischer;1920-04-06;0000-00-00;China;CN;Shanghai;;;;male;1992;medicine;;2;;University of Washington;Seattle, WA;USA;72
+447;Edwin G.;Krebs;1918-06-06;2009-12-21;USA;US;Lansing, IA;USA;US;Seattle, WA;male;1992;medicine;;2;;University of Washington;Seattle, WA;USA;74
+448;Richard J.;Roberts;1943-09-06;0000-00-00;United Kingdom;GB;Derby;;;;male;1993;medicine;;2;;New England Biolabs;Beverly, MA;USA;50
+449;Phillip A.;Sharp;1944-06-06;0000-00-00;USA;US;Falmouth, KY;;;;male;1993;medicine;;2;;Massachusetts Institute of Technology (MIT), Center for Cancer Research;Cambridge, MA;USA;49
+450;Alfred G.;Gilman;1941-07-01;2015-12-23;USA;US;New Haven, CT;USA;US;Dallas, TX;male;1994;medicine;;2;;University of Texas Southwestern Medical Center at Dallas;Dallas, TX;USA;53
+451;Martin;Rodbell;1925-12-01;1998-12-07;USA;US;Baltimore, MD;USA;US;Chapel Hill, NC;male;1994;medicine;;2;;National Institute of Environmental Health Sciences;Research Triangle Park, NC;USA;69
+452;Edward B.;Lewis;1918-05-20;2004-07-21;USA;US;Wilkes-Barre, PA;USA;US;Pasadena, CA;male;1995;medicine;;3;;California Institute of Technology (Caltech);Pasadena, CA;USA;77
+453;Christiane;Nüsslein-Volhard;1942-10-20;0000-00-00;Germany;DE;Magdeburg;;;;female;1995;medicine;;3;;Max-Planck-Institut für Entwicklungsbiologie;Tübingen;Federal Republic of Germany;53
+454;Eric F.;Wieschaus;1947-06-08;0000-00-00;USA;US;South Bend, IN;;;;male;1995;medicine;;3;;Princeton University;Princeton, NJ;USA;48
+455;Peter C.;Doherty;1940-10-15;0000-00-00;Australia;AU;Brisbane;;;;male;1996;medicine;;2;;St. Jude Children's Research Hospital;Memphis, TN;USA;56
+456;Rolf M.;Zinkernagel;1944-01-06;0000-00-00;Switzerland;CH;Basel;;;;male;1996;medicine;;2;;University of Zurich, Institute of Experimental Immunology;Zurich;Switzerland;52
+457;Stanley B.;Prusiner;1942-05-28;0000-00-00;USA;US;Des Moines, IA;;;;male;1997;medicine;;1;;University of California School of Medicine;San Francisco, CA;USA;55
+458;Robert F.;Furchgott;1916-06-04;2009-05-19;USA;US;Charleston, SC;USA;US;Seattle, WA;male;1998;medicine;;3;;SUNY Health Science Center;Brooklyn, NY;USA;82
+459;Louis J.;Ignarro;1941-05-31;0000-00-00;USA;US;Brooklyn, NY;;;;male;1998;medicine;;3;;University of California School of Medicine;Los Angeles, CA;USA;57
+460;Ferid;Murad;1936-09-14;0000-00-00;USA;US;Whiting, IN;;;;male;1998;medicine;;3;;University of Texas Medical School at Houston;Houston, TX;USA;62
+461;Günter;Blobel;1936-05-21;2018-02-18;Germany (now Poland);PL;Waltersdorf (now Niegoslawice);USA;US;New York, NY;male;1999;medicine;;1;;Howard Hughes Medical Institute;;;63
+462;Jean Henry;Dunant;1828-05-08;1910-10-30;Switzerland;CH;Geneva;Switzerland;CH;Heiden;male;1901;peace;;2;;;;;73
+463;Frédéric;Passy;1822-05-20;1912-06-12;France;FR;Paris;France;FR;Paris;male;1901;peace;;2;;;;;79
+464;Élie;Ducommun;1833-02-19;1906-12-07;Switzerland;CH;Geneva;Switzerland;CH;Bern;male;1902;peace;;2;;;;;69
+465;Charles Albert;Gobat;1843-05-21;1914-03-16;Switzerland;CH;Tramelan;Switzerland;CH;Bern;male;1902;peace;;2;;;;;59
+466;William Randal;Cremer;1828-03-18;1908-07-22;United Kingdom;GB;Fareham;United Kingdom;GB;London;male;1903;peace;;1;;;;;75
+467;Institut de droit international (Institute of International Law);;0000-00-00;0000-00-00;;;;;;;org;1904;peace;;1;;;;;NA
+468;Baroness Bertha Sophie Felicita;von Suttner, née Countess Kinsky von Chinic und Tettau;1843-06-09;1914-06-21;Austrian Empire (now Czech Republic);CZ;Prague;Austria;AT;Vienna;female;1905;peace;;1;;;;;62
+470;Theodore;Roosevelt;1858-10-27;1919-01-06;USA;US;New York, NY;USA;US;Oyster Bay, NY;male;1906;peace;;1;;;;;48
+471;Ernesto Teodoro;Moneta;1833-09-20;1918-02-10;Austrian Empire (now Italy);IT;Milan;Italy;IT;Milan;male;1907;peace;;2;;;;;74
+472;Louis;Renault;1843-05-21;1918-02-08;France;FR;Autun;France;FR;Barbizon;male;1907;peace;;2;;Sorbonne University;Paris;France;64
+473;Klas Pontus;Arnoldson;1844-10-27;1916-02-20;Sweden;SE;Gothenburg;Sweden;SE;Stockholm;male;1908;peace;;2;;;;;64
+474;Fredrik;Bajer;1837-04-21;1922-01-22;Denmark;DK;Næstved;Denmark;DK;Copenhagen;male;1908;peace;;2;;;;;71
+475;Auguste Marie François;Beernaert;1829-07-26;1912-10-06;Belgium;BE;Ostend;Switzerland;CH;Lucerne;male;1909;peace;;2;;;;;80
+476;Paul Henri Benjamin Balluet;d'Estournelles de Constant, Baron de Constant de Rebecque;1852-11-22;1924-05-15;France;FR;La Flèche;France;FR;Paris;male;1909;peace;;2;;;;;57
+477;Bureau international permanent de la Paix (Permanent International Peace Bureau);;0000-00-00;0000-00-00;;;;;;;org;1910;peace;;1;;;;;NA
+478;Tobias Michael Carel;Asser;1838-04-28;1913-07-29;the Netherlands;NL;Amsterdam;the Netherlands;NL;the Hague;male;1911;peace;;2;;;;;73
+479;Alfred Hermann;Fried;1864-11-11;1921-05-05;Austria;AT;Vienna;Austria;AT;Vienna;male;1911;peace;;2;;;;;47
+480;Elihu;Root;1845-02-15;1937-02-07;USA;US;Clinton, NY;USA;US;New York, NY;male;1912;peace;;1;;;;;67
+481;Henri;La Fontaine;1854-04-22;1943-05-14;Belgium;BE;Brussels;Belgium;BE;Brussels;male;1913;peace;;1;;;;;59
+482;Comité international de la Croix Rouge (International Committee of the Red Cross);;0000-00-00;0000-00-00;;;;;;;org;1963;peace;;2;;;;;NA
+483;Thomas Woodrow;Wilson;1856-12-28;1924-02-03;USA;US;Staunton, VA;USA;US;Washington, DC;male;1919;peace;;1;;;;;63
+484;Léon Victor Auguste;Bourgeois;1851-05-21;1925-09-29;France;FR;Paris;France;FR;Épernay;male;1920;peace;;1;;;;;69
+485;Karl Hjalmar;Branting;1860-11-23;1925-02-24;Sweden;SE;Stockholm;Sweden;SE;Stockholm;male;1921;peace;;2;;;;;61
+486;Christian Lous;Lange;1869-09-17;1938-12-11;Norway;NO;Stavanger;Norway;NO;Oslo;male;1921;peace;;2;;;;;52
+487;Fridtjof;Nansen;1861-10-10;1930-05-13;Norway;NO;Kristiania (now Oslo);Norway;NO;Oslo;male;1922;peace;;1;;;;;61
+488;Sir Austen;Chamberlain;1863-10-16;1937-03-16;United Kingdom;GB;Birmingham;United Kingdom;GB;London;male;1925;peace;;2;;;;;62
+489;Charles Gates;Dawes;1865-08-27;1951-04-23;USA;US;Marietta, OH;USA;US;Evanston, IL;male;1925;peace;;2;;;;;60
+490;Aristide;Briand;1862-03-28;1932-03-07;France;FR;Nantes;France;FR;Paris;male;1926;peace;;2;;;;;64
+491;Gustav;Stresemann;1878-05-10;1929-10-03;Germany;DE;Berlin;Germany;DE;Berlin;male;1926;peace;;2;;;;;48
+492;Ferdinand;Buisson;1841-12-20;1932-02-16;France;FR;Paris;France;FR;Thieuloy-Saint-Antoine;male;1927;peace;;2;;;;;86
+493;Ludwig;Quidde;1858-03-23;1941-03-04;Germany;DE;Bremen;Switzerland;CH;Geneva;male;1927;peace;;2;;;;;69
+494;Frank Billings;Kellogg;1856-12-22;1937-12-21;USA;US;Potsdam, NY;USA;US;St. Paul, MN;male;1929;peace;;1;;;;;73
+495;Lars Olof Jonathan (Nathan);Söderblom;1866-01-15;1931-07-12;Sweden;SE;Trönö;Sweden;SE;Uppsala;male;1930;peace;;1;;;;;64
+496;Jane;Addams;1860-09-06;1935-05-21;USA;US;Cedarville, IL;USA;US;Chicago, IL;female;1931;peace;;2;;;;;71
+497;Nicholas Murray;Butler;1862-04-02;1947-12-07;USA;US;Elizabeth, NJ;USA;US;New York, NY;male;1931;peace;;2;;Columbia University;New York, NY;USA;69
+498;Sir Norman;Angell (Ralph Lane);1872-12-26;1967-10-07;United Kingdom;GB;Holbeach;United Kingdom;GB;Croydon;male;1933;peace;;1;;;;;61
+499;Arthur;Henderson;1863-09-13;1935-10-20;Scotland;GB;Glasgow;United Kingdom;GB;London;male;1934;peace;;1;;;;;71
+500;Carl;von Ossietzky;1889-10-03;1938-05-04;Germany;DE;Hamburg;Germany;DE;Berlin;male;1935;peace;;1;;;;;46
+501;Carlos;Saavedra Lamas;1878-11-01;1959-05-05;Argentina;AR;Buenos Aires;Argentina;AR;Buenos Aires;male;1936;peace;;1;;;;;58
+502;Cecil of Chelwood, Viscount;(Lord Edgar Algernon Robert Gascoyne Cecil);1864-09-14;1958-11-24;United Kingdom;GB;London;United Kingdom;GB;Tunbridge Wells;male;1937;peace;;1;;;;;73
+503;Office international Nansen pour les Réfugiés (Nansen International Office for Refugees);;0000-00-00;0000-00-00;;;;;;;org;1938;peace;;1;;;;;NA
+505;Cordell;Hull;1871-10-02;1955-07-23;USA;US;Olympus, TN;USA;US;Bethesda, MD;male;1945;peace;;1;;;;;74
+506;Emily Greene;Balch;1867-01-08;1961-01-09;USA;US;Jamaica Plain, MA (now Boston);USA;US;Cambridge, MA;female;1946;peace;;2;;;;;79
+507;John Raleigh;Mott;1865-05-25;1955-01-31;USA;US;Livingston Manor, NY;USA;US;;male;1946;peace;;2;;;;;81
+508;Friends Service Council (The Quakers);;0000-00-00;0000-00-00;;;;;;;org;1947;peace;;2;;;;;NA
+509;American Friends Service Committee (The Quakers);;0000-00-00;0000-00-00;;;;;;;org;1947;peace;;2;;;;;NA
+510;Lord (John);Boyd Orr of Brechin;1880-09-23;1971-06-25;Scotland;GB;Kilmaurs;Scotland;GB;Edzell;male;1949;peace;;1;;;;;69
+511;Ralph;Bunche;1904-08-07;1971-12-09;USA;US;Detroit, MI;USA;US;New York, NY;male;1950;peace;;1;;Harvard University;Cambridge, MA;USA;46
+512;Léon;Jouhaux;1879-07-01;1954-04-28;France;FR;Paris;France;FR;Paris;male;1951;peace;;1;;;;;72
+513;Albert;Schweitzer;1875-01-14;1965-09-04;Germany (now France);FR;Kaysersberg;Gabon;GA;Lambaréné;male;1952;peace;;1;;;;;77
+514;George Catlett;Marshall;1880-12-31;1959-10-16;USA;US;Uniontown, PA;USA;US;Washington, DC;male;1953;peace;;1;;;;;73
+515;Office of the United Nations High Commissioner for Refugees (UNHCR);;0000-00-00;0000-00-00;;;;;;;org;1981;peace;;1;;;;;NA
+516;Lester Bowles;Pearson;1897-04-23;1972-12-27;Canada;CA;Toronto;Canada;CA;Ottawa;male;1957;peace;;1;;;;;60
+517;Georges;Pire;1910-02-10;1969-01-30;Belgium;BE;Dinant;Belgium;BE;Leuven;male;1958;peace;;1;;;;;48
+518;Philip J.;Noel-Baker;1889-11-01;1982-10-08;United Kingdom;GB;London;United Kingdom;GB;London;male;1959;peace;;1;;;;;70
+519;Albert John;Lutuli;1898-00-00;1967-07-21;Southern Rhodesia (now Zimbabwe);ZW;Bulawayo;South Africa;ZA;Stanger;male;1960;peace;;1;;;;;62
+520;Dag Hjalmar Agne Carl;Hammarskjöld;1905-07-29;1961-09-18;Sweden;SE;Jönköping;Northern Rhodesia (now Zambia);ZM;Ndola;male;1961;peace;;1;;;;;56
+523;Ligue des Sociétés de la Croix-Rouge (League of Red Cross Societies);;0000-00-00;0000-00-00;;;;;;;org;1963;peace;;2;;;;;NA
+524;Martin Luther;King Jr.;1929-01-15;1968-04-04;USA;US;Atlanta, GA;USA;US;Memphis, TN;male;1964;peace;;1;;;;;35
+525;United Nations Children's Fund (UNICEF);;0000-00-00;0000-00-00;;;;;;;org;1965;peace;;1;;;;;NA
+526;René;Cassin;1887-10-05;1976-02-20;France;FR;Bayonne;France;FR;Paris;male;1968;peace;;1;;;;;81
+527;International Labour Organization (I.L.O.);;0000-00-00;0000-00-00;;;;;;;org;1969;peace;;1;;;;;NA
+528;Norman E.;Borlaug;1914-03-25;2009-09-12;USA;US;Cresco, IA;USA;US;Dallas, TX;male;1970;peace;;1;;;;;56
+529;Willy;Brandt;1913-12-18;1992-10-08;Germany;DE;Lübeck;Germany;DE;Unkel;male;1971;peace;;1;;;;;58
+530;Henry A.;Kissinger;1923-05-27;0000-00-00;Germany;DE;Fürth;;;;male;1973;peace;;2;;;;;50
+531;Le Duc Tho;;1911-10-14;1990-10-13;Vietnam;VN;Nam Ha province;Vietnam;VN;Hanoi;male;1973;peace;;2;;;;;62
+532;Seán;MacBride;1904-01-26;1988-01-15;France;FR;Paris;Ireland;IE;Dublin;male;1974;peace;;2;;;;;70
+533;Eisaku;Sato;1901-03-27;1975-06-03;Japan;JP;Tabuse;Japan;JP;Tokyo;male;1974;peace;;2;;;;;73
+534;Andrei Dmitrievich;Sakharov;1921-05-21;1989-12-14;Russia;RU;Moscow;USSR (now Russia);RU;Moscow;male;1975;peace;;1;;;;;54
+535;Betty;Williams;1943-05-22;0000-00-00;Northern Ireland;GB;Belfast;;;;female;1976;peace;;2;;;;;33
+536;Mairead;Corrigan;1944-01-27;0000-00-00;Northern Ireland;GB;Belfast;;;;female;1976;peace;;2;;;;;32
+537;Amnesty International;;0000-00-00;0000-00-00;;;;;;;org;1977;peace;;1;;;;;NA
+538;Mohamed Anwar;al-Sadat;1918-12-25;1981-10-06;Egypt;EG;Mit Abu al-Kawm;Egypt;EG;Cairo;male;1978;peace;;2;;;;;60
+539;Menachem;Begin;1913-08-16;1992-03-09;Russian Empire (now Belarus);BY;Brest Litovsk;Israel;IL;Tel Aviv;male;1978;peace;;2;;;;;65
+540;Mother Teresa;;1910-08-26;1997-09-05;Ottoman Empire (now Republic of Macedonia);MK;Uskup (now Skopje);India;IN;Calcutta;female;1979;peace;;1;;;;;69
+541;Adolfo;Pérez Esquivel;1931-11-26;0000-00-00;Argentina;AR;Buenos Aires;;;;male;1980;peace;;1;;;;;49
+543;Alva;Myrdal;1902-01-31;1986-02-01;Sweden;SE;Uppsala;Sweden;SE;Stockholm;female;1982;peace;;2;;;;;80
+544;Alfonso;García Robles;1911-03-20;1991-09-02;Mexico;MX;Zamora;Mexico;MX;Mexico City;male;1982;peace;;2;;;;;71
+545;Lech;Walesa;1943-09-29;0000-00-00;Poland;PL;Popowo;;;;male;1983;peace;;1;;;;;40
+546;Desmond Mpilo;Tutu;1931-10-07;0000-00-00;South Africa;ZA;Klerksdorp;;;;male;1984;peace;;1;;;;;53
+547;International Physicians for the Prevention of Nuclear War;;0000-00-00;0000-00-00;;;;;;;org;1985;peace;;1;;;;;NA
+548;Elie;Wiesel;1928-09-30;2016-07-02;Romania;RO;Sighet;USA;US;New York, NY;male;1986;peace;;1;;;;;58
+549;Oscar;Arias Sánchez;1941-09-13;0000-00-00;Costa Rica;CR;Heredia;;;;male;1987;peace;;1;;;;;46
+550;United Nations Peacekeeping Forces;;0000-00-00;0000-00-00;;;;;;;org;1988;peace;;1;;;;;NA
+551;The 14th Dalai Lama (Tenzin Gyatso);;1935-07-06;0000-00-00;Tibet (now People's Republic of China);CN;Taktser;;;;male;1989;peace;;1;;;;;54
+552;Mikhail Sergeyevich;Gorbachev;1931-03-02;0000-00-00;USSR (now Russia);RU;Privolnoye;;;;male;1990;peace;;1;;;;;59
+553;Aung San Suu Kyi;;1945-06-19;0000-00-00;Burma (now Myanmar);MM;Rangoon (now Yangon);;;;female;1991;peace;;1;;;;;46
+554;Rigoberta;Menchú Tum;1959-01-09;0000-00-00;Guatemala;GT;Aldea Chimel;;;;female;1992;peace;;1;;;;;33
+555;Nelson;Mandela;1918-07-18;2013-12-05;South Africa;ZA;Qunu;South Africa;ZA;Johannesburg;male;1993;peace;;2;;;;;75
+556;Frederik Willem;de Klerk;1936-03-18;0000-00-00;South Africa;ZA;Johannesburg;;;;male;1993;peace;;2;;;;;57
+557;Yasser;Arafat;1929-08-24;2004-11-11;Egypt;EG;Cairo;;;;male;1994;peace;;3;;;;;65
+558;Shimon;Peres;1923-08-16;2016-09-28;Poland (now Belarus);BY;Vishneva;Israel;IL;Tel Aviv;male;1994;peace;;3;;;;;71
+559;Yitzhak;Rabin;1922-03-01;1995-11-04;British Mandate of Palestine (now Israel);IL;Jerusalem;Israel;IL;Tel Aviv;male;1994;peace;;3;;;;;72
+560;Joseph;Rotblat;1908-11-04;2005-08-31;Russian Empire (now Poland);PL;Warsaw;United Kingdom;GB;London;male;1995;peace;;2;;;;;87
+561;Pugwash Conferences on Science and World Affairs;;0000-00-00;0000-00-00;;;;;;;org;1995;peace;;2;;;;;NA
+562;Carlos Filipe Ximenes;Belo;1948-02-03;0000-00-00;East Timor;TL;Wailacama;;;;male;1996;peace;;2;;;;;48
+563;José;Ramos-Horta;1949-12-26;0000-00-00;East Timor;TL;Dili;;;;male;1996;peace;;2;;;;;47
+564;International Campaign to Ban Landmines (ICBL);;0000-00-00;0000-00-00;;;;;;;org;1997;peace;;2;;;;;NA
+565;Jody;Williams;1950-10-09;0000-00-00;USA;US;Putney, VT;;;;female;1997;peace;;2;;;;;47
+566;John;Hume;1937-01-18;0000-00-00;Northern Ireland;GB;Londonderry;;;;male;1998;peace;;2;;;;;61
+567;David;Trimble;1944-10-15;0000-00-00;Northern Ireland;GB;Belfast;;;;male;1998;peace;;2;;;;;54
+568;Médecins Sans Frontières;;0000-00-00;0000-00-00;;;;;;;org;1999;peace;;1;;;;;NA
+569;Sully;Prudhomme;1839-03-16;1907-09-07;France;FR;Paris;France;FR;Châtenay;male;1901;literature;;1;;;;;62
+571;Christian Matthias Theodor;Mommsen;1817-11-30;1903-11-01;Schleswig (now Germany);DE;Garding;Germany;DE;Charlottenburg;male;1902;literature;;1;;;;;85
+572;Bjørnstjerne Martinus;Bjørnson;1832-12-08;1910-04-26;Norway;NO;Kvikne;France;FR;Paris;male;1903;literature;;1;;;;;71
+573;Frédéric;Mistral;1830-09-08;1914-03-25;France;FR;Maillane;France;FR;Maillane;male;1904;literature;;2;;;;;74
+574;José;Echegaray y Eizaguirre;1832-04-19;1916-09-04;Spain;ES;Madrid;Spain;ES;Madrid;male;1904;literature;;2;;;;;72
+575;Henryk;Sienkiewicz;1846-05-05;1916-11-15;Poland;PL;Wola Okrzejska;Switzerland;CH;Vevey;male;1905;literature;;1;;;;;59
+576;Giosuè;Carducci;1835-07-27;1907-02-16;Tuscany (now Italy);IT;Val di Castello;Italy;IT;Bologna;male;1906;literature;;1;;;;;71
+577;Rudyard;Kipling;1865-12-30;1936-01-18;British India (now India);IN;Bombay;United Kingdom;GB;London;male;1907;literature;;1;;;;;42
+578;Rudolf Christoph;Eucken;1846-01-05;1926-09-14;East Friesland (now Germany);DE;Aurich;Germany;DE;Jena;male;1908;literature;;1;;;;;62
+579;Selma Ottilia Lovisa;Lagerlöf;1858-11-20;1940-03-16;Sweden;SE;Mårbacka;Sweden;SE;Mårbacka;female;1909;literature;;1;;;;;51
+580;Paul Johann Ludwig;Heyse;1830-03-15;1914-04-02;Prussia (now Germany);DE;Berlin;Germany;DE;Munich;male;1910;literature;;1;;;;;80
+581;Count Maurice (Mooris) Polidore Marie Bernhard;Maeterlinck;1862-08-29;1949-05-06;Belgium;BE;Ghent;France;FR;Nice;male;1911;literature;;1;;;;;49
+582;Gerhart Johann Robert;Hauptmann;1862-11-15;1946-06-06;Prussia (now Germany);DE;Bad Salzbrunn;Germany (now Poland);PL;Agnetendorf (now Jagniatków);male;1912;literature;;1;;;;;50
+583;Rabindranath;Tagore;1861-05-07;1941-08-07;India;IN;Calcutta;India;IN;Calcutta;male;1913;literature;;1;;;;;52
+584;Romain;Rolland;1866-01-29;1944-12-30;France;FR;Clamecy;France;FR;Vézelay;male;1915;literature;;1;;;;;49
+585;Carl Gustaf Verner;von Heidenstam;1859-07-06;1940-05-20;Sweden;SE;Olshammar;Sweden;SE;Övralid;male;1916;literature;;1;;;;;57
+586;Karl Adolph;Gjellerup;1857-06-02;1919-10-11;Denmark;DK;Roholte;Germany;DE;Klotzsche;male;1917;literature;;2;;;;;60
+587;Henrik;Pontoppidan;1857-07-24;1943-08-21;Denmark;DK;Fredericia;Denmark;DK;Ordrup;male;1917;literature;;2;;;;;60
+588;Carl Friedrich Georg;Spitteler;1845-04-24;1924-12-29;Switzerland;CH;Liestal;Switzerland;CH;Lucerne;male;1919;literature;;1;;;;;74
+589;Knut Pedersen;Hamsun;1859-08-04;1952-02-19;Norway;NO;Lom;Norway;NO;Grimstad;male;1920;literature;;1;;;;;61
+590;Anatole;France;1844-04-16;1924-10-12;France;FR;Paris;France;FR;Saint-Cyr-sur-Loire;male;1921;literature;;1;;;;;77
+592;Jacinto;Benavente;1866-08-12;1954-07-14;Spain;ES;Madrid;Spain;ES;Madrid;male;1922;literature;;1;;;;;56
+593;William Butler;Yeats;1865-06-13;1939-01-28;Ireland;IE;Dublin;France;FR;Roquebrune-Cap-Martin;male;1923;literature;;1;;;;;58
+594;Wladyslaw Stanislaw;Reymont;1867-05-07;1925-12-05;Russian Empire (now Poland);PL;Kobiele Wielkie;Poland;PL;Warsaw;male;1924;literature;;1;;;;;57
+596;George Bernard;Shaw;1856-07-26;1950-11-02;Ireland;IE;Dublin;United Kingdom;GB;Ayot St. Lawrence;male;1925;literature;;1;;;;;69
+597;Grazia;Deledda;1871-09-27;1936-08-15;Italy;IT;Nuoro, Sardinia;Italy;IT;Rome;female;1926;literature;;1;;;;;55
+600;Henri;Bergson;1859-10-18;1941-01-04;France;FR;Paris;France;FR;Paris;male;1927;literature;;1;;;;;68
+601;Sigrid;Undset;1882-05-20;1949-06-10;Denmark;DK;Kalundborg;Norway;NO;Lillehammer;female;1928;literature;;1;;;;;46
+602;Thomas;Mann;1875-06-06;1955-08-12;Germany;DE;Lübeck;Switzerland;CH;Zurich;male;1929;literature;;1;;;;;54
+603;Sinclair;Lewis;1885-02-07;1951-01-10;USA;US;Sauk Centre, MN;Italy;IT;Rome;male;1930;literature;;1;;;;;45
+604;Erik Axel;Karlfeldt;1864-07-20;1931-04-08;Sweden;SE;Karlbo;Sweden;SE;Stockholm;male;1931;literature;;1;;;;;67
+605;John;Galsworthy;1867-08-14;1933-01-31;United Kingdom;GB;Kingston Hill;United Kingdom;GB;London;male;1932;literature;;1;;;;;65
+606;Ivan Alekseyevich;Bunin;1870-10-22;1953-11-08;Russia;RU;Voronezh;France;FR;Paris;male;1933;literature;;1;;;;;63
+607;Luigi;Pirandello;1867-06-28;1936-12-10;Italy;IT;Agrigento, Sicily;Italy;IT;Rome;male;1934;literature;;1;;;;;67
+608;Eugene Gladstone;O'Neill;1888-10-16;1953-11-27;USA;US;New York, NY;USA;US;Boston, MA;male;1936;literature;;1;;;;;48
+609;Roger;Martin du Gard;1881-03-23;1958-08-22;France;FR;Neuilly-sur-Seine;France;FR;Bellême;male;1937;literature;;1;;;;;56
+610;Pearl;Buck;1892-06-26;1973-03-06;USA;US;Hillsboro, WV;USA;US;Danby, VT;female;1938;literature;;1;;;;;46
+613;Frans Eemil;Sillanpää;1888-09-16;1964-06-03;Russian Empire (now Finland);FI;Hämeenkyrö;Finland;FI;Helsinki;male;1939;literature;;1;;;;;51
+614;Johannes Vilhelm;Jensen;1873-01-20;1950-11-25;Denmark;DK;Farsø;Denmark;DK;Copenhagen;male;1944;literature;;1;;;;;71
+615;Gabriela;Mistral;1889-04-07;1957-01-10;Chile;CL;Vicuña;USA;US;Hempstead, NY;female;1945;literature;;1;;;;;56
+617;Hermann;Hesse;1877-07-02;1962-08-09;Germany;DE;Calw;Switzerland;CH;Montagnola;male;1946;literature;;1;;;;;69
+618;André Paul Guillaume;Gide;1869-11-22;1951-02-19;France;FR;Paris;France;FR;Paris;male;1947;literature;;1;;;;;78
+619;Thomas Stearns;Eliot;1888-09-26;1965-01-04;USA;US;St. Louis, MO;United Kingdom;GB;London;male;1948;literature;;1;;;;;60
+620;William;Faulkner;1897-09-25;1962-07-06;USA;US;New Albany, MS;USA;US;Byhalia, MS;male;1949;literature;;1;;;;;52
+621;Earl (Bertrand Arthur William);Russell;1872-05-18;1970-02-02;United Kingdom;GB;Trelleck;United Kingdom;GB;Penrhyndeudraeth;male;1950;literature;;1;;;;;78
+622;Pär Fabian;Lagerkvist;1891-05-23;1974-07-11;Sweden;SE;Växjö;Sweden;SE;Stockholm;male;1951;literature;;1;;;;;60
+623;François;Mauriac;1885-10-11;1970-09-01;France;FR;Bordeaux;France;FR;Paris;male;1952;literature;;1;;;;;67
+624;Sir Winston Leonard Spencer;Churchill;1874-11-30;1965-01-24;United Kingdom;GB;Woodstock;United Kingdom;GB;London;male;1953;literature;;1;;;;;79
+625;Ernest Miller;Hemingway;1899-07-21;1961-07-02;USA;US;Oak Park, IL;USA;US;Ketchum, ID;male;1954;literature;;1;;;;;55
+626;Halldór Kiljan;Laxness;1902-04-23;1998-02-08;Iceland;IS;Reykjavik;Iceland;IS;Reykjavik;male;1955;literature;;1;;;;;53
+627;Juan Ramón;Jiménez;1881-12-24;1958-05-29;Spain;ES;Moguer;Puerto Rico;PR;San Juan;male;1956;literature;;1;;;;;75
+628;Albert;Camus;1913-11-07;1960-01-04;French Algeria (now Algeria);DZ;Mondovi;France;FR;Sens;male;1957;literature;;1;;;;;44
+629;Boris Leonidovich;Pasternak;1890-02-10;1960-05-30;Russia;RU;Moscow;Russia;RU;Peredelkino;male;1958;literature;;1;;;;;68
+630;Salvatore;Quasimodo;1901-08-20;1968-06-14;Italy;IT;Modica;Italy;IT;Naples;male;1959;literature;;1;;;;;58
+631;Saint-John;Perse;1887-05-31;1975-09-20;Guadeloupe Island;GP;Pointe-à-Pitre;France;FR;Presqu'île-de-Giens;male;1960;literature;;1;;;;;73
+633;Ivo;Andric;1892-10-10;1975-03-13;Bosnia (now Bosnia and Herzegovina);BA;Dolac;Yugoslavia (now Serbia);RS;Belgrade;male;1961;literature;;1;;;;;69
+634;John;Steinbeck;1902-02-27;1968-12-20;USA;US;Salinas, CA;USA;US;New York, NY;male;1962;literature;;1;;;;;60
+635;Giorgos;Seferis;1900-03-13;1971-09-20;Ottoman Empire (now Turkey);TR;Smyrna (now Izmir);Greece;GR;Athens;male;1963;literature;;1;;;;;63
+637;Jean-Paul;Sartre;1905-06-21;1980-04-15;France;FR;Paris;France;FR;Paris;male;1964;literature;;1;;;;;59
+638;Mikhail Aleksandrovich;Sholokhov;1905-05-24;1984-02-21;Russia;RU;Veshenskaya;USSR;RU;Veshenskaya;male;1965;literature;;1;;;;;60
+639;Shmuel Yosef;Agnon;1888-07-17;1970-02-17;Austria-Hungary (now Ukraine);UA;Buczacz (now Buchach);Israel;IL;Rehovot;male;1966;literature;;2;;;;;78
+640;Nelly;Sachs;1891-12-10;1970-05-12;Germany;DE;Berlin;Sweden;SE;Stockholm;female;1966;literature;;2;;;;;75
+641;Miguel Angel;Asturias;1899-10-19;1974-06-09;Guatemala;GT;Guatemala City;Spain;ES;Madrid;male;1967;literature;;1;;;;;68
+642;Yasunari;Kawabata;1899-06-11;1972-04-16;Japan;JP;Osaka;Japan;JP;Zushi;male;1968;literature;;1;;;;;69
+643;Samuel;Beckett;1906-04-13;1989-12-22;Ireland;IE;Dublin;France;FR;Paris;male;1969;literature;;1;;;;;63
+644;Aleksandr Isayevich;Solzhenitsyn;1918-12-11;2008-08-03;Russia;RU;Kislovodsk;Russia;RU;Troitse-Lykovo;male;1970;literature;;1;;;;;52
+645;Pablo;Neruda;1904-07-12;1973-09-23;Chile;CL;Parral;Chile;CL;Santiago;male;1971;literature;;1;;;;;67
+647;Heinrich;Böll;1917-12-21;1985-07-16;Germany;DE;Cologne;West Germany (now Germany);DE;Bornheim-Merten;male;1972;literature;;1;;;;;55
+648;Patrick;White;1912-05-28;1990-09-30;United Kingdom;GB;London;Australia;AU;Sydney;male;1973;literature;;1;;;;;61
+649;Eyvind;Johnson;1900-07-29;1976-08-25;Sweden;SE;Svartbjörnsbyn;Sweden;SE;Stockholm;male;1974;literature;;2;;;;;74
+650;Harry;Martinson;1904-05-06;1978-02-11;Sweden;SE;Jämshög;Sweden;SE;Stockholm;male;1974;literature;;2;;;;;70
+651;Eugenio;Montale;1896-10-12;1981-09-12;Italy;IT;Genoa;Italy;IT;Milan;male;1975;literature;;1;;;;;79
+652;Saul;Bellow;1915-06-10;2005-04-05;Canada;CA;Montreal;USA;US;Brookline, MA;male;1976;literature;;1;;;;;61
+653;Vicente;Aleixandre;1898-04-26;1984-12-14;Spain;ES;Sevilla;Spain;ES;Madrid;male;1977;literature;;1;;;;;79
+654;Isaac Bashevis;Singer;1904-07-14;1991-07-24;Russian Empire (now Poland);PL;Leoncin;USA;US;Surfside, FL;male;1978;literature;;1;;;;;74
+655;Odysseus;Elytis;1911-11-02;1996-03-18;Crete (now Greece);GR;Iráklion;Greece;GR;Athens;male;1979;literature;;1;;;;;68
+657;Czeslaw;Milosz;1911-06-30;2004-08-14;Russian Empire (now Lithuania);LT;&#346$$eteniai;Poland;PL;Kraków;male;1980;literature;;1;;;;;69
+658;Elias;Canetti;1905-07-25;1994-08-14;Bulgaria;BG;Ruse;Switzerland;CH;Zurich;male;1981;literature;;1;;;;;76
+659;Gabriel;García Márquez;1927-03-06;2014-04-17;Colombia;CO;Aracataca;Mexico;MX;Mexico City;male;1982;literature;;1;;;;;55
+660;William;Golding;1911-09-19;1993-06-19;United Kingdom;GB;St. Columb Minor;United Kingdom;GB;Perranarworthal;male;1983;literature;;1;;;;;72
+661;Jaroslav;Seifert;1901-09-23;1986-01-10;Austria-Hungary (now Czech Republic);CZ;Prague;Czechoslovakia;CZ;Prague;male;1984;literature;;1;;;;;83
+662;Claude;Simon;1913-10-10;2005-07-06;Madagascar;MG;Tananarive (now Antananarivo);France;FR;Paris;male;1985;literature;;1;;;;;72
+663;Wole;Soyinka;1934-07-13;0000-00-00;Nigeria;NG;Abeokuta;;;;male;1986;literature;;1;;;;;52
+664;Joseph;Brodsky;1940-05-24;1996-01-28;USSR (now Russia);RU;Leningrad (now Saint Petersburg);USA;US;New York, NY;male;1987;literature;;1;;;;;47
+665;Naguib;Mahfouz;1911-12-11;2006-08-30;Egypt;EG;Cairo;Egypt;EG;Cairo;male;1988;literature;;1;;;;;77
+666;Camilo José;Cela;1916-05-11;2002-01-17;Spain;ES;Iria Flavia;Spain;ES;Madrid;male;1989;literature;;1;;;;;73
+667;Octavio;Paz;1914-03-31;1998-04-19;Mexico;MX;Mexico City;Mexico;MX;Mexico City;male;1990;literature;;1;;;;;76
+668;Nadine;Gordimer;1923-11-20;2014-07-13;South Africa;ZA;Springs;South Africa;ZA;Johannesburg;female;1991;literature;;1;;;;;68
+669;Derek;Walcott;1930-01-23;2017-03-17;Saint Lucia;LC;Castries;Saint Lucia;LC;Gros-Islet;male;1992;literature;;1;;;;;62
+670;Toni;Morrison;1931-02-18;0000-00-00;USA;US;Lorain, OH;;;;female;1993;literature;;1;;;;;62
+671;Kenzaburo;Oe;1935-01-31;0000-00-00;Japan;JP;Uchiko;;;;male;1994;literature;;1;;;;;59
+672;Seamus;Heaney;1939-04-13;2013-08-30;Northern Ireland;GB;Casteldàwson;Ireland;IE;Dublin;male;1995;literature;;1;;;;;56
+673;Wislawa;Szymborska;1923-07-02;2012-02-01;Poland;PL;Bnin (now Kórnik);Poland;PL;Kraków;female;1996;literature;;1;;;;;73
+674;Dario;Fo;1926-03-24;2016-10-13;Italy;IT;Leggiuno-Sangiano;Italy;IT;Milano;male;1997;literature;;1;;;;;71
+675;José;Saramago;1922-11-16;2010-06-18;Portugal;PT;Azinhaga;Spain;ES;Lanzarote;male;1998;literature;;1;;;;;76
+676;Günter;Grass;1927-10-16;2015-04-13;Free City of Danzig (now Poland);PL;Danzig (now Gdansk);Germany;DE;Lübeck;male;1999;literature;;1;;;;;72
+677;Ragnar;Frisch;1895-03-03;1973-01-31;Norway;NO;Oslo;Norway;NO;Oslo;male;1969;economics;;2;;University of Oslo;Oslo;Norway;74
+678;Jan;Tinbergen;1903-04-12;1994-06-09;the Netherlands;NL;the Hague;the Netherlands;NL;the Hague;male;1969;economics;;2;;The Netherlands School of Economics;Rotterdam;the Netherlands;66
+679;Paul A.;Samuelson;1915-05-15;2009-12-13;USA;US;Gary, IN;USA;US;Belmont, MA;male;1970;economics;;1;;Massachusetts Institute of Technology (MIT);Cambridge, MA;USA;55
+680;Simon;Kuznets;1901-04-30;1985-07-08;Russian Empire (now Belarus);BY;Pinsk;USA;US;Cambridge, MA;male;1971;economics;;1;;Harvard University;Cambridge, MA;USA;70
+681;John R.;Hicks;1904-04-08;1989-05-20;United Kingdom;GB;Warwick;United Kingdom;GB;Blockley;male;1972;economics;;2;;All Souls College;Oxford;United Kingdom;68
+682;Kenneth J.;Arrow;1921-08-23;2017-02-21;USA;US;New York, NY;USA;US;Palo Alto, CA;male;1972;economics;;2;;Harvard University;Cambridge, MA;USA;51
+683;Wassily;Leontief;1906-08-05;1999-02-05;Russia;RU;St. Petersburg;USA;US;New York, NY;male;1973;economics;;1;;Harvard University;Cambridge, MA;USA;67
+684;Gunnar;Myrdal;1898-12-06;1987-05-17;Sweden;SE;Skattungbyn;Sweden;SE;Stockholm;male;1974;economics;;2;;;;;76
+685;Friedrich August;von Hayek;1899-05-08;1992-03-23;Austria;AT;Vienna;Germany;DE;Freiburg;male;1974;economics;;2;;;;;75
+686;Leonid Vitaliyevich;Kantorovich;1912-01-19;1986-04-07;Russian Empire (now Russia);RU;St. Petersburg;USSR (now Russia);RU;Moscow;male;1975;economics;;2;;Academy of Sciences;Moscow;USSR;63
+687;Tjalling C.;Koopmans;1910-08-28;1985-02-26;the Netherlands;NL;'s Graveland;USA;US;New Haven, CT;male;1975;economics;;2;;Yale University;New Haven, CT;USA;65
+688;Milton;Friedman;1912-07-31;2006-11-16;USA;US;Brooklyn, NY;USA;US;San Francisco, CA;male;1976;economics;;1;;University of Chicago;Chicago, IL;USA;64
+689;Bertil;Ohlin;1899-04-23;1979-08-03;Sweden;SE;Klippan;Sweden;SE;Vålådalen;male;1977;economics;;2;;Stockholm School of Economics;Stockholm;Sweden;78
+690;James E.;Meade;1907-06-23;1995-12-22;United Kingdom;GB;Swanage;United Kingdom;GB;Cambridge;male;1977;economics;;2;;University of Cambridge;Cambridge;United Kingdom;70
+691;Herbert A.;Simon;1916-06-15;2001-02-09;USA;US;Milwaukee, WI;USA;US;Pittsburgh, PA;male;1978;economics;;1;;Carnegie Mellon University;Pittsburgh, PA;USA;62
+692;Theodore W.;Schultz;1902-04-30;1998-02-26;USA;US;Arlington, SD;USA;US;Evanston, IL;male;1979;economics;;2;;University of Chicago;Chicago, IL;USA;77
+693;Sir Arthur;Lewis;1915-01-23;1991-06-15;British West Indies (now Saint Lucia);LC;Castries;Barbados;BB;Bridgetown;male;1979;economics;;2;;Princeton University;Princeton, NJ;USA;64
+694;Lawrence R.;Klein;1920-09-14;2013-10-20;USA;US;Omaha, NE;USA;US;Gladwyne, PA;male;1980;economics;;1;;University of Pennsylvania;Philadelphia, PA;USA;60
+695;James;Tobin;1918-03-05;2002-03-11;USA;US;Champaign, IL;USA;US;New Haven, CT;male;1981;economics;;1;;Yale University;New Haven, CT;USA;63
+696;George J.;Stigler;1911-01-17;1991-12-01;USA;US;Renton, WA;USA;US;Chicago, IL;male;1982;economics;;1;;University of Chicago;Chicago, IL;USA;71
+697;Gerard;Debreu;1921-07-04;2004-12-31;France;FR;Calais;France;FR;Paris;male;1983;economics;;1;;University of California;Berkeley, CA;USA;62
+698;Richard;Stone;1913-08-30;1991-12-06;United Kingdom;GB;London;United Kingdom;GB;Cambridge;male;1984;economics;;1;;University of Cambridge;Cambridge;United Kingdom;71
+699;Franco;Modigliani;1918-06-18;2003-09-25;Italy;IT;Rome;USA;US;Cambridge, MA;male;1985;economics;;1;;Massachusetts Institute of Technology (MIT);Cambridge, MA;USA;67
+700;James M.;Buchanan Jr.;1919-10-03;2013-01-09;USA;US;Murfreesboro, TN;USA;US;Blacksburg, VA;male;1986;economics;;1;;Center for Study of Public Choice;Fairfax, VA;USA;67
+701;Robert M.;Solow;1924-08-23;0000-00-00;USA;US;Brooklyn, NY;;;;male;1987;economics;;1;;Massachusetts Institute of Technology (MIT);Cambridge, MA;USA;63
+702;Maurice;Allais;1911-05-31;2010-10-09;France;FR;Paris;France;FR;Paris;male;1988;economics;;1;;École Nationale Supérieur des Mines de Paris;Paris;France;77
+703;Trygve;Haavelmo;1911-12-13;1999-07-26;Norway;NO;Skedsmo;Norway;NO;Oslo;male;1989;economics;;1;;University of Oslo;Oslo;Norway;78
+704;Harry M.;Markowitz;1927-08-24;0000-00-00;USA;US;Chicago, IL;;;;male;1990;economics;;3;;City University of New York;New York, NY;USA;63
+705;Merton H.;Miller;1923-05-16;2000-06-03;USA;US;Boston, MA;USA;US;Chicago, IL;male;1990;economics;;3;;University of Chicago;Chicago, IL;USA;67
+706;William F.;Sharpe;1934-06-16;0000-00-00;USA;US;Boston, MA;;;;male;1990;economics;;3;;Stanford University;Stanford, CA;USA;56
+707;Ronald H.;Coase;1910-12-29;2013-09-02;United Kingdom;GB;Willesden;USA;US;Chicago, IL;male;1991;economics;;1;;University of Chicago;Chicago, IL;USA;81
+708;Gary S.;Becker;1930-12-02;2014-05-03;USA;US;Pottsville, PA;USA;US;Chicago, IL;male;1992;economics;;1;;University of Chicago;Chicago, IL;USA;62
+709;Robert W.;Fogel;1927-07-01;2013-06-11;USA;US;New York, NY;USA;US;Oak Lawn, IL;male;1993;economics;;2;;University of Chicago;Chicago, IL;USA;66
+710;Douglass C.;North;1920-11-05;2015-11-23;USA;US;Cambridge, MA;USA;US;Benzonia, MI;male;1993;economics;;2;;Washington University;St. Louis, MO;USA;73
+711;John C.;Harsanyi;1920-05-29;2000-08-09;Hungary;HU;Budapest;USA;US;Berkeley, CA;male;1994;economics;;3;;University of California;Berkeley, CA;USA;74
+712;John F.;Nash Jr.;1928-06-13;2015-05-23;USA;US;Bluefield, WV;USA;US;New Jersey, NJ;male;1994;economics;;3;;Princeton University;Princeton, NJ;USA;66
+713;Reinhard;Selten;1930-10-05;2016-08-23;Germany (now Poland);PL;Breslau (now Wroclaw);Poland;PL;Poznan;male;1994;economics;;3;;Rheinische Friedrich-Wilhelms-Universität;Bonn;Federal Republic of Germany;64
+714;Robert E.;Lucas Jr.;1937-09-15;0000-00-00;USA;US;Yakima, WA;;;;male;1995;economics;;1;;University of Chicago;Chicago, IL;USA;58
+715;James A.;Mirrlees;1936-07-05;2018-08-29;Scotland;GB;Minnigaff;United Kingdom;GB;Cambridge;male;1996;economics;;2;;University of Cambridge;Cambridge;United Kingdom;60
+716;William;Vickrey;1914-06-21;1996-10-11;Canada;CA;Victoria, BC;USA;US;Harrison, NY;male;1996;economics;;2;;Columbia University;New York, NY;USA;82
+717;Robert C.;Merton;1944-07-31;0000-00-00;USA;US;New York, NY;;;;male;1997;economics;;2;;Harvard University;Cambridge, MA;USA;53
+718;Myron S.;Scholes;1941-07-01;0000-00-00;Canada;CA;Timmins, ON;;;;male;1997;economics;;2;;Long Term Capital Management;Greenwich, CT;USA;56
+719;Amartya;Sen;1933-11-03;0000-00-00;India;IN;Santiniketan;;;;male;1998;economics;;1;;Trinity College;Cambridge;United Kingdom;65
+720;Robert A.;Mundell;1932-10-24;0000-00-00;Canada;CA;Kingston, ON;;;;male;1999;economics;;1;;Columbia University;New York, NY;USA;67
+721;Il´ja Mikhailovich;Frank;1908-10-23;1990-06-22;Russia;RU;Leningrad (now Saint Petersburg);USSR (now Russia);RU;Moscow;male;1958;physics;;3;;P.N. Lebedev Physical Institute;Moscow;USSR;50
+722;Arvid;Carlsson;1923-01-25;2018-06-29;Sweden;SE;Uppsala;Sweden;SE;Göteborg;male;2000;medicine;;3;;Göteborg University;Gothenburg;Sweden;77
+723;Paul;Greengard;1925-12-11;0000-00-00;USA;US;New York, NY;;;;male;2000;medicine;;3;;Rockefeller University;New York, NY;USA;75
+724;Eric R.;Kandel;1929-11-07;0000-00-00;Austria;AT;Vienna;;;;male;2000;medicine;;3;;Columbia University;New York, NY;USA;71
+725;Kim;Dae-jung;1925-12-03;2009-08-18;Korea (now South Korea);KR;Mokpo;;;;male;2000;peace;;1;;;;;75
+726;Zhores I.;Alferov;1930-03-15;0000-00-00;USSR (now Belarus);BY;Vitebsk, Belorussia;;;;male;2000;physics;"""for basic work on information and communication technology""";4;;A.F. Ioffe Physico-Technical Institute;St. Petersburg;Russia;70
+727;Herbert;Kroemer;1928-08-25;0000-00-00;Germany;DE;Weimar;;;;male;2000;physics;"""for basic work on information and communication technology""";4;;University of California;Santa Barbara, CA;USA;72
+728;Jack S.;Kilby;1923-11-08;2005-06-20;USA;US;Jefferson City, MO;USA;US;Dallas, TX;male;2000;physics;"""for basic work on information and communication technology""";2;;Texas Instruments;Dallas, TX;USA;77
+729;Alan J.;Heeger;1936-01-22;0000-00-00;USA;US;Sioux City, IA;;;;male;2000;chemistry;;3;;University of California;Santa Barbara, CA;USA;64
+730;Alan G.;MacDiarmid;1927-04-14;2007-02-07;New Zealand;NZ;Masterton;USA;US;Drexel Hill, PA;male;2000;chemistry;;3;;University of Pennsylvania;Philadelphia, PA;USA;73
+731;Hideki;Shirakawa;1936-08-20;0000-00-00;Japan;JP;Tokyo;;;;male;2000;chemistry;;3;;University of Tsukuba;Tokyo;Japan;64
+732;James J.;Heckman;1944-04-19;0000-00-00;USA;US;Chicago, IL;;;;male;2000;economics;;2;;University of Chicago;Chicago, IL;USA;56
+733;Daniel L.;McFadden;1937-07-29;0000-00-00;USA;US;Raleigh, NC;;;;male;2000;economics;;2;;University of California;Berkeley, CA;USA;63
+734;Gao;Xingjian;1940-01-04;0000-00-00;China;CN;Ganzhou;;;;male;2000;literature;;1;;;;;60
+735;Leland H.;Hartwell;1939-10-30;0000-00-00;USA;US;Los Angeles, CA;;;;male;2001;medicine;;3;;Fred Hutchinson Cancer Research Center;Seattle, WA;USA;62
+736;Tim;Hunt;1943-02-19;0000-00-00;United Kingdom;GB;Neston;;;;male;2001;medicine;;3;;Imperial Cancer Research Fund;London;United Kingdom;58
+737;Sir Paul M.;Nurse;1949-01-25;0000-00-00;United Kingdom;GB;Norwich;;;;male;2001;medicine;;3;;Imperial Cancer Research Fund;London;United Kingdom;52
+738;Eric A.;Cornell;1961-12-19;0000-00-00;USA;US;Palo Alto, CA;;;;male;2001;physics;;3;;University of Colorado, JILA;Boulder, CO;USA;40
+739;Wolfgang;Ketterle;1957-10-21;0000-00-00;West Germany (now Germany);DE;Heidelberg;;;;male;2001;physics;;3;;Massachusetts Institute of Technology (MIT);Cambridge, MA;USA;44
+740;Carl E.;Wieman;1951-03-26;0000-00-00;USA;US;Corvallis, OR;;;;male;2001;physics;;3;;University of Colorado, JILA;Boulder, CO;USA;50
+741;William S.;Knowles;1917-06-01;2012-06-13;USA;US;Taunton, MA;USA;US;Chesterfield, MO;male;2001;chemistry;;4;;;St. Louis, MO;USA;84
+742;Ryoji;Noyori;1938-09-03;0000-00-00;Japan;JP;Kobe;;;;male;2001;chemistry;;4;;Nagoya University;Nagoya;Japan;63
+743;K. Barry;Sharpless;1941-04-28;0000-00-00;USA;US;Philadelphia, PA;;;;male;2001;chemistry;;2;;The Scripps Research Institute;La Jolla, CA;USA;60
+744;George A.;Akerlof;1940-06-17;0000-00-00;USA;US;New Haven, CT;;;;male;2001;economics;;3;;University of California;Berkeley, CA;USA;61
+745;A. Michael;Spence;1943-00-00;0000-00-00;USA;US;Montclair, NJ;;;;male;2001;economics;;3;;Stanford University;Stanford, CA;USA;58
+746;Joseph E.;Stiglitz;1943-02-09;0000-00-00;USA;US;Gary, IN;;;;male;2001;economics;;3;;Columbia University;New York, NY;USA;58
+747;Sir Vidiadhar Surajprasad;Naipaul;1932-08-17;2018-08-11;;;;United Kingdom;GB;London;male;2001;literature;;1;;;;;69
+748;United Nations (U.N.);;0000-00-00;0000-00-00;;;;;;;org;2001;peace;;2;;;;;NA
+749;Kofi;Annan;1938-04-08;0000-00-00;Gold Coast (now Ghana);GH;Kumasi;;;;male;2001;peace;;2;;;;;63
+750;Sydney;Brenner;1927-01-13;0000-00-00;South Africa;ZA;Germiston;;;;male;2002;medicine;;3;;The Molecular Sciences Institute;Berkeley, CA;USA;75
+751;H. Robert;Horvitz;1947-05-08;0000-00-00;USA;US;Chicago, IL;;;;male;2002;medicine;;3;;Massachusetts Institute of Technology (MIT);Cambridge, MA;USA;55
+752;John E.;Sulston;1942-03-27;2018-03-06;United Kingdom;GB;Cambridge;;;;male;2002;medicine;;3;;The Wellcome Trust Sanger Institute;Cambridge;United Kingdom;60
+753;Raymond;Davis Jr.;1914-10-14;2006-05-31;USA;US;Washington, DC;USA;US;Blue Point, NY;male;2002;physics;;4;;University of Pennsylvania;Philadelphia, PA;USA;88
+754;Masatoshi;Koshiba;1926-09-19;0000-00-00;Japan;JP;Toyohashi;;;;male;2002;physics;;4;;University of Tokyo;Tokyo;Japan;76
+755;Riccardo;Giacconi;1931-10-06;0000-00-00;Italy;IT;Genoa;;;;male;2002;physics;;2;;Associated Universities Inc.;Washington, DC;USA;71
+756;John B.;Fenn;1917-06-15;2010-12-10;USA;US;New York, NY;USA;US;Richmond, VA;male;2002;chemistry;"""for the development of methods for identification and structure analyses of biological macromolecules""";4;;Virginia Commonwealth University;Richmond, VA;USA;85
+757;Koichi;Tanaka;1959-08-03;0000-00-00;Japan;JP;Toyama City;;;;male;2002;chemistry;"""for the development of methods for identification and structure analyses of biological macromolecules""";4;;Shimadzu Corp.;Kyoto;Japan;43
+758;Kurt;Wüthrich;1938-10-04;0000-00-00;Switzerland;CH;Aarberg;;;;male;2002;chemistry;"""for the development of methods for identification and structure analyses of biological macromolecules""";2;;The Scripps Research Institute;La Jolla, CA;USA;64
+759;Daniel;Kahneman;1934-03-05;0000-00-00;British Mandate of Palestine (now Israel);IL;Tel Aviv;;;;male;2002;economics;;2;;Princeton University;Princeton, NJ;USA;68
+760;Vernon L.;Smith;1927-01-01;0000-00-00;USA;US;Wichita, KS;;;;male;2002;economics;;2;;George Mason University;Fairfax, VA;USA;75
+761;Imre;Kertész;1929-11-09;2016-03-31;Hungary;HU;Budapest;Hungary;HU;Budapest;male;2002;literature;;1;;;;;73
+762;Jimmy;Carter;1924-10-01;0000-00-00;USA;US;Plains, GA;;;;male;2002;peace;;1;;;;;78
+763;John M.;Coetzee;1940-02-09;0000-00-00;South Africa;ZA;Cape Town;;;;male;2003;literature;;1;;;;;63
+764;Paul C.;Lauterbur;1929-05-06;2007-03-27;USA;US;Sidney, OH;USA;US;Urbana, IL;male;2003;medicine;;2;;University of Illinois;Urbana, IL;USA;74
+765;Sir Peter;Mansfield;1933-10-09;2017-02-08;United Kingdom;GB;London;;;;male;2003;medicine;;2;;University of Nottingham, School of Physics and Astronomy;Nottingham;United Kingdom;70
+766;Alexei A.;Abrikosov;1928-06-25;2017-03-29;USSR (now Russia);RU;Moscow;;;;male;2003;physics;;3;;Argonne National Laboratory;Argonne, IL;USA;75
+767;Vitaly L.;Ginzburg;1916-10-04;2009-11-08;Russia;RU;Moscow;;;;male;2003;physics;;3;;P.N. Lebedev Physical Institute;Moscow;Russia;87
+768;Anthony J.;Leggett;1938-03-26;0000-00-00;United Kingdom;GB;London;;;;male;2003;physics;;3;;University of Illinois;Urbana, IL;USA;65
+769;Peter;Agre;1949-01-30;0000-00-00;USA;US;Northfield, MN;;;;male;2003;chemistry;"""for discoveries concerning channels in cell membranes""";2;;Johns Hopkins University School of Medicine;Baltimore, MD;USA;54
+770;Roderick;MacKinnon;1956-02-19;0000-00-00;USA;US;Burlington, MA;;;;male;2003;chemistry;"""for discoveries concerning channels in cell membranes""";2;;Howard Hughes Medical Institute;;;47
+771;Robert F.;Engle III;1942-11-10;0000-00-00;USA;US;Syracuse, NY;;;;male;2003;economics;;2;;New York University;New York, NY;USA;61
+772;Clive W.J.;Granger;1934-09-04;2009-05-27;United Kingdom;GB;Swansea;USA;US;San Diego, CA;male;2003;economics;;2;;University of California;San Diego, CA;USA;69
+773;Shirin;Ebadi;1947-06-21;0000-00-00;Iran;IR;Hamadan;;;;female;2003;peace;;1;;;;;56
+774;Richard;Axel;1946-07-02;0000-00-00;USA;US;New York, NY;;;;male;2004;medicine;;2;;Columbia University;New York, NY;USA;58
+775;Linda B.;Buck;1947-01-29;0000-00-00;USA;US;Seattle, WA;;;;female;2004;medicine;;2;;Fred Hutchinson Cancer Research Center;Seattle, WA;USA;57
+776;David J.;Gross;1941-02-19;0000-00-00;USA;US;Washington, DC;;;;male;2004;physics;;3;;University of California, Kavli Institute for Theoretical Physics;Santa Barbara, CA;USA;63
+777;H. David;Politzer;1949-08-31;0000-00-00;USA;US;New York, NY;;;;male;2004;physics;;3;;California Institute of Technology (Caltech);Pasadena, CA;USA;55
+778;Frank;Wilczek;1951-05-15;0000-00-00;USA;US;New York, NY;;;;male;2004;physics;;3;;Massachusetts Institute of Technology (MIT);Cambridge, MA;USA;53
+779;Aaron;Ciechanover;1947-10-01;0000-00-00;British Protectorate of Palestine (now Israel);IL;Haifa;;;;male;2004;chemistry;;3;;Technion - Israel Institute of Technology;Haifa;Israel;57
+780;Avram;Hershko;1937-12-31;0000-00-00;Hungary;HU;Karcag;;;;male;2004;chemistry;;3;;Technion - Israel Institute of Technology;Haifa;Israel;67
+781;Irwin;Rose;1926-07-16;2015-06-03;USA;US;Brooklyn, NY;USA;US;Deerfield, MA;male;2004;chemistry;;3;;University of California;Irvine, CA;USA;78
+782;Elfriede;Jelinek;1946-10-20;0000-00-00;Austria;AT;Mürzzuschlag;;;;female;2004;literature;;1;;;;;58
+783;Wangari Muta;Maathai;1940-04-01;2011-09-25;Kenya;KE;Nyeri;Kenya;KE;Nairobi;female;2004;peace;;1;;;;;64
+786;Finn E.;Kydland;1943-12-01;0000-00-00;Norway;NO;Gjesdal;;;;male;2004;economics;;2;;University of California;Santa Barbara, CA;USA;61
+787;Edward C.;Prescott;1940-12-26;0000-00-00;USA;US;Glens Falls, NY;;;;male;2004;economics;;2;;Federal Reserve Bank of Minneapolis;Minneapolis, MN;USA;64
+789;Barry J.;Marshall;1951-09-30;0000-00-00;Australia;AU;Kalgoorlie;;;;male;2005;medicine;;2;;University of Western Australia;Perth;Australia;54
+790;J. Robin;Warren;1937-06-11;0000-00-00;Australia;AU;Adelaide;;;;male;2005;medicine;;2;;;Perth;Australia;68
+791;Roy J.;Glauber;1925-09-01;0000-00-00;USA;US;New York, NY;;;;male;2005;physics;;2;;Harvard University;Cambridge, MA;USA;80
+792;John L.;Hall;1934-08-21;0000-00-00;USA;US;Denver, CO;;;;male;2005;physics;;4;;National Institute of Standards and Technology;Boulder, CO;USA;71
+793;Theodor W.;Hänsch;1941-10-30;0000-00-00;Germany;DE;Heidelberg;;;;male;2005;physics;;4;;Ludwig-Maximilians- Universität;Munich;Germany;64
+794;Yves;Chauvin;1930-10-10;2015-01-27;Belgium;BE;Menin;France;FR;Tours;male;2005;chemistry;;3;;Institut Français du Pétrole;Rueil-Malmaison;France;75
+795;Robert H.;Grubbs;1942-02-27;0000-00-00;USA;US;Possum Trot, KY;;;;male;2005;chemistry;;3;;California Institute of Technology (Caltech);Pasadena, CA;USA;63
+796;Richard R.;Schrock;1945-01-04;0000-00-00;USA;US;Berne, IN;;;;male;2005;chemistry;;3;;Massachusetts Institute of Technology (MIT);Cambridge, MA;USA;60
+797;International Atomic Energy Agency (IAEA);;0000-00-00;0000-00-00;;;;;;;org;2005;peace;;2;;;;;NA
+798;Mohamed;ElBaradei;1942-06-17;0000-00-00;Egypt;EG;Cairo;;;;male;2005;peace;;2;;;;;63
+799;Robert J.;Aumann;1930-06-08;0000-00-00;Germany;DE;Frankfurt-on-the-Main;;;;male;2005;economics;;2;;University of Jerusalem, Center for RationalityHebrew;Jerusalem;Israel;75
+800;Thomas C.;Schelling;1921-04-14;2016-12-13;USA;US;Oakland, CA;USA;US;Bethesda, MD;male;2005;economics;;2;;University of Maryland, Department of Economics and School of Public Policy;College Park, MD;USA;84
+801;Harold;Pinter;1930-10-10;2008-12-24;United Kingdom;GB;London;United Kingdom;GB;London;male;2005;literature;;1;;;;;75
+802;Andrew Z.;Fire;1959-04-27;0000-00-00;USA;US;Stanford, CA;;;;male;2006;medicine;;2;;Stanford University School of Medicine;Stanford, CA;USA;47
+803;Craig C.;Mello;1960-10-19;0000-00-00;USA;US;New Haven, CT;;;;male;2006;medicine;;2;;University of Massachusetts Medical School;Worcester, MA;USA;46
+804;John C.;Mather;1946-08-07;0000-00-00;USA;US;Roanoke, VA;;;;male;2006;physics;;2;;NASA Goddard Space Flight Center;Greenbelt, MD;USA;60
+805;George F.;Smoot;1945-02-20;0000-00-00;USA;US;Yukon, FL;;;;male;2006;physics;;2;;University of California;Berkeley, CA;USA;61
+806;Roger D.;Kornberg;1947-04-24;0000-00-00;USA;US;St. Louis, MO;;;;male;2006;chemistry;;1;;Stanford University;Stanford, CA;USA;59
+807;Edmund S.;Phelps;1933-07-26;0000-00-00;USA;US;Evanston, IL;;;;male;2006;economics;;1;;Columbia University;New York, NY;USA;73
+808;Orhan;Pamuk;1952-06-07;0000-00-00;Turkey;TR;Istanbul;;;;male;2006;literature;;1;;;;;54
+809;Muhammad;Yunus;1940-06-28;0000-00-00;British India (now Bangladesh);BD;Chittagong;;;;male;2006;peace;;2;;;;;66
+810;Grameen Bank;;0000-00-00;0000-00-00;;;;;;;org;2006;peace;;2;;;;;NA
+811;Mario R.;Capecchi;1937-10-06;0000-00-00;Italy;IT;Verona;;;;male;2007;medicine;;3;;Howard Hughes Medical Institute;;;70
+812;Sir Martin J.;Evans;1941-01-01;0000-00-00;United Kingdom;GB;Stroud;;;;male;2007;medicine;;3;;Cardiff University;Cardiff;United Kingdom;66
+813;Oliver;Smithies;1925-06-23;2017-01-10;United Kingdom;GB;Halifax;USA;US;Chapel Hill, NC;male;2007;medicine;;3;;University of North Carolina;Chapel Hill, NC;USA;82
+814;Albert;Fert;1938-03-07;0000-00-00;France;FR;Carcassonne;;;;male;2007;physics;;2;;Unit&eacute$$ Mixte de Physique CNRS/THALES;Orsay;France;69
+815;Peter;Grünberg;1939-05-18;2018-04-09;Czechoslovakia (now Czech Republic);CZ;Plzen;Germany;DE;J&uuml$$lich;male;2007;physics;;2;;Forschungszentrum J&uuml$$lich;J&uuml$$lich;Germany;68
+816;Gerhard;Ertl;1936-10-10;0000-00-00;Germany;DE;Bad Cannstatt;;;;male;2007;chemistry;;1;;Fritz-Haber-Institut der Max-Planck-Gesellschaft;Berlin;Germany;71
+817;Doris;Lessing;1919-10-22;2013-11-17;Persia (now Iran);IR;Kermanshah;United Kingdom;GB;London;female;2007;literature;;1;;;;;88
+818;Intergovernmental Panel on Climate Change (IPCC);;0000-00-00;0000-00-00;;;;;;;org;2007;peace;;2;;;;;NA
+819;Albert Arnold (Al);Gore Jr.;1948-03-31;0000-00-00;USA;US;Washington, DC;;;;male;2007;peace;;2;;;;;59
+820;Leonid;Hurwicz;1917-08-21;2008-06-24;Russia;RU;Moscow;USA;US;Minneapolis, MN;male;2007;economics;;3;;University of Minnesota;Minneapolis, MN;USA;90
+821;Eric S.;Maskin;1950-12-12;0000-00-00;USA;US;New York, NY;;;;male;2007;economics;;3;;Institute for Advanced Study;Princeton, NJ;USA;57
+822;Roger B.;Myerson;1951-03-29;0000-00-00;USA;US;Boston, MA;;;;male;2007;economics;;3;;University of Chicago;Chicago, IL;USA;56
+823;Harald;zur Hausen;1936-03-11;0000-00-00;Germany;DE;Gelsenkirchen;;;;male;2008;medicine;;2;;German Cancer Research Center;Heidelberg;Germany;72
+824;Françoise;Barré-Sinoussi;1947-07-30;0000-00-00;France;FR;Paris;;;;female;2008;medicine;;4;;Regulation of Retroviral Infections Unit, Virology Department, Institut Pasteur;Paris;France;61
+825;Luc;Montagnier;1932-08-18;0000-00-00;France;FR;Chabris;;;;male;2008;medicine;;4;;World Foundation for AIDS Research and Prevention;Paris;France;76
+826;Yoichiro;Nambu;1921-01-18;2015-07-05;Japan;JP;Tokyo;Japan;JP;Osaka;male;2008;physics;;2;;Enrico Fermi Institute, University of Chicago;Chicago, IL;USA;87
+827;Makoto;Kobayashi;1944-04-07;0000-00-00;Japan;JP;Nagoya;;;;male;2008;physics;;4;;High Energy Accelerator Research Organization (KEK);Tsukuba;Japan;64
+828;Toshihide;Maskawa;1940-02-07;0000-00-00;Japan;JP;Nagoya;;;;male;2008;physics;;4;;Yukawa Institute for Theoretical Physics (YITP), Kyoto University;Kyoto;Japan;68
+829;Osamu;Shimomura;1928-08-27;0000-00-00;Japan;JP;Kyoto;;;;male;2008;chemistry;;3;;Boston University Medical School;Massachusetts, MA;USA;80
+830;Martin;Chalfie;1947-01-15;0000-00-00;USA;US;Chicago, IL;;;;male;2008;chemistry;;3;;Columbia University;New York, NY;USA;61
+831;Roger Y.;Tsien;1952-02-01;2016-08-24;USA;US;New York, NY;USA;US;Eugene, OR;male;2008;chemistry;;3;;Howard Hughes Medical Institute;;;56
+832;Jean-Marie Gustave;Le Clézio;1940-04-13;0000-00-00;France;FR;Nice;;;;male;2008;literature;;1;;;;;68
+833;Martti;Ahtisaari;1937-06-23;0000-00-00;Finland;FI;Viipuri (now Vyborg);;;;male;2008;peace;;1;;;;;71
+834;Paul;Krugman;1953-02-28;0000-00-00;USA;US;New York, NY;;;;male;2008;economics;;1;;Princeton University;Princeton, NJ;USA;55
+835;Elizabeth H.;Blackburn;1948-11-26;0000-00-00;Australia;AU;Hobart, Tasmania;;;;female;2009;medicine;;3;;University of California;San Francisco, CA;USA;61
+836;Carol W.;Greider;1961-04-15;0000-00-00;USA;US;San Diego, CA;;;;female;2009;medicine;;3;;Johns Hopkins University School of Medicine;Baltimore, MD;USA;48
+837;Jack W.;Szostak;1952-11-09;0000-00-00;United Kingdom;GB;London;;;;male;2009;medicine;;3;;Howard Hughes Medical Institute;;;57
+838;Charles Kuen;Kao;1933-11-04;0000-00-00;China;CN;Shanghai;;;;male;2009;physics;;2;;Chinese University of Hong Kong;Hong Kong;China;76
+839;Willard S.;Boyle;1924-08-19;2011-05-07;Canada;CA;Amherst, NS;Canada;CA;Truro, NS;male;2009;physics;;4;;Bell Laboratories;Murray Hill, NJ;USA;85
+840;George E.;Smith;1930-05-10;0000-00-00;USA;US;White Plains, NY;;;;male;2009;physics;;4;;Bell Laboratories;Murray Hill, NJ;USA;79
+841;Venkatraman;Ramakrishnan;0000-00-00;0000-00-00;India;IN;Chidambaram, Tamil Nadu;;;;male;2009;chemistry;;3;;MRC Laboratory of Molecular Biology;Cambridge;United Kingdom;NA
+842;Thomas A.;Steitz;1940-08-23;0000-00-00;USA;US;Milwaukee, WI;;;;male;2009;chemistry;;3;;Howard Hughes Medical Institute;;;69
+843;Ada E.;Yonath;1939-06-22;0000-00-00;British Mandate of Palestine (now Israel);IL;Jerusalem;;;;female;2009;chemistry;;3;;Weizmann Institute of Science;Rehovot;Israel;70
+844;Herta;Müller;1953-08-17;0000-00-00;Romania;RO;Nitzkydorf, Banat;;;;female;2009;literature;;1;;;;;56
+845;Barack H.;Obama;1961-08-04;0000-00-00;USA;US;Honolulu, HI;;;;male;2009;peace;;1;;;;;48
+846;Elinor;Ostrom;1933-08-07;2012-06-12;USA;US;Los Angeles, CA;USA;US;Bloomington, IN;female;2009;economics;;2;;Arizona State University;Tempe, AZ;USA;76
+847;Oliver E.;Williamson;1932-09-27;0000-00-00;USA;US;Superior, WI;;;;male;2009;economics;;2;;University of California;Berkeley, CA;USA;77
+848;Robert G.;Edwards;1925-09-27;2013-04-10;United Kingdom;GB;Batley;United Kingdom;GB;Cambridge;male;2010;medicine;;1;;University of Cambridge;Cambridge;United Kingdom;85
+849;Andre;Geim;1958-10-21;0000-00-00;Russia;RU;Sochi;;;;male;2010;physics;;2;;University of Manchester;Manchester;United Kingdom;52
+850;Konstantin;Novoselov;1974-08-23;0000-00-00;Russia;RU;Nizhny Tagil;;;;male;2010;physics;;2;;University of Manchester;Manchester;United Kingdom;36
+851;Richard F.;Heck;1931-08-15;2015-10-09;USA;US;Springfield, MA;Philippines;;Manila;male;2010;chemistry;;3;;University of Delaware;;USA;79
+852;Ei-ichi;Negishi;1935-07-14;0000-00-00;China;CN;Changchun;;;;male;2010;chemistry;;3;;Purdue University;West Lafayette, IN;USA;75
+853;Akira;Suzuki;1930-09-12;0000-00-00;Japan;JP;Mukawa;;;;male;2010;chemistry;;3;;Hokkaido University;Sapporo;Japan;80
+854;Mario;Vargas Llosa;1936-03-28;0000-00-00;Peru;PE;Arequipa;;;;male;2010;literature;;1;;;;;74
+855;Liu;Xiaobo;1955-12-28;2017-07-13;China;CN;Changchun;China;CN;Shenyang;male;2010;peace;;1;;;;;55
+856;Peter A.;Diamond;1940-04-29;0000-00-00;USA;US;New York, NY;;;;male;2010;economics;;3;;Massachusetts Institute of Technology (MIT);Cambridge, MA;USA;70
+857;Dale T.;Mortensen;1939-02-02;2014-01-09;USA;US;Enterprise, OR;USA;US;Wilmette, IL;male;2010;economics;;3;;Aarhus University;Aarhus;Denmark;71
+858;Christopher A.;Pissarides;1948-02-20;0000-00-00;Cyprus;CY;Nicosia;;;;male;2010;economics;;3;;London School of Economics and Political Science;London;United Kingdom;62
+861;Bruce A.;Beutler;1957-12-29;0000-00-00;USA;US;Chicago, IL;;;;male;2011;medicine;;4;;The Scripps Research Institute;La Jolla, CA;USA;54
+862;Jules A.;Hoffmann;1941-08-02;0000-00-00;Luxembourg;LU;Echternach;;;;male;2011;medicine;;4;;University of Strasbourg;Strasbourg;France;70
+863;Ralph M.;Steinman;1943-01-14;2011-09-30;Canada;CA;Montreal;;;;male;2011;medicine;;2;;Rockefeller University;New York, NY;USA;68
+864;Saul;Perlmutter;0000-00-00;0000-00-00;USA;US;Champaign-Urbana, IL;;;;male;2011;physics;;2;;University of California;Berkeley, CA;USA;NA
+865;Brian P.;Schmidt;1967-02-24;0000-00-00;USA;US;Missoula, MT;;;;male;2011;physics;;4;;Australian National University;Weston Creek;Australia;44
+866;Adam G.;Riess;1969-12-16;0000-00-00;USA;US;Washington, DC;;;;male;2011;physics;;4;;Space Telescope Science Institute;Baltimore, MD;USA;42
+867;Dan;Shechtman;1941-01-24;0000-00-00;British Mandate of Palestine (now Israel);IL;Tel Aviv;;;;male;2011;chemistry;;1;;Technion - Israel Institute of Technology;Haifa;Israel;70
+868;Tomas;Tranströmer;1931-04-15;2015-03-26;Sweden;SE;Stockholm;Sweden;SE;Stockholm;male;2011;literature;;1;;;;;80
+869;Ellen;Johnson Sirleaf;1938-10-29;0000-00-00;Liberia;LR;Monrovia;;;;female;2011;peace;;3;;;;;73
+870;Leymah;Gbowee;1972-02-01;0000-00-00;Liberia;LR;Monrovia;;;;female;2011;peace;;3;;;;;39
+871;Tawakkol;Karman;1979-02-07;0000-00-00;Yemen;YE;Ta'izz;;;;female;2011;peace;;3;;;;;32
+872;Thomas J.;Sargent;1943-07-19;0000-00-00;USA;US;Pasadena, CA;;;;male;2011;economics;;2;;New York University;New York, NY;USA;68
+873;Christopher A.;Sims;1942-10-21;0000-00-00;USA;US;Washington, DC;;;;male;2011;economics;;2;;Princeton University;Princeton, NJ;USA;69
+874;Sir John B.;Gurdon;1933-10-02;0000-00-00;United Kingdom;GB;Dippenhall;;;;male;2012;medicine;;2;;Gurdon Institute;Cambridge;United Kingdom;79
+875;Shinya;Yamanaka;1962-09-04;0000-00-00;Japan;JP;Osaka;;;;male;2012;medicine;;2;;Gladstone Institutes;San Francisco, CA;USA;50
+876;Serge;Haroche;1944-09-11;0000-00-00;Morocco;MA;Casablanca;;;;male;2012;physics;;2;;École Normale Supérieure;Paris;France;68
+877;David J.;Wineland;1944-02-24;0000-00-00;USA;US;Milwaukee, WI;;;;male;2012;physics;;2;;University of Colorado;Boulder, CO;USA;68
+878;Robert J.;Lefkowitz;1943-04-15;0000-00-00;USA;US;New York, NY;;;;male;2012;chemistry;;2;;Duke University Medical Center;Durham, NC;USA;69
+879;Brian K.;Kobilka;1955-05-30;0000-00-00;USA;US;Little Falls, MN;;;;male;2012;chemistry;;2;;Stanford University School of Medicine;Stanford, CA;USA;57
+880;Mo;Yan;1955-02-02;0000-00-00;China;CN;Gaomi;;;;male;2012;literature;;1;;;;;57
+881;European Union (EU);;0000-00-00;0000-00-00;;;;;;;org;2012;peace;;1;;;;;NA
+882;Alvin E.;Roth;1951-12-18;0000-00-00;USA;US;New York, NY;;;;male;2012;economics;;2;;Harvard Business School;Boston, MA;USA;61
+883;Lloyd S.;Shapley;1923-06-02;2016-03-12;USA;US;Cambridge, MA;USA;US;Tucson, AZ;male;2012;economics;;2;;University of California;Los Angeles, CA;USA;89
+884;James E.;Rothman;1950-11-03;0000-00-00;USA;US;Haverhill, MA;;;;male;2013;medicine;;3;;Yale University;New Haven, CT;USA;63
+885;Randy W.;Schekman;1948-12-30;0000-00-00;USA;US;St. Paul, MN;;;;male;2013;medicine;;3;;Howard Hughes Medical Institute;;;65
+886;Thomas C.;Südhof;1955-12-22;0000-00-00;Germany;DE;Göttingen;;;;male;2013;medicine;;3;;Howard Hughes Medical Institute;;;58
+887;François;Englert;1932-11-06;0000-00-00;Belgium;BE;Etterbeek;;;;male;2013;physics;;2;;Université Libre de Bruxelles;Brussels;Belgium;81
+888;Peter W.;Higgs;1929-05-29;0000-00-00;United Kingdom;GB;Newcastle upon Tyne;;;;male;2013;physics;;2;;University of Edinburgh;Edinburgh;United Kingdom;84
+889;Martin;Karplus;1930-03-15;0000-00-00;Austria;AT;Vienna;;;;male;2013;chemistry;;3;;Harvard University;Cambridge, MA;USA;83
+890;Michael;Levitt;1947-05-09;0000-00-00;South Africa;ZA;Pretoria;;;;male;2013;chemistry;;3;;Stanford University School of Medicine;Stanford, CA;USA;66
+891;Arieh;Warshel;1940-11-20;0000-00-00;British Mandate of Palestine (now Israel);IL;Kibbutz Sde-Nahum;;;;male;2013;chemistry;;3;;University of Southern California;Los Angeles, CA;USA;73
+892;Alice;Munro;1931-07-10;0000-00-00;Canada;CA;Wingham;;;;female;2013;literature;;1;;;;;82
+893;Organisation for the Prohibition of Chemical Weapons (OPCW);;0000-00-00;0000-00-00;;;;;;;org;2013;peace;;1;;;;;NA
+894;Eugene F.;Fama;1939-02-14;0000-00-00;USA;US;Boston, MA;;;;male;2013;economics;;3;;University of Chicago;Chicago, IL;USA;74
+895;Lars Peter;Hansen;1952-10-26;0000-00-00;USA;US;Urbana, IL;;;;male;2013;economics;;3;;University of Chicago;Chicago, IL;USA;61
+896;Robert J.;Shiller;1946-03-29;0000-00-00;USA;US;Detroit, MI;;;;male;2013;economics;;3;;Yale University;New Haven, CT;USA;67
+897;;;0000-00-00;0000-00-00;;;;;;;male;;;;;;;;;NA
+898;;;0000-00-00;0000-00-00;;;;;;;male;;;;;;;;;NA
+899;;;0000-00-00;0000-00-00;;;;;;;male;;;;;;;;;NA
+900;;;0000-00-00;0000-00-00;;;;;;;male;;;;;;;;;NA
+901;;;0000-00-00;0000-00-00;;;;;;;male;;;;;;;;;NA
+902;;;0000-00-00;0000-00-00;;;;;;;male;;;;;;;;;NA
+903;John;O'Keefe;1939-11-18;0000-00-00;USA;US;New York, NY;;;;male;2014;medicine;;2;;University College;London;United Kingdom;75
+904;May-Britt;Moser;1963-01-04;0000-00-00;Norway;NO;Fosnavåg;;;;female;2014;medicine;;4;;Norwegian University of Science and Technology (NTNU);Trondheim;Norway;51
+905;Edvard I.;Moser;1962-04-27;0000-00-00;Norway;NO;Ålesund;;;;male;2014;medicine;;4;;Norwegian University of Science and Technology (NTNU);Trondheim;Norway;52
+906;Isamu;Akasaki;1929-01-30;0000-00-00;Japan;JP;Chiran;;;;male;2014;physics;;3;;Nagoya University;Nagoya;Japan;85
+907;Hiroshi;Amano;1960-09-11;0000-00-00;Japan;JP;Hamamatsu;;;;male;2014;physics;;3;;Nagoya University;Nagoya;Japan;54
+908;Shuji;Nakamura;1954-05-22;0000-00-00;Japan;JP;Ikata;;;;male;2014;physics;;3;;University of California;Santa Barbara, CA;USA;60
+909;Eric;Betzig;1960-01-13;0000-00-00;USA;US;Ann Arbor, MI;;;;male;2014;chemistry;;3;;Janelia Research Campus, Howard Hughes Medical Institute;Ashburn, VA;USA;54
+910;Stefan W.;Hell;1962-12-23;0000-00-00;Romania;RO;Arad;;;;male;2014;chemistry;;3;;German Cancer Research Center;Heidelberg;Germany;52
+911;William E.;Moerner;1953-06-24;0000-00-00;USA;US;Pleasanton, CA;;;;male;2014;chemistry;;3;;Stanford University;Stanford, CA;USA;61
+912;Patrick;Modiano;1945-07-30;0000-00-00;France;FR;Paris;;;;male;2014;literature;;1;;;;;69
+913;Kailash;Satyarthi;1954-01-11;0000-00-00;India;IN;Vidisha;;;;male;2014;peace;;2;;;;;60
+914;Malala;Yousafzai;1997-07-12;0000-00-00;Pakistan;PK;Mingora;;;;female;2014;peace;;2;;;;;NA
+915;Jean;Tirole;1953-08-09;0000-00-00;France;FR;Troyes;;;;male;2014;economics;;1;;Toulouse School of Economics (TSE);Toulouse;France;61
+916;William C.;Campbell;1930-06-28;0000-00-00;Ireland;IE;Ramelton;;;;male;2015;medicine;;4;;Drew University;Madison, NJ;USA;85
+917;Satoshi;Ōmura;1935-07-12;0000-00-00;Japan;JP;Yamanashi Prefecture;;;;male;2015;medicine;;4;;Kitasato University;Tokyo;Japan;80
+918;Youyou;Tu;1930-12-30;0000-00-00;China;CN;Zhejiang Ningbo;;;;female;2015;medicine;;2;;China Academy of Traditional Chinese Medicine;Beijing;China;85
+919;Takaaki;Kajita;1959-03-09;0000-00-00;Japan;JP;Higashimatsuyama;;;;male;2015;physics;;2;;University of Tokyo;Kashiwa;Japan;56
+920;Arthur B.;McDonald;1943-08-29;0000-00-00;Canada;CA;Sydney;;;;male;2015;physics;;2;;Queen's University;Kingston;Canada;72
+921;Tomas;Lindahl;1938-01-28;0000-00-00;Sweden;SE;Stockholm;;;;male;2015;chemistry;;3;;Clare Hall Laboratory;Hertfordshire;United Kingdom;77
+922;Paul;Modrich;1946-06-13;0000-00-00;USA;US;Raton, NM;;;;male;2015;chemistry;;3;;Duke University School of Medicine;Durham, NC;USA;69
+923;Aziz;Sancar;1946-09-08;0000-00-00;Turkey;TR;Savur;;;;male;2015;chemistry;;3;;University of North Carolina;Chapel Hill, NC;USA;69
+924;Svetlana;Alexievich;1948-05-31;0000-00-00;Ukraine;UA;Ivano-Frankivsk;;;;female;2015;literature;;1;;;;;67
+925;National Dialogue Quartet;;0000-00-00;0000-00-00;;;;;;;org;2015;peace;;1;;;;;NA
+926;Angus;Deaton;1945-10-19;0000-00-00;Scotland;GB;Edinburgh;;;;male;2015;economics;;1;;Princeton University;Princeton, NJ;USA;70
+927;Yoshinori;Ohsumi;1945-02-09;0000-00-00;Japan;JP;Fukuoka;;;;male;2016;medicine;;1;;Tokyo Institute of Technology;Tokyo;Japan;71
+928;David J.;Thouless;1934-09-21;0000-00-00;United Kingdom;GB;Bearsden;;;;male;2016;physics;;2;;University of Washington;Seattle, WA;USA;82
+929;F. Duncan M.;Haldane;1951-09-14;0000-00-00;United Kingdom;GB;London;;;;male;2016;physics;;4;;Princeton University;Princeton, NJ;USA;65
+930;J. Michael;Kosterlitz;1943-06-22;0000-00-00;United Kingdom;GB;Aberdeen;;;;male;2016;physics;;4;;Brown University;Providence, RI;USA;73
+931;Jean-Pierre;Sauvage;1944-10-21;0000-00-00;France;FR;Paris;;;;male;2016;chemistry;;3;;University of Strasbourg;Strasbourg;France;72
+932;Sir J. Fraser;Stoddart;1942-05-24;0000-00-00;United Kingdom;GB;Edinburgh;;;;male;2016;chemistry;;3;;Northwestern University;Evanston, IL;USA;74
+933;Bernard L.;Feringa;1951-05-18;0000-00-00;the Netherlands;NL;Barger-Compascuum;;;;male;2016;chemistry;;3;;University of Groningen;Groningen;the Netherlands;65
+934;Juan Manuel;Santos;1951-08-10;0000-00-00;Colombia;CO;Bogotá;;;;male;2016;peace;;1;;;;;65
+935;Oliver;Hart;1948-10-09;0000-00-00;United Kingdom;GB;London;;;;male;2016;economics;;2;;Harvard University;Cambridge, MA;USA;68
+936;Bengt;Holmström;1949-04-18;0000-00-00;Finland;FI;Helsinki;;;;male;2016;economics;;2;;Massachusetts Institute of Technology (MIT);Cambridge, MA;USA;67
+937;Bob;Dylan;1941-05-24;0000-00-00;USA;US;Duluth, MN;;;;male;2016;literature;;1;;;;;75
+938;Jeffrey C.;Hall;1945-05-03;0000-00-00;USA;US;New York, NY;;;;male;2017;medicine;;3;;University of Maine;Maine, ME;USA;72
+939;Michael;Rosbash;1944-03-07;0000-00-00;USA;US;Kansas City, MO;;;;male;2017;medicine;;3;;Howard Hughes Medical Institute;;;73
+940;Michael W.;Young;1949-03-28;0000-00-00;USA;US;Miami, FL;;;;male;2017;medicine;;3;;Rockefeller University;New York, NY;USA;68
+941;Rainer;Weiss;1932-09-29;0000-00-00;Germany;DE;Berlin;;;;male;2017;physics;;2;;Massachusetts Institute of Technology (MIT);Cambridge, MA;USA;85
+942;Barry C.;Barish;1936-01-27;0000-00-00;USA;US;Omaha, NE;;;;male;2017;physics;;4;;California Institute of Technology (Caltech);Pasadena, CA;USA;81
+943;Kip S.;Thorne;1940-06-01;0000-00-00;USA;US;Logan, UT;;;;male;2017;physics;;4;;California Institute of Technology (Caltech);Pasadena, CA;USA;77
+944;Jacques;Dubochet;1942-06-08;0000-00-00;Switzerland;CH;Aigle;;;;male;2017;chemistry;;3;;University of Lausanne;Lausanne;Switzerland;75
+945;Joachim;Frank;1940-09-12;0000-00-00;Germany;DE;Siegen;;;;male;2017;chemistry;;3;;Columbia University;New York, NY;USA;77
+946;Richard;Henderson;1945-07-19;0000-00-00;Scotland;GB;Edinburgh;;;;male;2017;chemistry;;3;;MRC Laboratory of Molecular Biology;Cambridge;United Kingdom;72
+947;Kazuo;Ishiguro;1954-11-08;0000-00-00;Japan;JP;Nagasaki;;;;male;2017;literature;;1;;;;;63
+948;International Campaign to Abolish Nuclear Weapons (ICAN);;0000-00-00;0000-00-00;;;;;;;org;2017;peace;;1;;;;;NA
+949;Richard H.;Thaler;1945-09-12;0000-00-00;USA;US;East Orange, NJ;;;;male;2017;economics;;1;;University of Chicago;Chicago, IL;USA;72
+958;James P.;Allison;1948-08-07;0000-00-00;USA;US;Alice, TX;;;;male;2018;medicine;;2;;University of Texas MD Anderson Cancer Center;Houston, TX;USA;70
+959;Tasuku;Honjo;1942-01-27;0000-00-00;Japan;JP;Kyoto;;;;male;2018;medicine;;2;;Kyoto University;Kyoto;Japan;76
+960;Arthur;Ashkin;1922-09-02;0000-00-00;USA;US;New York, NY;;;;male;2018;physics;“for groundbreaking inventions in the field of laser physics”;2;;Bell Laboratories;Holmdel, NJ;USA;96
+961;Gérard;Mourou;1944-06-22;0000-00-00;France;FR;Albertville;;;;male;2018;physics;“for groundbreaking inventions in the field of laser physics”;4;;University of Michigan;Ann Arbor, MI;USA;74
+962;Donna;Strickland;0000-00-00;0000-00-00;Canada;CA;Guelph;;;;female;2018;physics;“for groundbreaking inventions in the field of laser physics”;4;;University of Waterloo;Waterloo;Canada;NA
+963;Frances H.;Arnold;1956-07-25;0000-00-00;USA;US;Pittsburgh, PA;;;;female;2018;chemistry;;2;;California Institute of Technology (Caltech);Pasadena, CA;USA;62
+964;George P.;Smith;0000-00-00;0000-00-00;USA;US;Norwalk, CT;;;;male;2018;chemistry;;4;;University of Missouri;Columbia;USA;NA
+965;Sir Gregory P.;Winter;1951-04-14;0000-00-00;United Kingdom;GB;Leicester;;;;male;2018;chemistry;;4;;MRC Laboratory of Molecular Biology;Cambridge;United Kingdom;67
+966;Denis;Mukwege;0000-00-00;0000-00-00;;;;;;;male;2018;peace;;2;;;;;NA
+967;Nadia;Murad;0000-00-00;0000-00-00;;;;;;;female;2018;peace;;2;;;;;NA
+968;William D.;Nordhaus;0000-00-00;0000-00-00;USA;US;Albuquerque, NM;;;;male;2018;economics;;2;;Yale University;New Haven, CT;USA;NA
+969;Paul M.;Romer;0000-00-00;0000-00-00;USA;US;Denver, CO;;;;male;2018;economics;;2;;NYU Stern School of Business;New York, NY;USA;NA

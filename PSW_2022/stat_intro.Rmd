@@ -1,0 +1,55 @@
+---
+title: "Short intro to descriptive statistics"
+author: "Tomasz Przechlewski"
+division: "Powiślańska Szkoła Wyższa (Kwidzyn/Poland)"
+description: (c) Tomasz Przechlewski / CC-BY license
+date: "October, 2019"
+output:
+  html_document:
+    df_print: paged
+  pdf_document: default
+  word_document: default
+---
+
+## Two approaches to statistical analysis
+
+**Confirmatory**: seek answers to non-trival questions. Usually model based. 
+
+**Exploratory**: seek answers to trival questions or seek questions.
+
+**Descriptive statistics** (part of EA):  
+summarizing/arranging/plotting the data so they can be easily understood.
+
+**Data wrangling** cleaning, structuring and enriching raw data into a desired format 
+for better decision making in less time (enhance data quality and accessability)
+
+
+## Basic descriptive measures 
+
+**Measure of Central Tendency**: mean, median, mode, quartille
+
+**Measure of Spread/Dispersion**: variance, standard deviation, interquartile range (IQR)
+
+**Skewness**: (mean - mode)/s or 3(mean - Me)/s 
+
+**Correlation**: 
+
+![](./WhatIsCorrelation.png){width=80%}
+
+
+## Basic charts
+
+**1-dimensional plots**: pie chart, bar plot, dot plot 
+
+**2-dimensional plots**: scatter plot
+
+**distribution**: histogram, frequency polygon, box plot
+
+**Box-plot**: rectangle edges equal to quartilles with median in between;
+whiskers equals to Q1/Q3 ± 1,5 IQR; outliers
+
+![](./boxplotwithoutliers.jpg){width=80%}
+
+## Resources
+
+https://github.com/hrpunio/Z2019

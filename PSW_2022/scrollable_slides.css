@@ -1,0 +1,6 @@
+slides > slide {
+  overflow-x: auto !important;
+  overflow-y: scroll !important;
+}
+
+h1, h2, h3 { font-size: 30px; line-height: 40px }
