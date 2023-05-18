@@ -18,6 +18,7 @@ knitr::opts_chunk$set(echo = F, warning=F, message = F)
 library("ggplot2")
 library("dplyr")
 library("tidyr")
+library(knitr)
 
 items.of.interest <- c( 'Meat', 'Animal Products', 'Grand Total', 'Population')
 units.of.interest <- c('FoodS (kcal/c/d)', 'ProtSQ (g/c/d)', 
@@ -423,6 +424,37 @@ o4t.total <- o4t %>%
   group_by(YearCode) %>%
   summarise(tc = sum(tc))
 ```
+
+## Energy supply by food category
+
+```{r}
+o2t.energy <- o2 %>%
+  filter (Item =='Population' | (Item == 'Meat' & Element =='FoodS (kcal/c/d)' )) %>%
+  select (CodeM49, class, Item, Value, YearCode)  %>%
+  pivot_wider(names_from = Item, values_from = Value) %>%
+  mutate (tc = Population * Meat) %>%
+  group_by(class, YearCode) %>%
+  summarise(tc=sum(tc), tpop =sum(Population), pctc = tc/tpop) %>%
+  ##
+  group_by(YearCode) %>%
+  mutate(T = sum(tc), TP = sum(tpop)) %>%
+  group_by(class, YearCode) %>%
+  summarise(p = sum(tc) / T * 100, pp = sum(tpop) / TP, pctc = first(pctc) )
+
+o99t <- o2t.energy %>% select (class, YearCode, meat=pctc) %>%
+  left_join(o3t, by=c('class', 'YearCode')) %>%
+  select (class, YearCode, meat, animal=pctc) %>%
+  left_join(o4t, by=c('class', 'YearCode')) %>%
+  select (class, YearCode, meat, animal, total=pctc) %>%
+  mutate (meatp=meat/total * 100, animalp=animal/total * 100)
+
+energy.pc.table <- kable(o99t, digits = 1,
+                         col.names = c('Group', 'Year', 'Meat', 
+                                             'AnimalP', 'Total', 'Meat%†', 'AnimalP%†'))
+energy.pc.table
+```
+
+† percent of total energy supply (kcal/c/d)
 
 ## Per capita vs total 
 
