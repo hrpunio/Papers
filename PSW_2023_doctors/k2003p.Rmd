@@ -1,0 +1,1160 @@
+---
+title: "Physicians shortage and medical education in Poland"
+author: dr Katarzyna Strzała-Osuch, prof. PSW, dr hab. Tomasz Plata-Przechlewski, prof. PSW,  mgr Julia Osuch
+date: "Powiślańska Szkoła Wyższa/2023"
+output:
+  slidy_presentation:
+    css: scrollable_slides.css
+    smaller: yes
+  html_document:
+    df_print: paged
+  ioslides_presentation: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = F, warning=F, message = F)
+library("tidyverse")
+library("ggplot2")
+library("scales")
+library("sf")
+library("knitr")
+library("ggrepel")
+
+## new.ue =11
+neu_ <- 'NEU'
+oeu_ <- 'OEU'
+
+pl.ue <- c('PL')
+## łącznie z PL
+new.ue <- c('CZ', 'EE', 'LT', 'LV', 'PL', 'SK', 'SI', 'HU', 'BG', 'RO', 'HR')
+## wo: cyprus, malta, luxemburg
+## old.ue = 13
+## Greece is EL not GR
+old.ue <- c('AT', 'BE', 'DK', 'FI', 'FR', 'DE', 'EL', 'IE', 'IT', 'NL', 'PT', 'ES', 'SE')
+## rest
+rest.ue <- c('CY', 'LU', 'MT')
+ue.ue <- c(new.ue, old.ue)
+## 3 + 13 + 11 = 27 + UK
+## zgadza się
+
+exclude.ue <- c('EU27_2020', 'EU28', 'IS', 'MK', 'TR', 'EA19', 'EFTA', 'LI', 'LU', 'MT', 'CY')
+
+## 
+## Stan ludności (dane historyczne)
+##
+pop <- read.csv("demo_pjan_tabular.tsv.gz", sep = '\t',  header=T, na.string="NA")
+pop0 <- pop %>% pivot_longer(cols = starts_with('X'),
+                             names_prefix = 'X', names_to = 'year',
+                             values_to = 'value') %>%
+  ## split 1st column into 3
+  separate(`freq.unit.age.sex.geo.TIME_PERIOD`,
+           into = c("freq", "unit", "age", "sex", "geo"), sep = ",") %>%
+  ## fix value column (some value(s) are not numbers)
+  mutate(value = as.numeric(gsub("[^0-9\\+\\-\\.]", "", value))) %>%
+  filter(sex=='T', year > 1999) %>%
+  filter (geo %in% ue.ue) %>%
+  mutate(age = as.factor(age))
+
+pop0 <- pop0 %>% mutate(age=recode(age,
+                                   'Y65' = 'pp',
+                                   'Y66' = 'pp',
+                                   'Y67' = 'pp',
+                                   'Y68' = 'pp',
+                                   'Y69' = 'pp',
+                                   'Y70' = 'pp',
+                                   'Y71' = 'pp',
+                                   'Y72' = 'pp',
+                                   'Y73' = 'pp',
+                                   'Y74' = 'pp',
+                                   'Y75' = 'pp',
+                                   'Y76' = 'pp',
+                                   'Y77' = 'pp',
+                                   'Y78' = 'pp',
+                                   'Y79' = 'pp',
+                                   'Y80' = 'pp',
+                                   'Y81' = 'pp',
+                                   'Y82' = 'pp',
+                                   'Y83' = 'pp',
+                                   'Y84' = 'pp',
+                                   'Y85' = 'pp',
+                                   'Y86' = 'pp',
+                                   'Y87' = 'pp',
+                                   'Y88' = 'pp',
+                                   'Y89' = 'pp',
+                                   'Y90' = 'pp',
+                                   'Y91' = 'pp',
+                                   'Y92' = 'pp',
+                                   'Y93' = 'pp',
+                                   'Y94' = 'pp',
+                                   'Y95' = 'pp',
+                                   'Y96' = 'pp',
+                                   'Y97' = 'pp',
+                                   'Y98' = 'pp',
+                                   'Y99' = 'pp',
+                                   'Y_GE100' = 'pp',
+                                   'TOTAL'  = "total")) %>%
+  filter (age == 'pp' | age == 'total' ) %>%
+  filter (as.numeric(year) > 2000) %>%
+  group_by(age, geo, year) %>%
+  summarise(value = sum(value)) %>%
+  ungroup() %>%
+  select (pop.age=age, geo, year, pop=value) 
+
+pop2017pl.tt <- pop0 %>%
+  filter(year == 2017 & geo == 'PL' & pop.age == 'total') %>%
+  select(pop) %>% 
+  unlist() %>%
+  unname() 
+
+pop2017pl.pp <- pop0 %>%
+  filter(year == 2017 & geo == 'PL' & pop.age == 'pp') %>%
+  select(pop) %>% 
+  unlist() %>%
+  unname() 
+
+```
+
+## Background
+
+There is a confirmed relationship between population health
+and the number (and quality) of medial personel
+
+Staff shortages in the health care system are currently a serious
+barrier to the implementation of proper medical care in Poland and
+Europe
+
+Staffing Shortages in Health Care can be attributed to several factors:
+Aging Population, burnout but also:
+
+* improper management of human resources,
+
+* failure to adjust the employment structure to the profile and scope of provided services,
+
+* a defective education system based on a monopoly on educating doctors at public universities, and
+
+* underfunding of the health care system
+
+There are also public opinions (aka myths) on this problem:
+
+* Staff shortages are particularly acute in Poland
+
+* Staff shortages are caused by migration abroad
+
+* Number of medical staff is decreasing
+
+* To have more doctors an enrollment quota should go up, but only at public universities
+which guarantee high quality
+
+## Objectives of this study
+
+Comparison of the number of physicians and medical graduates in Poland and European Union countries.
+
+Development of several simple scenarios for the demand for doctors in Poland in the years 2023-2048
+
+
+## Material and method
+
+Data on the number of doctors and the number of medical graduates come from Eurostat (tables hlth_rs_phys, hlth_rs_grd and hlth_rs_wkmg).
+
+Population data and population projections are also from Eurostat (table demo_pjan and proj_23np).
+
+Data from the Local Data Bank of the [Polish] Central Statistical Office (table OCHR_2612_CREL_20220612185524) were also used.
+(cf https://bdl.stat.gov.pl/bdl/start)
+
+Data on the number of graduates who passed
+the Medical Final Exam were downloaded from the website of the Center for Medical Examinations (*Centrum Egzaminów Medycznych*)
+
+(cf https://www.cem.edu.pl/aktualnosci/lep/lep_stat3.php.)
+
+Additionaly selected information contained in reports and scientific publications on the subject was used.
+
+## Number of doctors in EU
+
+We use **People per 1 physician** ratio (last reported year/2017 for PL)
+
+Member states were divided into two groups:
+
+* new member states (NEU), 
+  ie. Czech Rep., Estonia, Lituania, Latvia, Poland, Slovakia, Slovenia, Hungary, Bulgaria, Romania and Croatia.
+
+* old member states (OEU), Austria, Belgium, Danmark, Finland, 
+France, Germany, Greece, Ireland, Italy, Netherlands, Portugal,
+Spain, Sweden.
+
+Cyprus, Malta and Luxemburg were omited.
+
+```{r}
+l <- read.csv("hlth_rs_phys.tsv.gz", sep = '\t',  header=T, na.string="NA")
+
+l0 <- l %>% pivot_longer(cols = starts_with('X'),
+             names_prefix = 'X', names_to = 'year',
+             values_to = 'value') %>%
+  ## split 1st column into 3
+  separate(`unit.age.sex.geo.time`,
+           into = c("unit", "age", "sex", "geo"), sep = ",") %>%
+  ## fix value column (some value(s) are not numbers)
+  mutate(value = as.numeric(gsub("[^0-9\\+\\-\\.]", "", value))) %>%
+  filter(sex=='T') %>%
+  mutate(age = as.factor(age)) %>%
+  filter (geo %in% ue.ue) %>%
+  select (phys.age=age, geo, year, value) %>%
+  mutate (status = geo, 
+          status = recode(status, 
+                         'CZ' = neu_, 'EE'= neu_, 'LT' = neu_, 'LV'= neu_, 'PL'= neu_, 
+                         'SK' = neu_, 'SI'= neu_, 'HU' = neu_, 'BG'= neu_, 'RO'= neu_, 
+                         'HR' = neu_, 
+                         'AT' = oeu_, 'BE'= oeu_, 'DK' = oeu_, 'FI'= oeu_, 'FR'= oeu_, 
+                         'DE' = oeu_, 'EL'= oeu_, 'IE' = oeu_, 'IT'= oeu_, 'NL'= oeu_, 
+                         'PT' = oeu_, 'ES'= oeu_, 'SE' = oeu_,  
+                         .default=NA_character_))
+
+l1 <- left_join(l0, pop0, by=c('geo', 'year'))
+#####################################
+
+l2021 <- l1 %>% 
+  filter ( phys.age == 'TOTAL' & pop.age == 'total') %>%
+  filter(!is.na(value)) %>%
+  group_by(geo) %>%
+    arrange(year) %>%
+    summarise(pop = last(pop), value=last(value), status=last(status)) %>%
+  mutate (ppc = pop /value)
+
+wtt.pl.last <- l2021 %>%
+  filter(geo == 'PL' ) %>%
+  select(ppc) %>% 
+  unlist() %>%
+  unname() 
+
+l2021.tt.summary <- l2021 %>%
+    group_by(status) %>%
+    summarise(m = median(ppc))
+##l2021pp.summary
+
+median.tt.neu <- l2021.tt.summary %>%
+  filter(status == 'NEU' ) %>%
+  select(m) %>% 
+  unlist() %>%
+  unname() 
+
+median.tt.oeu <- l2021.tt.summary %>%
+  filter(status == 'OEU' ) %>%
+  select(m) %>% 
+  unlist() %>%
+  unname() 
+
+p1 <- l2021 %>% 
+  ggplot(aes(x=status, y=ppc)) +
+  geom_boxplot(outlier.shape = NA) +
+  ##geom_jitter(size=3, alpha=.3, position=position_jitter(0.05)) +
+  geom_label(aes(y = ppc, label = geo),  
+             position=position_jitter(0.1),
+             fill = "yellow", size=2)+
+  ##geom_smooth(method='lm') +
+  ##facet_wrap(~year) +
+  ylab(label="People per 1 physician") +
+  xlab("") +
+  ##scale_y_continuous(breaks = seq(0, 32, by=2)) +
+  ggtitle("People per 1 physician (last reported year)", subtitle="Source: Eurostat/hlth_rs_phys/demo_pjan")
+p1
+ggsave(plot=p1, file="lekarzePC.png")
+```
+
+As expected in new members the vale of the indicator is on the average (median) higher
+(`r median.tt.neu` vs `r median.tt.oeu`)
+
+Poland has the worst  value of the indicator (`r wtt.pl.last`), which is `r sprintf ("%.1f", wtt.pl.last/median.tt.neu * 100)`% of the
+median  in the group of new EU countries and as much as `r sprintf ("%.1f", wtt.pl.last/median.tt.oeu * 100)`%
+in the group of old EU members.
+
+
+```{r}
+l.ue.tt <- l1 %>% filter ( phys.age == 'TOTAL' & pop.age == 'total') %>%
+  mutate (ppc = pop /value)
+p33ue.p.tt <- l.ue.tt %>%
+  ggplot(aes(x=as.Date(as.character(year), format="%Y"), y=ppc)) +
+  facet_wrap(~geo, ncol = 4, scales ='fixed') +
+  geom_point(size=.6, color="blue") +
+  geom_line(size=.5, color="red") +
+  ylab(label="people per 1 physician") +
+  ggtitle("People per 1 physician (2000--2021)", subtitle="Source: Eurostat/hlth_rs_phys/demo_pjan") +
+  xlab("")
+
+p33ue.p.tt
+
+## zmiana pierwszy
+l.ue.tt.zmiana <- l.ue.tt %>%
+  filter(!is.na(ppc)) %>%
+  group_by(geo) %>%
+  arrange(year) %>%
+  summarise(f=first(ppc), fy=first(year), ly=last(year), l=last(ppc)) %>%
+  mutate (fy = as.numeric(fy), ly = as.numeric(ly),
+          d = l - f, pd = d/(ly-fy)) 
+l.nue.tt.zmiana <- l.ue.tt.zmiana %>% filter (geo %in% new.ue )
+l.oue.tt.zmiana <- l.ue.tt.zmiana %>% filter (geo %in% old.ue )
+    
+##l.ue.pp.zmiana
+level.tt <- median(l.ue.tt.zmiana$l)
+change.tt <- median(l.ue.tt.zmiana$pd)
+change.tt.neu <- median(l.nue.tt.zmiana$pd)
+change.tt.oeu <- median(l.oue.tt.zmiana$pd)
+
+level.tt.pl <- l.ue.tt.zmiana %>%
+  filter(geo == 'PL' ) %>%
+  select(l) %>% 
+  unlist() %>%
+  unname() 
+
+change.tt.pl <- l.ue.tt.zmiana %>%
+  filter(geo == 'PL' ) %>%
+  select(pd) %>% 
+  unlist() %>%
+  unname() 
+
+```
+
+Median of the last reported value (for the entire analyzed group of
+EU countries) is `r level.tt`.
+
+The median of the average change in the reporting period is `r change.tt`.
+(in half of the countries, the value of the indicator drops not less than `r change.tt` )
+
+The value of the indicator for Poland is `r level.tt.pl` and
+is `r sprintf ("%.1f", level.tt.pl/level.tt * 100 - 100 )`% higher than the median value;
+
+The average change in the reporting period in Poland is `r change.tt.pl`
+(From year to year, there is `r sprintf ("%.1f", abs(change.tt.pl))` less people per one doctor);
+which is `r sprintf ("%.1f", change.tt.pl/change.tt * 100)`%
+of the median for the analyzed group of countries.
+
+
+## Elderly people per 1 physician
+
+Due to the aging of the population, we believe that
+in addition to total age indicator, it is also worth analyzing the ratio
+of the number of Elderly people per 1 physician (people aged 65+ per 1 physician).
+
+
+```{r}
+l2021pp <- l1 %>% 
+  filter ( phys.age == 'TOTAL' & pop.age == 'pp') %>%
+  filter(!is.na(value)) %>%
+  group_by(geo) %>%
+    arrange(year) %>%
+    summarise(pop = last(pop), value=last(value), status=last(status)) %>%
+  mutate (ppc = pop /value)
+
+w65.pl.last <- l2021pp %>%
+  filter(geo == 'PL' ) %>%
+  select(ppc) %>% 
+  unlist() %>%
+  unname() 
+
+l2021pp.summary <- l2021pp %>%
+    group_by(status) %>%
+    summarise(m = median(ppc))
+##l2021pp.summary
+
+median.pp.neu <- l2021pp.summary %>%
+  filter(status == 'NEU' ) %>%
+  select(m) %>% 
+  unlist() %>%
+  unname() 
+
+median.pp.oeu <- l2021pp.summary %>%
+  filter(status == 'OEU' ) %>%
+  select(m) %>% 
+  unlist() %>%
+  unname() 
+
+p1.pp <- l2021pp %>% 
+  ggplot(aes(x=status, y=ppc)) +
+  geom_boxplot(outlier.shape = NA) +
+  ##geom_jitter(size=3, alpha=.3, position=position_jitter(0.25)) +
+  geom_label(aes(y = ppc, label = geo),  
+             position=position_jitter(0.1),
+             fill = "yellow", size=2)+
+  ##geom_smooth(method='lm') +
+  ##facet_wrap(~year) +
+  ylab(label="People 65+/1 doctor") +
+  xlab("")  +
+  ##scale_y_continuous(breaks = seq(0, 32, by=2)) +
+  ggtitle("People aged 65+ per 1 physician", subtitle="Source: Eurostat /hlth_rs_phys/demo_pjan")
+p1.pp
+ggsave(plot=p1.pp, file="lekarzePC65.png")
+```
+
+On average, new EU countries have higher rato
+(median equal to `r median.pp.neu` than old ones (`r median.pp.oeu`)
+
+Poland has the worst value of the indicator (`r w65.pl.last`)
+
+
+```{r}
+l.ue.pp <- l1 %>% filter ( phys.age == 'TOTAL' & pop.age == 'pp') %>%
+  mutate (ppc = pop /value)
+
+p33ue.p.pp <- l.ue.pp %>%
+  ggplot(aes(x=as.Date(as.character(year), format="%Y"), y=ppc)) +
+  facet_wrap(~geo, ncol = 4, scales ='fixed') +
+  geom_point(size=.6, color="blue") +
+  geom_line(size=.5, color="red") +
+  ylab(label="People 65+/1 doctor") +
+  ggtitle("People per 1 physician (2000--2021)", 
+          subtitle="Source: Eurostat/hlth_rs_phys/demo_pjan") +
+  xlab("") 
+
+p33ue.p.pp
+
+## zmiana: ostatni - pierwszy 
+## dla całej unii
+l.ue.pp.zmiana <- l.ue.pp %>%
+  filter(!is.na(ppc)) %>%
+  group_by(geo) %>%
+  arrange(year) %>%
+  summarise(f=first(ppc), fy=first(year), ly=last(year), l=last(ppc)) %>%
+  mutate (fy = as.numeric(fy), ly = as.numeric(ly),
+          d = l - f, pd = d/(ly-fy)) 
+l.nue.pp.zmiana <- l.ue.pp.zmiana %>% filter (geo %in% new.ue )
+l.oue.pp.zmiana <- l.ue.pp.zmiana %>% filter (geo %in% old.ue )
+    
+##l.ue.pp.zmiana
+level65 <- median(l.ue.pp.zmiana$l)
+change65 <- median(l.ue.pp.zmiana$pd)
+change65.neu <- median(l.nue.pp.zmiana$pd)
+change65.oeu <- median(l.oue.pp.zmiana$pd)
+
+level65.pl <- l.ue.pp.zmiana %>%
+  filter(geo == 'PL' ) %>%
+  select(l) %>% 
+  unlist() %>%
+  unname() 
+
+change65.pl <- l.ue.pp.zmiana %>%
+  filter(geo == 'PL' ) %>%
+  select(pd) %>% 
+  unlist() %>%
+  unname() 
+
+```
+
+Note that the data is severely incomplete.
+
+The median of the last reported value is `r level65`.
+
+The median of the average change in the reporting period is `r change65`.
+(in half of the countries, the value of the indicator increases on average no more than `r change65` )
+
+The value of the indicator for Poland is `r level65.pl` and is `r sprintf ("%.1f", level65.pl/level65 * 100 - 100)`% higher than the median value;
+
+The average change in the reporting period is `r change65.pl` and is `r sprintf ("%.1f", change65.pl/change65 * 100 - 100)`% higher than the median
+
+
+## Graduates of medical studies
+
+Medical graduates are future doctors. Therefore, the population per 1 graduate rate determines the size of the stream
+supplying the health care system with new staff.
+
+We compare new and old EU member states for 2017 vs 2002
+
+```{r} 
+gr <- read.csv("hlth_rs_grd.tsv.gz", sep = '\t',  header=T, na.string="NA")
+
+gr0 <- gr %>% pivot_longer(cols = starts_with('X'),
+                    names_prefix = 'X', names_to = 'year',
+                    values_to = 'value') %>%
+  ## split 1st column into 3
+  separate(`isco08.unit.geo.time`,
+           into = c("isco", "unit", "geo"), sep = ",") %>%
+  ## fix value column (some value(s) are not numbers)
+  select (grad.class=isco, unit, geo, year, value) %>%
+  mutate(value = as.numeric(gsub("[^0-9\\+\\-\\.]", "", value))) %>%
+  filter (geo %in% ue.ue) %>%
+  ## 221 -- lekarz ; 2261 -- dentysta
+  filter ( grad.class == 'OC221' | grad.class == 'OC2261') %>%
+  filter (unit == 'NR') %>%
+  group_by(geo, year) %>%
+  summarise(value=sum(value)) %>%
+  mutate (status = geo, 
+          status = recode(status, 
+                          'CZ' = neu_, 'EE'= neu_, 'LT' = neu_, 'LV'= neu_, 'PL'= neu_, 
+                          'SK' = neu_, 'SI'= neu_, 'HU' = neu_, 'BG'= neu_, 'RO'= neu_, 
+                          'HR' = neu_, 
+                          'AT' = oeu_, 'BE'= oeu_, 'DK' = oeu_, 'FI'= oeu_, 'FR'= oeu_, 
+                          'DE' = oeu_, 'EL'= oeu_, 'IE' = oeu_, 'IT'= oeu_, 'NL'= oeu_, 
+                          'PT' = oeu_, 'ES'= oeu_, 'SE' = oeu_,  
+                          .default=NA_character_)) %>%
+  ungroup()
+
+
+gr1 <- left_join(gr0, pop0, by=c('geo', 'year')) %>%
+  filter (pop.age == 'total') %>%
+  mutate (gpc = pop / value)
+
+gr.2021 <- gr1 %>% 
+  filter(!is.na(value)) %>%
+  group_by(geo) %>%
+  arrange(year) %>%
+  summarise(gpc = last(gpc), status=last(status), g = last(value), p = last(pop))
+
+p2 <- gr.2021 %>% 
+  ggplot(aes(x=status, y=gpc)) +
+  geom_boxplot(outlier.shape = NA) +
+  ##geom_jitter(size=3, alpha=.3, position=position_jitter(0.05)) +
+  geom_label(aes(y = gpc, label = geo),
+            position=position_jitter(0.1),
+            ##vjust=1.6, 
+            fill='yellow',
+            color = "black", size=2)+
+  ##geom_smooth(method='lm') +
+  ##facet_wrap(~year) +
+  ylab(label="People per 1 graduate") +
+  ggtitle("People per 1 graduate ", subtitle="Source: Eurostat /hlth_rs_grd/demo_pjan") +
+  xlab("")
+ 
+p2
+
+ggsave(plot=p2, file="absolwenci_PC.png")
+```
+
+On average, there were more medical graduates in the new EU
+countries. Poland is next to last; but many countries with a better
+reputation for health care have relatively high values (Germany,
+Sweden, Finland)
+
+```{r}
+##print(gr.2021, n=30)
+graduates.ue.mean <- mean(gr.2021$gpc)
+graduates.nue.mean <- gr.2021 %>% filter (geo %in% new.ue) %>% 
+  summarise (m = median(gpc)) %>% select(m) %>%  unlist() %>% unname() 
+graduates.oue.mean <- gr.2021 %>% filter (geo %in% old.ue) %>% 
+  summarise (m = median(gpc)) %>% select(m) %>%  unlist() %>% unname() 
+
+graduates.pl.gpc <- gr.2021 %>%
+  filter(geo == 'PL' ) %>%
+  select(gpc) %>% 
+  unlist() %>%
+  unname() 
+
+graduates.pl.g <- gr.2021 %>%
+  filter(geo == 'PL' ) %>%
+  select(g) %>% 
+  unlist() %>%
+  unname() 
+##graduates.nue.mean
+
+#graduates.nue.mean/graduates.pl.gpc
+##
+## W pl jest 44% więcej na 1 garduates niż w nowej UE
+## jeżeli będzie o 44% więcej graduates będziemy na średniej
+#graduates.pl.gpc / graduates.nue.mean
+##
+#graduates.oue.mean/graduates.pl.gpc
+coeff.g.pl <- 1 / (graduates.nue.mean/graduates.pl.gpc)
+##
+pl.mean.neu <-  coeff.g.pl * graduates.pl.g
+
+pl.mean.neu.diff <- pl.mean.neu - graduates.pl.g
+
+```
+
+The median population/graduate ratio in the group of new EU members is `r sprintf ("%.0f", graduates.nue.mean)` (Poland `r sprintf ("%.0f", graduates.pl.gpc)` or `r sprintf ("%.2f", coeff.g.pl * 100)`%).
+
+In the last reported year, there were `r graduates.pl.g` graduates in Poland, and to achieve the average for new EU members, it would be necessary to educate `r sprintf ("%.0f", pl.mean.neu)`, i.e. about `r sprintf ("%.0f", pl.mean.neu.diff)` more (increase by `r sprintf ("%.1f", pl.mean.neu.diff/graduates.pl.g * 100 )`% ).
+
+
+```{r}
+gr1.total <- gr1 %>%
+  group_by(geo) %>% summarise( m = mean(gpc, na.rm = T)) 
+
+gr2 <- left_join(gr1.total, gr1, by='geo') %>%
+  mutate (gpc = 1/ ( gpc ) * 100000 )
+
+gr33ue.p.tt <- gr2 %>%
+  ggplot(aes(x=as.Date(as.character(year), format="%Y"), y=gpc)) +
+  facet_wrap(~geo, ncol = 4, scales ='fixed') +
+  geom_point(size=.6, color="blue") +
+  geom_line(size=.5, color="red") +
+   scale_colour_discrete(guide = 'none')  +    
+  ylab(label="Graduates") +
+  ggtitle("Number of graduates per 100 thousand of population") +
+  xlab("")
+        
+gr33ue.p.tt
+
+ggsave(plot=gr33ue.p.tt, file="absolwenci_PC_n.png")
+```
+
+There is constant increase in the number of graduates in Poland
+
+```{r}
+gr2.pl <-gr2 %>% filter (geo== 'PL')
+gr2.pl.2010 <- gr2.pl %>% filter ( year == '2010')  %>%
+  select(value) %>% unlist() %>% unname() 
+gr2.pl.2017 <- gr2.pl %>% filter ( year == '2017') %>%
+  select(value) %>% unlist() %>% unname() 
+```
+
+For example, in 2010 there were `r gr2.pl.2010` graduates, and in 2017 (the last reported year)
+there was `r gr2.pl.2017` (increase by `r sprintf ("%.1f", gr2.pl.2010/ gr2.pl.2017 *100)`%)
+
+
+##  Scenarios of demand for physicians in Poland
+
+Scenarios are based on population projection from Eurostat (table proj_23np.)
+
+```{r}
+proj <- read.csv("proj_23np.tsv.gz", sep = '\t',  header=T, na.string="NA") %>%
+pivot_longer(cols = starts_with('X'),
+             names_prefix = 'X', names_to = 'year',
+             values_to = 'value') %>%
+  ## split 1st column into 3
+  separate(`projection.sex.age.unit.geo.time`,
+           into = c("proj", "sex", "age", "unit", "geo"), sep = ",") %>%
+  ## fix value column (some value(s) are not numbers)
+  mutate(value = as.numeric(gsub("[^0-9\\+\\-\\.]", "", value))) %>%
+    select (sex, age, geo, year, value) %>%
+  #filter (as.numeric(year) > 2000) %>%
+  mutate(age=recode(age,
+                    'Y65' = 'pp',
+                    'Y66' = 'pp',
+                    'Y67' = 'pp',
+                    'Y68' = 'pp',
+                    'Y69' = 'pp',
+                    'Y70' = 'pp',
+                    'Y71' = 'pp',
+                    'Y72' = 'pp',
+                    'Y73' = 'pp',
+                    'Y74' = 'pp',
+                    'Y75' = 'pp',
+                    'Y76' = 'pp',
+                    'Y77' = 'pp',
+                    'Y78' = 'pp',
+                    'Y79' = 'pp',
+                    'Y80' = 'pp',
+                    'Y81' = 'pp',
+                    'Y82' = 'pp',
+                    'Y83' = 'pp',
+                    'Y84' = 'pp',
+                    'Y85' = 'pp',
+                    'Y86' = 'pp',
+                    'Y87' = 'pp',
+                    'Y88' = 'pp',
+                    'Y89' = 'pp',
+                    'Y90' = 'pp',
+                    'Y91' = 'pp',
+                    'Y92' = 'pp',
+                    'Y93' = 'pp',
+                    'Y94' = 'pp',
+                    'Y95' = 'pp',
+                    'Y96' = 'pp',
+                    'Y97' = 'pp',
+                    'Y98' = 'pp',
+                    'Y99' = 'pp',
+                    'Y_GE100' = 'pp',
+                    'TOTAL'  = "total")) %>%
+  filter (age == 'pp' | age == 'total' ) %>%
+  filter (sex == 'T') %>%
+group_by(age, geo, year) %>%
+  summarise(value = sum(value)) %>%
+  select (pop.age=age, geo, year, pop=value)  %>%
+  ungroup()
+
+proj.pl <- proj %>% filter (geo == 'PL')
+ 
+  
+## pop w 2048
+pop2048eu <- proj %>% filter(year == 2048 ) %>% filter (geo %in% ue.ue) %>%
+  pivot_wider(names_from = pop.age, values_from = pop) %>%
+  mutate (p = pp/total * 100) %>%
+  arrange(p)
+mean.pp.2048 <-  median(pop2048eu$p)
+
+pop2023eu <- proj %>% filter(year == 2023 ) %>% filter (geo %in% ue.ue) %>%
+  pivot_wider(names_from = pop.age, values_from = pop) %>%
+  mutate (p = pp/total * 100) %>%
+  arrange(p)        
+mean.pp.2023 <-  median(pop2023eu$p)
+
+pop2099eu <- proj %>% filter(year == 2099 ) %>% filter (geo %in% ue.ue) %>%
+  pivot_wider(names_from = pop.age, values_from = pop) %>%
+  mutate (p = pp/total * 100) %>%
+  arrange(p)
+mean.pp.2099 <-  median(pop2099eu$p)
+
+
+pop2048pl.tt <- proj.pl %>%
+  filter(year == 2048 & geo == 'PL' & pop.age == 'total') %>%
+  select(pop) %>% 
+  unlist() %>%
+  unname() 
+
+pop2048pl.pp <- proj.pl %>%
+  filter(year == 2048 & geo == 'PL' & pop.age == 'pp') %>%
+  select(pop) %>% 
+  unlist() %>%
+  unname() 
+
+pp_proc.2023pl.pp <- pop2023eu %>%  filter(geo == 'PL') %>% select(p) %>% 
+  unlist() %>% unname() 
+
+pp_proc.2048pl.pp <- pop2048eu %>%
+  filter(geo == 'PL') %>%
+  select(p) %>% 
+  unlist() %>%
+  unname() 
+pp_proc.2099pl.pp <- pop2099eu %>%
+  filter(geo == 'PL') %>%
+  select(p) %>% 
+  unlist() %>%
+  unname() 
+ 
+### Population projection
+#### Ludność w wieku 65+
+f1p <- proj.pl %>% 
+  ggplot(aes(x=as.Date(as.character(year), format="%Y"), y=pop, group=pop.age,
+             color=pop.age)) +
+  geom_point(size=1) +
+  geom_line(size=1) +
+  ##geom_smooth(method='lm') +
+  ylab(label="Population") +
+  xlab("") +
+  scale_x_date( breaks = "8 years", labels = date_format("%Y")) +
+  scale_color_manual( name='Age:',
+                      breaks=c('pp', 'total'),
+                      labels=c('65+', 'total'),
+                      values=c("aquamarine4", "red" )) +
+  ##scale_y_continuous(breaks = seq(0, 32, by=2)) +
+  ggtitle("Population projection for Poland", subtitle="Source: Eurostat /proj_23np")
+  
+f1p
+ggsave(plot=f1p, file="ludnosc_prognoza_PL.png")
+```
+
+The population of Poland will steadily decrease (in 2090 it will fall below 29 million)
+
+The number of people aged 65+ in Poland will systematically grow until 2062, reaching over 10 million.
+
+The share of people aged 65+in Europe will increase. The median for the analyzed group of countries in 2023 will be `r mean.pp.2023`
+and in 2048 it will be `r mean.pp.2048`
+
+In 2017, the total population of Poland was
+`r pop2017pl.tt `, population aged 65+ will be
+`r pop2017pl.pp` (`r sprintf ("%.2f%%", pop2017pl.pp/pop2017pl.tt *100 )`)
+
+In 2048 the total population of Poland will be
+`r pop2048pl.tt `, while population aged 65+
+`r pop2048pl.pp` (`r sprintf ("%.2f%%", pop2048pl.pp/pop2048pl.tt * 100)`)
+
+Share of population aged 65+ will almost double (2017--2048). Total
+population will decrease by `r sprintf ("%.2f%%", 100 - pop2017pl.tt/pop2048pl.tt * 100)`
+
+## Increase in the number of doctors in the health care system
+
+```{r}
+### liczba lekarzy wg BDL
+
+l.bdl <- read.csv("OCHR_2612_CREL_20220612185524.csv", sep = ';',
+                  header=T, na.string="NA") %>%
+  select (teryt, geo, Rodzaje_personelu, rok, value, unit, Atrybut) %>%
+  filter (Rodzaje_personelu == 'lekarze' & teryt == 0)
+pl.yr.first <- first(l.bdl$rok)
+pl.yr.last <- last(l.bdl$rok)
+```
+
+The average increase in the number of doctors in Poland was assessed using the Local Data Bank of the Central Statistical Office,
+which is more up-to-date than the Eurostat data.
+
+```{r}
+p4bdl1 <- l.bdl %>%
+  ggplot(aes(x=as.Date(as.character(rok), format="%Y"), y=value)) +
+  geom_point(size=.6, color='blue') +
+  geom_line(size=.5, color='red') +
+  geom_smooth(method='lm') +
+  ylab(label="Physicians") +
+  xlab("") +
+  scale_x_date( breaks = "2 years", labels = date_format("%Y")) +
+  #scale_y_continuous(breaks = seq(2000, 2020, by=2)) +
+  ggtitle("Number of physicians in Poland", 
+          subtitle="Source: BDL GUS/OCHR_2612_CREL_20220612185524")
+
+p4bdl1
+
+model.2 <- lm(value ~ rok, data=l.bdl)
+
+##model.2
+##summary(model.2)
+
+lmc <- coef(model.2)
+##lmr <- summary(model.2)$r.squared
+##lmse <- summary(model.2)$sigma
+
+b.coeff <- lmc["rok"]
+a.coeff <- lmc["(Intercept)"]
+
+##b.coeff
+```
+
+We can observe steady increase in the analyzed period. The approximation with linear trend showed that, the average annual increase
+in the number of doctors was `r sprintf ("%.1f", b.coeff)`.
+
+
+## Demand scenarios 
+
+The number of doctors is estimated, taking into account **the
+population projection** under the assumption that Poland is catching
+up with the rest of the EU.
+
+Specifically, five scenarios were considered, assuming that in 2048 (i.e. in 25 years):
+
+
+1. The per capita rate [of doctors] in the 65+ group will be equal to the average in the group of new EU members, adjusted by the average annual change
+
+2. The per capita rate [of doctors] in the 65+ group will be equal to the average in the whole EU, adjusted by the average annual change
+
+3. The total per capita rate [of doctors] will be equal to the average in the group of new EU members, adjusted by the average annual change
+
+4. The total per capita rate [of doctors] will be equal to the average in the whole EU, adjusted by the average annual change
+
+5. The per capita rate [of doctors] in the 65+ group will be equal to the 
+value for PL for 2017 (it will not deteriorate), adjusted by the average annual change
+
+
+The median was taken as the mean value. It was assumed that the observed average change in this average value will continue in the forecast period. For example, if in the group of new EU countries, the average annual change was `r change65.neu`. We assume that in 2048 this average will be `r change65.neu * (2048 - 2017)` patients per doctor higher (annual change multiplied by 31, i.e. the difference between 2048 and 2017).
+
+Of course, this is a very simplified assumption and it boils down to determining what will happen if the observed trends do not change.
+
+The rapid aging of the population justifies the use of the population 65+/doctor ratio, not the total population.
+
+Scenarios 1 and 2 are the most ambitious and scenario 5 the least
+
+Scenarios 1-5 and a linear trend line assuming an average annual increase in physicians in 2018-2048 equal to
+the one observed in years `r pl.yr.first`--`r pl.yr.last` (i.e. `r sprintf("%.1f", b.coeff)` doctors per year) are presented
+at the chart below
+
+```{r}
+last.scenario.yr <- 2048
+horizon <- last.scenario.yr - 2017
+
+# liczba lekarzy w pl w 2017
+d2017.pl <- l2021 %>%
+  filter(geo=='PL' ) %>%
+  select(value) %>%
+  unlist() %>%
+  unname() 
+
+## ludność PL za 25 lat (ogółem)
+pop2048.pl.tt <- proj.pl  %>%
+  filter(year == last.scenario.yr & geo=='PL' & pop.age == 'total') %>%
+  select(pop) %>%
+  unlist() %>%
+  unname() 
+
+## 65+
+pop2048.pl.pp <- proj.pl  %>%
+  filter(year == last.scenario.yr & geo=='PL' & pop.age == 'pp') %>%
+  select(pop) %>%
+  unlist() %>%
+  unname() 
+
+## 
+w2017.pl.pp <- l2021pp  %>%
+  filter(geo =='PL') %>%
+  select(ppc) %>%
+  unlist() %>%
+  unname() 
+
+## change65 = przeciętna zmiana wskaźnika
+w2017.nue.pp <- median.pp.neu + horizon * change65.neu
+
+w2017.ue.pp <- median.pp.oeu + horizon * change65
+
+##
+w2017.nue.tt <- median.tt.neu + horizon * change.tt.neu
+
+w2017.ue.tt <- median.tt.oeu + horizon * change.tt
+
+
+
+## Scenariusze
+##
+proj.pl1 <- proj.pl %>% filter (pop.age == 'pp') %>%
+  mutate (w = w2017.pl.pp, doctors = pop /w2017.pl.pp)
+
+##
+#proj.pl2 <- proj.pl %>% filter (pop.age == 'pp') %>%
+#  mutate (w = w2017.pl, doctors = pop /w2017.pl)
+
+
+## w5
+l2048p.pp <- pop2048.pl.pp / w2017.pl.pp
+##l2048p.pp
+
+## w1 w2
+l2048p.nue <- pop2048.pl.pp / w2017.nue.pp
+l2048p.ue <- pop2048.pl.pp / w2017.ue.pp
+##l2048p.ue
+##l2048p.nue 
+
+w5 <- (l2048p.pp - d2017.pl )/horizon
+
+w1 <- (l2048p.nue - d2017.pl )/horizon
+w2 <- (l2048p.ue - d2017.pl) /horizon
+
+## w3
+l2048t.nue <- pop2048.pl.tt / w2017.nue.tt
+l2048t.ue <- pop2048.pl.tt / w2017.ue.tt
+
+##l2048t.nue
+##l2048t.ue
+
+w3 <- (l2048t.nue - d2017.pl )/horizon
+w4 <- (l2048t.ue - d2017.pl) /horizon
+
+##w1
+##w2
+##w3
+##w4
+##w5
+
+t.0 <- seq (from=1, to=31, by=1) 
+
+##
+t.1 <- as.data.frame(t.0) %>%
+  mutate (t.1 = t.0 * w1 + d2017.pl,
+          t.2 = t.0 * w2 + d2017.pl,
+          t.3 = t.0 * w3 + d2017.pl,
+          t.4 = t.0 * w4 + d2017.pl,
+          t.5 = t.0 * w5 + d2017.pl,
+          ####
+          t.x = t.0 * b.coeff + d2017.pl,
+          year = t.0 + 2017
+          ) %>%
+  pivot_longer(cols=c('t.1', 't.2', 't.3', 't.4', 't.5', 't.x'),
+               names_to = 'scenarios',
+              values_to = 'doctors') %>%
+  mutate (scenarios = as.factor(scenarios),
+          year = as.Date(as.character(year), format="%Y")
+          )
+##scale_fill_manual(values = mycols)
+
+t.1.last <- t.1 %>% group_by(scenarios) %>% 
+  summarise(doctors=last(doctors), year=last(year))
+t.1.last.trend <- t.1.last %>%
+  filter (scenarios == 't.x') %>%
+  select(doctors) %>%
+  unlist() %>%
+  unname() 
+t.1.last.3.d <- t.1.last %>%
+  filter (scenarios == 't.3') %>%
+  select(doctors) %>%
+  unlist() %>%
+  unname() 
+
+  
+p3pp <- t.1 %>%
+  ggplot(aes(x=year, y=doctors, color=scenarios, group=scenarios )) +
+  geom_line(size=1 ) +
+  ##geom_smooth(method='lm') +
+  ylab(label="doctors") +
+  xlab("") +
+  scale_color_manual( name='Scenario:',
+    breaks=c('t.1', 't.2', 't.3', 't.4', 't.5', 't.x'),
+    labels=c('1. mean NUE65', '2. mean UE65', 
+             '3. mean NEU', '4. mean UE', '5. PL65', 'trend'),
+    values=c("aquamarine4", "navyblue", "green2",
+             "cornflowerblue", "red",  
+             "darkgoldenrod1", 'yellow')) +
+  ##scale_y_continuous(breaks = seq(0, 32, by=2)) +
+  scale_x_date(breaks = date_breaks("5 years"),  labels = date_format("%Y")) +
+  ggtitle("Demand scenarios for doctors", subtitle="") +
+  geom_text_repel(
+    aes(label = sprintf("%.0f", doctors)), data = t.1.last,
+    fontface ="plain", color = "black", size = 3
+  )
+  
+p3pp
+ggsave(plot=p3pp, file="lekarze_scenariusze_PL.png")
+
+```
+
+None of the scenarios will be implemented assuming that the current rate of growth in the number of doctors is maintained
+
+Even the least ambitious scenario 5 assuming only no deterioration of the 65+ population ratio per doctor will not be implemented either.
+
+
+The table shows the additional number of doctors (compared to the number resulting from the linear trend, i.e. `r sprintf("%.0f", t.1.last.trend)`) necessary to implement in the year `r last.scenario.yr` this specific scenario.
+
+
+The last column doctors/year is the average annual increase in the number of doctors necessary to implement a specific scenario.
+
+For example, in scenario 3 in the year `r last.scenario.yr` there should be `r sprintf("%.0f", t.1.last.3.d - t.1.last.trend )` more doctors
+in the system, or `r sprintf("%.0f", (t.1.last.3.d - t.1.last.trend )/25)` more per year.
+
+
+```{r}
+trend.pl.last <- t.1.last  %>%
+  filter(scenarios =='t.x') %>%
+  select(doctors) %>%
+  unlist() %>%
+  unname() 
+t.1.last.diff <- t.1.last %>% mutate (doctors = doctors - trend.pl.last,
+                                      yd =  doctors/ 25) %>%
+  mutate(scenarios=recode(scenarios,
+                          't.1' = '1. średnia NEU65',
+                          't.2' = '2. średnia UE65',
+                          't.3' = '3. średnia NEU',
+                          't.4' = '4. średnia UE',
+                          't.5' = '5. PL65',
+                          't.x' = 'trend',
+                          )) %>%
+  filter (scenarios != 'trend') %>%
+  select (scenarios, doctors, yd)
+
+scenario.3.yr <- t.1.last.diff %>%
+  filter (scenarios == '3. średnia NEU') %>% select(yd) %>%
+  unlist() %>% unname() 
+
+
+absolwenci.scr <- kable(t.1.last.diff, digits = 0,
+                        col.names = c('Scenario', 'doctors', 'doctors/year'))
+absolwenci.scr
+```
+
+
+## Where will the extra doctors come from?
+
+Potentially two sources: 
+
+* from the national higher education system, and 
+
+* by recruiting doctors/graduates educated abroad.
+
+## Number of graduates entering the profession
+
+There is no data on the number of graduates of medical faculties of Polish medical schools, but the Center for Medical Examinations (CEM)
+publishes data on the results of Medical Final Examinations.
+
+```{r}
+p <- read.csv("lek.csv", sep = ';',  header=T, na.string="NA") %>%
+    select (uczelnia, rok=rok_ukonczenia, zdalo=lek_zdalo) %>%
+    mutate (data = sprintf ("%i-01-01", rok) )
+
+p0 <- p %>% group_by(rok) %>%
+  summarise(zdalo = sum(zdalo), data=first(data)) %>%
+  mutate (zdalo = zdalo/1000)
+  
+  
+p1z <- p0 %>%
+  ggplot(aes(x= as.Date (data, format="%Y-%m-%d"), y=zdalo)) +
+  geom_point(size=2, color=default_cyan, alpha=.3) +
+  geom_line(size=.5, color=default_violet) +
+  geom_smooth(method='lm', se=F) +
+  ylab(label="Graduates (thousand)") +
+  xlab("") +
+  scale_x_date( breaks = "1 year", labels = date_format("%Y")) +
+  #scale_y_continuous(breaks = seq(2000, 2020, by=2)) +
+  scale_y_continuous(expand = c(0, 0), limits = c(0, NA)) +
+  ggtitle("Number of graduates who passed the Medical Final Examination", subtitle="Żródło: https://www.cem.edu.pl/aktualnosci/lep/lep_stat3.php")
+
+p1z
+```
+
+```{r}
+model.1 <- lm(zdalo ~ rok, data=p0)
+
+##model.1
+##
+##summary(model.1)
+lmc <- coef(model.1)
+b.coeff <- lmc["rok"]
+a.coeff <- lmc["(Intercept)"]
+```
+
+
+Practically no increase is observed in the analyzed period (on average, there are `r b.coeff` of graduates per year.)
+
+Conclusion1: with the current system of education, there is no chance for a greater influx of doctors to the system.
+
+Conclusion2: the zero dynamics of the number of graduates entering the profession contradicts the high dynamics of graduates (according to Eurostat)
+We have no explanation to that
+
+##  Doctors educated abroad
+
+
+```{r}
+mig <- read.csv("hlth_rs_wkmg.tsv.gz", sep = '\t',  header=T, na.string="NA")
+
+mig0 <- mig %>% pivot_longer(cols = starts_with('X'),
+                             names_prefix = 'X', names_to = 'year',
+                             values_to = 'value') %>%
+  ## split 1st column into 3
+  separate(`unit.isco08.indic_ed.geo.time`,
+           into = c("unit", "isco08", "indic_ed", "geo"), sep = ",") %>%
+  ## fix value column (some value(s) are not numbers)
+  mutate(value = as.numeric(gsub("[^0-9\\+\\-\\.]", "", value))) %>%
+  mutate(isco08 = as.factor(isco08), indic_ed = as.factor(indic_ed), unit = as.factor(unit)) %>%
+  ## [OC221] Medical doctors
+  filter (unit == 'PC' & isco08 == 'OC221')  %>%
+  ## szkoleni za granicą (w %)
+  filter (indic_ed == 'TNG_OUT') %>%
+  filter (geo %in% ue.ue) %>%
+  mutate (unit = factor(unit)) %>%
+  select (geo, year, value) %>%
+  mutate (status = geo, 
+          status = recode(status, 
+                          'CZ' = neu_, 'EE'= neu_, 'LT' = neu_, 'LV'= neu_, 'PL'= neu_, 
+                          'SK' = neu_, 'SI'= neu_, 'HU' = neu_, 'BG'= neu_, 'RO'= neu_, 
+                          'HR' = neu_, 
+                          'AT' = oeu_, 'BE'= oeu_, 'DK' = oeu_, 'FI'= oeu_, 'FR'= oeu_, 
+                          'DE' = oeu_, 'EL'= oeu_, 'IE' = oeu_, 'IT'= oeu_, 'NL'= oeu_, 
+                          'PT' = oeu_, 'ES'= oeu_, 'SE' = oeu_,  
+                          .default=NA_character_))
+
+mig2021 <- mig0 %>% filter ( (year == 2017 | year == 2008 | year == 2002) )
+
+p1.mm <- mig2021 %>% 
+  ggplot(aes(x=status, y=value)) +
+  geom_boxplot(outlier.shape = NA) +
+  ##geom_jitter(size=3, alpha=.3, position=position_jitter(0.25)) +
+  geom_label(aes(y = value, label = geo),  
+             position=position_jitter(0.1),
+             fill = "yellow", size=2)+
+  ##geom_smooth(method='lm') +
+  facet_wrap(~year) +
+  ylab(label="%") +
+  xlab("") +
+  ##scale_y_continuous(breaks = seq(0, 32, by=2)) +
+  ggtitle("Doctors educated abroad (percent of total)", 
+         subtitle="Source: Eurostat / tabela proj_19np")
+p1.mm
+ggsave(plot=p1.mm, file="lekarze_zagr.png")
+
+```
+
+Or mean averages for EU new/old member states.
+
+```{r}
+## średnie
+
+mm.means <-  mig2021 %>%
+  group_by(status, year) %>%
+  summarise(m = mean(value, na.rm = T)) %>%
+  ungroup() %>%
+  pivot_wider(names_from = 'year', values_from = 'm')
+
+
+##mm.means
+lekarze.zgr.p <- kable(mm.means, col.names = c('Group', '2002', '2008', '2017'))
+lekarze.zgr.p 
+##mm.means
+```
+
+
+In the new EU countries, the share of immigrant doctors is marginal;
+
+In the new EU countries, this share increases slightly (in 15 years by less than 5%, practically from zero)
+
+Seems migrants are not silver-bullet
+
+
+## Thank you
