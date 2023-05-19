@@ -117,28 +117,28 @@ pop2017pl.pp <- pop0 %>%
 ## Background
 
 There is a confirmed relationship between population health
-and the number (and quality) of medial personel
+and the number (and quality) of medial staff
 
-Staff shortages in the health care system are currently a serious
+Staff shortages in the health care (HC) system are currently a serious
 barrier to the implementation of proper medical care in Poland and
 Europe
 
-Staffing Shortages in Health Care can be attributed to several factors:
-Aging Population, burnout but also:
+Staff shortages in HC can be attributed to several factors:
+**aging population**, **personel burnout**, but also:
 
 * improper management of human resources,
 
-* failure to adjust the employment structure to the profile and scope of provided services,
+* failure to adjust the **employment structure** to health needs,
 
-* a defective education system based on a monopoly on educating doctors at public universities, and
+* a defective education system based on public universities monopoly
 
-* underfunding of the health care system
+* HC system underfunding
 
-There are also public opinions (aka myths) on this problem:
+There are also common public opinions (aka myths) on this problem:
 
 * Staff shortages are particularly acute in Poland
 
-* Staff shortages are caused by migration abroad
+* Staff shortages are caused by mass abroad migration (of doctors)
 
 * Number of medical staff is decreasing
 
@@ -149,14 +149,15 @@ which guarantee high quality
 
 Comparison of the number of physicians and medical graduates in Poland and European Union countries.
 
-Development of several simple scenarios for the demand for doctors in Poland in the years 2023-2048
+Development of several simple scenarios for the demand for doctors in Poland in the years 2023--2048
 
+Establish the basic facts and debunk public myths
 
 ## Material and method
 
-Data on the number of doctors and the number of medical graduates come from Eurostat (tables hlth_rs_phys, hlth_rs_grd and hlth_rs_wkmg).
+Data on the number of doctors/medical graduates come from Eurostat (tables `hlth_rs_phys`, `hlth_rs_grd` and `hlth_rs_wkmg`).
 
-Population data and population projections are also from Eurostat (table demo_pjan and proj_23np).
+Population data and population projections are also from Eurostat (table `demo_pjan` and `proj_23np`).
 
 Data from the Local Data Bank of the [Polish] Central Statistical Office (table OCHR_2612_CREL_20220612185524) were also used.
 (cf https://bdl.stat.gov.pl/bdl/start)
@@ -166,22 +167,22 @@ the Medical Final Exam were downloaded from the website of the Center for Medica
 
 (cf https://www.cem.edu.pl/aktualnosci/lep/lep_stat3.php.)
 
-Additionaly selected information contained in reports and scientific publications on the subject was used.
+Additionally selected information contained in reports and scientific publications on the subject was used.
 
 ## Number of doctors in EU
 
-We use **People per 1 physician** ratio (last reported year/2017 for PL)
+We use [number of] **people per 1 physician** rate (last reported year; 2017 for PL)
 
-Member states were divided into two groups:
+EU member states were divided into two groups:
 
-* new member states (NEU), 
-  ie. Czech Rep., Estonia, Lituania, Latvia, Poland, Slovakia, Slovenia, Hungary, Bulgaria, Romania and Croatia.
+* **new member states** (NEU), 
+  ie. Czech Rep., Estonia, Lithuania, Latvia, Poland, Slovakia, Slovenia, Hungary, Bulgaria, Romania and Croatia.
 
-* old member states (OEU), Austria, Belgium, Danmark, Finland, 
+* **old member states** (OEU), Austria, Belgium, Denmark, Finland, 
 France, Germany, Greece, Ireland, Italy, Netherlands, Portugal,
 Spain, Sweden.
 
-Cyprus, Malta and Luxemburg were omited.
+Cyprus, Malta and Luxembourg were omitted.
 
 ```{r}
 l <- read.csv("hlth_rs_phys.tsv.gz", sep = '\t',  header=T, na.string="NA")
@@ -260,10 +261,11 @@ ggsave(plot=p1, file="lekarzePC.png")
 ```
 
 As expected in new members the vale of the indicator is on the average (median) higher
-(`r median.tt.neu` vs `r median.tt.oeu`)
+(`r sprintf("%.1f", median.tt.neu)` vs `r sprintf("%.1f", median.tt.oeu)`)
 
-Poland has the worst  value of the indicator (`r wtt.pl.last`), which is `r sprintf ("%.1f", wtt.pl.last/median.tt.neu * 100)`% of the
-median  in the group of new EU countries and as much as `r sprintf ("%.1f", wtt.pl.last/median.tt.oeu * 100)`%
+Poland has the worst  value of the rate (`r sprintf("%.1f", wtt.pl.last)`),
+which is `r sprintf ("%.1f", wtt.pl.last/median.tt.neu * 100)`% of the
+median in the group of new EU countries and as much as `r sprintf ("%.1f", wtt.pl.last/median.tt.oeu * 100)`%
 in the group of old EU members.
 
 
@@ -313,26 +315,25 @@ change.tt.pl <- l.ue.tt.zmiana %>%
 ```
 
 Median of the last reported value (for the entire analyzed group of
-EU countries) is `r level.tt`.
+EU countries) is `r sprintf("%.1f", level.tt)`.
 
-The median of the average change in the reporting period is `r change.tt`.
-(in half of the countries, the value of the indicator drops not less than `r change.tt` )
+The median of the average change in the reporting period is `r sprintf("%.2f", change.tt)`.
+(in half of the countries, the value of the indicator 
+drops not less than `r sprintf("%.2f", change.tt)` )
 
-The value of the indicator for Poland is `r level.tt.pl` and
+The value of the indicator for Poland is `r sprintf("%.1f", level.tt.pl)` and
 is `r sprintf ("%.1f", level.tt.pl/level.tt * 100 - 100 )`% higher than the median value;
 
-The average change in the reporting period in Poland is `r change.tt.pl`
+The average change in the reporting period in Poland is `r sprintf("%.2f", change.tt.pl)`
 (From year to year, there is `r sprintf ("%.1f", abs(change.tt.pl))` less people per one doctor);
 which is `r sprintf ("%.1f", change.tt.pl/change.tt * 100)`%
-of the median for the analyzed group of countries.
+of the median for the analyzed group of countries (`r sprintf("%.2f", change.tt)`).
 
 
 ## Elderly people per 1 physician
 
-Due to the aging of the population, we believe that
-in addition to total age indicator, it is also worth analyzing the ratio
-of the number of Elderly people per 1 physician (people aged 65+ per 1 physician).
-
+Due to the aging of the population it is worth analyzing the ratio
+of the number of **elderly people per 1 physician** (ie. people aged 65+ per 1 physician).
 
 ```{r}
 l2021pp <- l1 %>% 
@@ -383,11 +384,10 @@ p1.pp
 ggsave(plot=p1.pp, file="lekarzePC65.png")
 ```
 
-On average, new EU countries have higher rato
-(median equal to `r median.pp.neu` than old ones (`r median.pp.oeu`)
+On the average, new EU countries have higher rates
+(median equal to `r sprintf("%.1f", median.pp.neu)` than old ones (`r sprintf("%.1f", median.pp.oeu)`)
 
-Poland has the worst value of the indicator (`r w65.pl.last`)
-
+Poland has again the worst rate value (`r sprintf("%.1f", w65.pl.last)`)
 
 ```{r}
 l.ue.pp <- l1 %>% filter ( phys.age == 'TOTAL' & pop.age == 'pp') %>%
@@ -439,20 +439,24 @@ change65.pl <- l.ue.pp.zmiana %>%
 
 Note that the data is severely incomplete.
 
-The median of the last reported value is `r level65`.
+The median of the last reported value is `r sprintf("%.1f", level65)`.
 
-The median of the average change in the reporting period is `r change65`.
-(in half of the countries, the value of the indicator increases on average no more than `r change65` )
+The median of the average change in the reporting period is `r sprintf("%.3f", change65)`.
+(in half of the countries, the rate value increases on average
+no more than `r sprintf("%.1f", change65)` )
 
-The value of the indicator for Poland is `r level65.pl` and is `r sprintf ("%.1f", level65.pl/level65 * 100 - 100)`% higher than the median value;
+The value of the indicator for Poland is `r sprintf("%.1f", level65.pl)`
+and is `r sprintf ("%.1f", level65.pl/level65 * 100 - 100)`% higher than the median value;
 
-The average change in the reporting period is `r change65.pl` and is `r sprintf ("%.1f", change65.pl/change65 * 100 - 100)`% higher than the median
+The average change in the reporting period is `r sprintf("%.1f", change65.pl)` 
+and is `r sprintf ("%.1f", change65.pl/change65 * 100 - 100)`% higher than the median
 
 
 ## Graduates of medical studies
 
-Medical graduates are future doctors. Therefore, the population per 1 graduate rate determines the size of the stream
-supplying the health care system with new staff.
+Medical graduates are future doctors. 
+Therefore, the **population per 1 graduate** rate determines the size of the stream
+supplying the HC system with new staff.
 
 We compare new and old EU member states for 2017 vs 2002
 
@@ -516,10 +520,9 @@ p2
 ggsave(plot=p2, file="absolwenci_PC.png")
 ```
 
-On average, there were more medical graduates in the new EU
-countries. Poland is next to last; but many countries with a better
-reputation for health care have relatively high values (Germany,
-Sweden, Finland)
+On the average, there were more medical graduates in the new EU
+countries. Poland is next to last (again), but many countries with a better
+reputation for HC have relatively high values (Germany, Sweden, Finland) as well.
 
 ```{r}
 ##print(gr.2021, n=30)
@@ -557,10 +560,11 @@ pl.mean.neu.diff <- pl.mean.neu - graduates.pl.g
 
 ```
 
-The median population/graduate ratio in the group of new EU members is `r sprintf ("%.0f", graduates.nue.mean)` (Poland `r sprintf ("%.0f", graduates.pl.gpc)` or `r sprintf ("%.2f", coeff.g.pl * 100)`%).
+The median population per graduate ratio in the group of new EU members is `r sprintf ("%.0f", graduates.nue.mean)` (Poland `r sprintf ("%.0f", graduates.pl.gpc)` or `r sprintf ("%.2f", coeff.g.pl * 100)`%).
 
-In the last reported year, there were `r graduates.pl.g` graduates in Poland, and to achieve the average for new EU members, it would be necessary to educate `r sprintf ("%.0f", pl.mean.neu)`, i.e. about `r sprintf ("%.0f", pl.mean.neu.diff)` more (increase by `r sprintf ("%.1f", pl.mean.neu.diff/graduates.pl.g * 100 )`% ).
-
+In the last reported year, there were `r graduates.pl.g` 
+graduates in Poland. To achieve the average for new EU members
+it would be necessary to educate `r sprintf ("%.0f", pl.mean.neu)`, i.e. about `r sprintf ("%.0f", pl.mean.neu.diff)` more (increase by `r sprintf ("%.1f", pl.mean.neu.diff/graduates.pl.g * 100 )`% ). Pretty formidable task.
 
 ```{r}
 gr1.total <- gr1 %>%
@@ -600,7 +604,7 @@ there was `r gr2.pl.2017` (increase by `r sprintf ("%.1f", gr2.pl.2010/ gr2.pl.2
 
 ##  Scenarios of demand for physicians in Poland
 
-Scenarios are based on population projection from Eurostat (table proj_23np.)
+Scenarios are based on population projection from Eurostat (table `proj_23np`.)
 
 ```{r}
 proj <- read.csv("proj_23np.tsv.gz", sep = '\t',  header=T, na.string="NA") %>%
@@ -732,13 +736,15 @@ ggsave(plot=f1p, file="ludnosc_prognoza_PL.png")
 
 The population of Poland will steadily decrease (in 2090 it will fall below 29 million)
 
-The number of people aged 65+ in Poland will systematically grow until 2062, reaching over 10 million.
+The number of people aged 65+ in Poland 
+will systematically grow until 2062, reaching over 10 million.
 
-The share of people aged 65+in Europe will increase. The median for the analyzed group of countries in 2023 will be `r mean.pp.2023`
-and in 2048 it will be `r mean.pp.2048`
+The share of people aged 65+in Europe will increase.
+The median for the analyzed group of countries in 2023 will be `r sprintf("%.1f",mean.pp.2023)`
+and in 2048 it will be `r sprintf("%.1f",mean.pp.2048)`
 
 In 2017, the total population of Poland was
-`r pop2017pl.tt `, population aged 65+ will be
+`r pop2017pl.tt `, population aged 65+ was 
 `r pop2017pl.pp` (`r sprintf ("%.2f%%", pop2017pl.pp/pop2017pl.tt *100 )`)
 
 In 2048 the total population of Poland will be
@@ -748,7 +754,7 @@ In 2048 the total population of Poland will be
 Share of population aged 65+ will almost double (2017--2048). Total
 population will decrease by `r sprintf ("%.2f%%", 100 - pop2017pl.tt/pop2048pl.tt * 100)`
 
-## Increase in the number of doctors in the health care system
+## Increase in the number of doctors in the HC system
 
 ```{r}
 ### liczba lekarzy wg BDL
@@ -794,9 +800,9 @@ a.coeff <- lmc["(Intercept)"]
 ##b.coeff
 ```
 
-We can observe steady increase in the analyzed period. The approximation with linear trend showed that, the average annual increase
+Steady increase in the analyzed period is observed. 
+The approximation with linear trend showed that, the average annual increase
 in the number of doctors was `r sprintf ("%.1f", b.coeff)`.
-
 
 ## Demand scenarios 
 
@@ -807,29 +813,38 @@ up with the rest of the EU.
 Specifically, five scenarios were considered, assuming that in 2048 (i.e. in 25 years):
 
 
-1. The per capita rate [of doctors] in the 65+ group will be equal to the average in the group of new EU members, adjusted by the average annual change
+1. The per capita rate [of doctors] in the 65+ group will be equal to
+the average in the group of new EU members, adjusted by the average
+annual change
 
-2. The per capita rate [of doctors] in the 65+ group will be equal to the average in the whole EU, adjusted by the average annual change
+2. The per capita rate [of doctors] in the 65+ group will be equal to
+the average in the whole EU, adjusted by the average annual change
 
-3. The total per capita rate [of doctors] will be equal to the average in the group of new EU members, adjusted by the average annual change
+3. The total per capita rate [of doctors] will be equal to the average
+in the group of new EU members, adjusted by the average annual change
 
-4. The total per capita rate [of doctors] will be equal to the average in the whole EU, adjusted by the average annual change
+4. The total per capita rate [of doctors] will be equal to the average
+in the whole EU, adjusted by the average annual change
 
 5. The per capita rate [of doctors] in the 65+ group will be equal to the 
 value for PL for 2017 (it will not deteriorate), adjusted by the average annual change
 
 
-The median was taken as the mean value. It was assumed that the observed average change in this average value will continue in the forecast period. For example, if in the group of new EU countries, the average annual change was `r change65.neu`. We assume that in 2048 this average will be `r change65.neu * (2048 - 2017)` patients per doctor higher (annual change multiplied by 31, i.e. the difference between 2048 and 2017).
+The median was taken as the mean value.
+It was assumed that the observed average change in this average value will continue in the forecast period.
+For example, if in the group of new EU countries, the average annual change was `r sprintf("%.1f", change65.neu)`
+we assume that in 2048 this average will be `r sprintf("%.1f", change65.neu * (2048 - 2017))` people per doctor higher (annual change multiplied by 31, i.e. the difference between 2048 and 2017).
 
-Of course, this is a very simplified assumption and it boils down to determining what will happen if the observed trends do not change.
+Of course, this is a very simplified assumption and it boils down
+to determining what will happen if the observed trends do not change.
 
-The rapid aging of the population justifies the use of the population 65+/doctor ratio, not the total population.
+The rapid aging of the population justifies the use of the population 65+/doctor rate, 
+not the total population rate.
 
 Scenarios 1 and 2 are the most ambitious and scenario 5 the least
 
-Scenarios 1-5 and a linear trend line assuming an average annual increase in physicians in 2018-2048 equal to
-the one observed in years `r pl.yr.first`--`r pl.yr.last` (i.e. `r sprintf("%.1f", b.coeff)` doctors per year) are presented
-at the chart below
+Scenarios 1--5 and a linear trend line assuming an average annual increase in physicians in 2018--2048 equal to
+the one observed in years `r pl.yr.first`--`r pl.yr.last` (i.e. `r sprintf("%.1f", b.coeff)` doctors per year) are presented at the chart below
 
 ```{r}
 last.scenario.yr <- 2048
@@ -1031,7 +1046,8 @@ Potentially two sources:
 
 ## Number of graduates entering the profession
 
-There is no data on the number of graduates of medical faculties of Polish medical schools, but the Center for Medical Examinations (CEM)
+There is no data on the number of graduates of medical faculties of Polish medical schools, 
+but the Center for Medical Examinations (CEM)
 publishes data on the results of Medical Final Examinations.
 
 ```{r}
@@ -1071,11 +1087,13 @@ a.coeff <- lmc["(Intercept)"]
 ```
 
 
-Practically no increase is observed in the analyzed period (on average, there are `r b.coeff` of graduates per year.)
+Practically no increase is observed in the analyzed period (on the average, 
+there are extra `r b.coeff` graduates per year.)
 
 Conclusion1: with the current system of education, there is no chance for a greater influx of doctors to the system.
 
-Conclusion2: the zero dynamics of the number of graduates entering the profession contradicts the high dynamics of graduates (according to Eurostat)
+Conclusion2: the low dynamics of the number of graduates entering 
+the profession contradicts the high dynamics of graduates (according to Eurostat)
 We have no explanation to that
 
 ##  Doctors educated abroad
@@ -1152,9 +1170,10 @@ lekarze.zgr.p
 
 In the new EU countries, the share of immigrant doctors is marginal;
 
-In the new EU countries, this share increases slightly (in 15 years by less than 5%, practically from zero)
+In the new EU countries, 
+this share increases slightly (in 15 years by less than 5%, practically from zero)
 
-Seems migrants are not silver-bullet
+Seems migrants are not silver-bullet.
 
 
 ## Thank you
