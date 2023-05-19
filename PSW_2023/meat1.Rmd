@@ -56,7 +56,7 @@ Data on per capita supply at a retail level of various food items
 
 Calculate as: 
 
-(production + import + stocks) - (export + feeding/non-food-usage/wastage + closing stocks)
+**(production + import + stocks) - (export + feeding/non-food-usage/wastage + closing stocks)**
 
 The difference divided by population is per capita consumption
 
@@ -69,11 +69,17 @@ Up to you to assess the precision :-)
 
 Items (hundreds) and item groups (such as Meat or Animal Products)
 
-Measured as: daily per capita energy supply (kcal/c/d),
-daily per capita protein supply (g/c/d),
-daily per capita fat supply (g/c/d),
+Measured as: 
+
+* daily per capita energy supply (kcal/c/d or **kilocalories/per capita/daily**),
+
+* daily per capita protein supply (g/c/d),
+
+* daily per capita fat supply (g/c/d),
+
 or
-daily per capita quantity supply (kg/c/year)
+
+* daily per capita quantity supply (kg/c/year)
 
 We use the following item groups: Meat, Animal Products
 (Meat + Eggs + Dairy products, Honey etc...),
@@ -90,13 +96,15 @@ World Bank Income Groups
 GNI per capita, Atlas method (current USD)
 https://data.worldbank.org/indicator/NY.GNP.PCAP.CD
 
- GNI         | Income Group
--------------+--------------
- 0–1084      | low 
- 1085–4254   | lower-middle
- 4255–13204  | upper-middle
- 13205–      | high
--------------+--------------
+
+| GNI         | Income Group |
+|-------------|--------------|
+| 0–1084      | low          |
+| 1085–4254   | lower-middle |
+| 4255–13204  | upper-middle |
+| 13205–      | high         |
+
+
 
 ```{r}
 o0 <- read.csv(file='FoodBalance2023.csv',sep=';', 
@@ -574,6 +582,8 @@ If a relation between Meat consumption and GDP follows EKC
 it must has a turning point, ie. an income level above which
 the consumption of meat decreases.
 
+BTW: https://www.youtube.com/watch?v=2-LunSug43 (How to pronounce Kuznets)
+
 ## Environmental Kuznets Curve cd
 
 Simple regressions
@@ -679,10 +689,10 @@ p.kuznets
 Meat = `r a.coeff` + `r b.coeff` · GNI  + `r b.coeff` · GNI² (1000 USD/pc; R² = `r lmr.m1`)
 
 Apex point is `r sprintf ("%.1f", apex.y)` kcal/c/daily 
-of Animal Products at  `r sprintf ("%.1f", apex)` USD/pc. 
+of Animal Products at  `r sprintf ("%.1f", apex)` (thousand) USD/pc. 
 
 This is very high value but is consistent with **Cole J.R. and McCoskey S. (2017)**
-who using data for 2009 reported 43,9 thousand/pc.
+who using data for 2009 reported 43,9 thousand USD/pc.
 
 ## Conclusion
 
@@ -705,3 +715,32 @@ Przechlewski T.,
 *Meat and animal products consumption trends 2010--2020. Exploratory analysis*
 Oblicza Dobrobytu 2023 (In Press)
 https://github.com/hrpunio/Papers/tree/main/PSW_2023
+
+
+## Appendix
+
+```{r}
+konf.part <- c(
+  '616', '012', '268', '800', '400', '504', '792', '356', '417', '100',
+  '275', '498', '788', '051', '008', '688' )
+
+o0od2023 <- o0 %>% filter (CodeM49 %in% konf.part )  %>%
+  filter (Item == 'Meat' & Element =='FoodSQ (kg/c/y)' ) %>%
+  mutate (V2020 = as.character(Value))
+
+o0od2023$V2020[ (o0od2023$YearCode == "2010" ) ] <- ""
+
+od2023.cons.p <- ggplot(o0od2023, aes(x= Area,  y=Value, fill=as.factor(YearCode) )) +
+  geom_bar(stat='identity', position="identity",  alpha=.3) +
+  xlab(label="") +
+  ylab("kg/capita/year") +
+  theme(legend.position = "top") +
+  labs(fill="") +
+  geom_text(aes(label = sprintf ("%s", V2020)), size=3, color='red', hjust=1.25) +
+  ggtitle('Consumption of meat in countries represented at OD2023 (2020 vs 2010)') +
+  coord_flip()
+od2023.cons.p
+
+```
+
+Thank you (finally)
