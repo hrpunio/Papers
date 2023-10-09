@@ -1,0 +1,977 @@
+---
+title: "Meat consumption trends 1995--2020"
+author: "Tomasz Przechlewski"
+date: "2023"
+output:
+  html_document: default
+  word_document: default
+  pdf_document: default
+documentclass: book
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = F, warning=F, message = F)
+
+library("ggplot2")
+library("dplyr")
+library("tidyr")
+library("knitr")
+library("ggpubr")
+
+options(knitr.kable.NA = '--')
+
+printprc <- function(x) { sprintf ("%.1f%%", x)}
+
+items.of.interest <- c( 'Meat', 'Animal Products', 'Grand Total', 'Population')
+units.of.interest <- c('FoodS (kcal/c/d)', 'ProtSQ (g/c/d)', 
+                       'FoodSQ (kg/c/y)', 'TotalPop', 'Import', 'Export',
+                       'DomSQ')
+## years_c not used
+# years_c <- c('2010', '2011', '2012', '2013', '2020')
+## Lata które są rejestrowane podwójnie
+years_overlap <- c('2010', '2011', '2012', '2013')
+## Lata wybrane do wykresu
+years_sel <- c('1995', '2010', '2020')
+
+## 159 == China
+## China mainland vs China, mainland
+fao.aggregates <- c("001", "002", "014", "017", "015", "018", "011", "019",
+"021", "013", "029", "005", "142", "143", "030", "034", "035", "145", "150",
+"151", "154", "039", "155", "009", "053", "054", "097", "199", "432", "722",
+"901", "902", "159")
+
+LastYr <- 2020
+
+## Dane 2010--
+## China, mainland vs China mainland
+o0 <- read.csv(file='FoodBalance2023.csv',sep=';', 
+               colClasses=c( CodeM49 ="character"),
+               header=T) %>%
+  ##filter (YearCode %in% years_c ) %>%
+  filter (Item %in% items.of.interest) %>%
+  filter (Element %in% units.of.interest)
+
+## Spożycie mięsa ogółem 1000 ton w  roku 2020
+o0.total.2020.world <- o0 %>% filter (Area == 'World') %>%
+  filter (Item == 'Meat' & Element =='DomSQ' & YearCode == LastYr) %>%
+  select(Value) %>%  unlist() %>% unname() 
+
+## Dane historyczne
+## Dane --2013
+o0h <- read.csv(file='FoodBalance2023H_M.csv',sep=';', 
+               colClasses=c( CodeM49 ="character"),
+               header=T) %>%
+  ##filter (YearCode %in% years_c ) %>%
+  filter (Item %in% items.of.interest) %>%
+  filter (Element %in% units.of.interest)
+
+## Tylko kraje o liczbie ludności > 3mln (2020)
+## około 130 krajów
+## Polecenie pull zamienia na listę
+big.countries.2020 <- o0 %>% filter(YearCode == LastYr ) %>%
+   filter (Item == 'Population' & Value > 3000) %>%
+    filter (! CodeM49 %in% fao.aggregates) %>%
+  pull(CodeM49)
+
+o1 <- o0 %>% filter (CodeM49 %in% big.countries.2020) 
+o1h <- o0h %>% filter (CodeM49 %in% big.countries.2020) 
+
+## Mają być tylko 2010--2013
+o1xx <- o1 %>% filter (YearCode %in% years_overlap)
+o1hxx <- o1h %>% filter (YearCode %in% years_overlap)
+
+o_old_vs_new.0 <- o1xx %>% 
+  left_join(o1hxx, by=c('CodeM49', 'Item', 'Element', 'YearCode') ) %>%
+  select(CodeM49, Area=Area.x, Item, Element, YearCode, 
+         Value=Value.x, ValueOld=Value.y)
+
+o_old_vs_new <- o_old_vs_new.0 %>%
+  group_by(Area, Item, Element) %>%
+    summarise(v = mean(Value), z = mean(Value - ValueOld)) %>%
+  ungroup() %>%
+  mutate(zp=z/v * 100 ) %>%
+  filter (Item == 'Meat') %>%
+  filter (Element == 'FoodSQ (kg/c/y)' | Element == 'Import' | Element == 'Export')
+
+## # Kraje o 10% i większej różnicy 
+## # -------------------------------
+o_big_diff <- o_old_vs_new %>%
+  filter (zp > 10 | zp < -10) %>%
+  filter (Element == 'FoodSQ (kg/c/y)' )
+
+##
+o_big_diff_names <- o_big_diff %>% select (Area) %>% unlist %>% unname()
+
+## Łączymy stare + nowe
+## pomijamy kraje o dużej różnicy
+#
+o1h <- o1h %>% filter (YearCode < 2010)
+
+oo <- bind_rows(o1, o1h) %>%
+  filter (! Area %in% o_big_diff_names )
+
+## liczba krajów
+nn0 <- nlevels(as.factor(oo$Area))
+nn_levels_0 <- levels(as.factor(oo$Area))
+
+```
+
+
+## Introduction
+
+Over the last 60 years, global food consumption increased from to ie. by 300%.
+This growth was caused both by increasing the world population
+from 3 to 8 billions of people, and by increased demand due to higher per capita income.
+In short there are more, more wealthy people.
+Moreover not only global food consumption has increased, but the structure of what was consumed
+changed. In particular faster than average increase in meat and animal-based products were observed.
+
+This meat consumptions trends are generally regarded as harmful
+and the potential negative consequences of substituting meat for traditional foods
+are threefold:
+
+* meat consumption is unhealthy (for consumers),
+
+* meat production is economically inefficient (compared to plant-based food),
+
+* meat production is harmful to environment being substantial source both of greenhouse gases
+and land degradation
+
+Ever-increased number of papers warns that following the path of 
+fast increasing 
+meat consumption results in both environment and global economic catastrophe.
+Looking for possible soft-solutions (hard solution is a degrowth strategies)
+Vrenken et all (2014) based on EKC
+hypothesis looked for `turning point' in meat consumption and claimed they
+found one. The other paper which claimed that meat consumption follows EKC is of Cole and McCoskey (2013).
+
+The aim of the study is to assess the trends in world meat consumption in last 60 years
+based on data from FAO food balance sheet. As it is
+assumed that the total meat consumption depends on income  the consumptions is compared by
+World Bank's income groups.
+Finally two simple models namely Engel Curve, and
+Environment Kuznets Curve (EKC) hypothesis are tested and the results discussed with the above mentioned previous reports.
+
+In particular both papers cited above are pretty dated and do not cover 
+the last decade. Using the same data (FAO Food balance sheet) we try 
+to verify if after ten years of ever-increased warnings, social-awareness and pro-environmental propaganda the world is closer to those `turning points'? 
+
+## Data
+
+```{r}
+## Total meat consumption  (1000 tonnes)
+o0h <- o0h %>% filter (YearCode < 2010)
+
+oo.total.meat <- bind_rows(o0, o0h) %>% filter (Area == 'World') %>%
+  filter (Item == 'Meat' & Element =='DomSQ') %>%
+    arrange(Value)
+
+## Meat FoodS (kcal/c/d)
+oo.total.meat.foodS <- bind_rows(o0, o0h) %>% filter (Area == 'World') %>%
+  filter (Item == 'Meat' & Element =='FoodS (kcal/c/d)') %>%
+    arrange(Value)
+
+## Protein (g/c/d)
+oo.total.prot <- bind_rows(o0, o0h) %>% filter (Area == 'World') %>%
+  filter (Item == 'Grand Total' & Element =='ProtSQ (g/c/d)') %>%
+    arrange(Value)
+
+## Total supply (kcal/c/d)
+oo.total.tot <- bind_rows(o0, o0h) %>% filter (Area == 'World') %>%
+  filter (Item == 'Grand Total' & Element =='FoodS (kcal/c/d)') %>%
+     arrange(Value)
+
+## As % of 1961 value ###
+## FoodSuply kcal/pc 
+oo.total.tot <- oo.total.tot %>%
+  mutate (pt = Value / first(Value) * 100)
+
+## ProtSupply
+oo.total.prot <- oo.total.prot %>%
+  mutate (pp = Value / first(Value) * 100)
+
+## MeatSupply 1000 t
+oo.total.meat <- oo.total.meat %>%
+  mutate (pm = Value / first(Value) * 100)
+
+## Meat per capita
+oo.total.meat.foodS <- oo.total.meat.foodS  %>%
+  mutate (pm = Value / first(Value) * 100)
+
+## Change
+## Average yearly increase 1961-2010
+yearsPass <- 2010 - 1961
+YC0 <- c(1961, 2010)
+YY <- oo.total.meat.foodS %>% filter (YearCode %in% YC0)
+
+meat.min.0 <- YY %>%  summarise(index = first(Value))  %>% unlist %>% unname()
+meat.max.0 <- YY %>%  summarise(index = last(Value))  %>% unlist %>% unname()
+                                
+meat.index.0 <- YY %>%
+  summarise(index = ((last(Value)/first(Value) * 100 ) - 100) /yearsPass)  %>%
+  unlist %>% unname()
+
+YY <- oo.total.prot %>% filter (YearCode %in% YC0)
+
+prot.min.0 <- YY %>%  summarise(index = first(Value))  %>% unlist %>% unname()
+prot.max.0 <- YY %>%  summarise(index = last(Value))  %>% unlist %>% unname()
+
+prot.index.0 <- YY %>%
+  summarise(index = ((last(Value)/first(Value) * 100 ) - 100) /yearsPass)  %>%
+  unlist %>% unname()
+
+YY <- oo.total.tot %>% filter (YearCode %in% YC0)
+
+tot.min.0 <- YY %>%  summarise(index = first(Value))  %>% unlist %>% unname()
+tot.max.0 <- YY %>%  summarise(index = last(Value))  %>% unlist %>% unname()
+
+tot.index.0 <- YY %>%
+  summarise(index = ((last(Value)/first(Value) * 100 ) - 100) /yearsPass)  %>%
+  unlist %>% unname()
+
+###
+###  Same as above for 2020--2010
+###
+yearsPass <- 2020 - 2010
+YC0 <- c(2010, 2020)
+
+YY <- oo.total.meat.foodS %>% filter (YearCode %in% YC0)
+
+meat.min.1 <- YY %>%  summarise(index = first(Value))  %>% unlist %>% unname()
+meat.max.1 <- YY %>%  summarise(index = last(Value))  %>% unlist %>% unname()
+
+meat.index.1 <- YY %>%
+  summarise(index = ((last(Value)/first(Value) *100) - 100) / yearsPass) %>%
+  unlist %>% unname()
+
+
+YY <- oo.total.prot %>% filter (YearCode %in% YC0)
+
+prot.min.1 <- YY %>%  summarise(index = first(Value))  %>% unlist %>% unname()
+prot.max.1 <- YY %>%  summarise(index = last(Value))  %>% unlist %>% unname()
+
+prot.index.1 <- YY %>%
+  summarise(index = ((last(Value)/first(Value) * 100 ) - 100) /yearsPass)  %>%
+  unlist %>% unname()
+
+YY <- oo.total.tot %>% filter (YearCode %in% YC0)
+
+tot.max.1 <- YY %>%  summarise(index = first(Value))  %>% unlist %>% unname()
+tot.min.1 <- YY %>%  summarise(index = last(Value))  %>% unlist %>% unname()
+
+tot.index.1 <- YY %>%
+  summarise(index = ((last(Value)/first(Value) * 100 ) - 100) /yearsPass)  %>%
+  unlist %>% unname()
+
+### Meat quantity supply (1000 t)
+yearsPass <- 2020 - 2010
+YC0 <- c(2010, 2020)
+
+## oo.total.meat = total world
+YY <- oo.total.meat %>% filter (YearCode %in% YC0)
+meat.min.supply <- YY %>%  summarise(index = first(Value))  %>% unlist %>% unname()
+### Domestic Supply w 2020
+meat.max.supply <- YY %>%  summarise(index = last(Value))  %>% unlist %>% unname()
+
+## total Domestic Supply in a sample
+oo.total.meat.sample <- oo %>% filter (YearCode == 2020) %>%
+  filter (Item == 'Meat' & Element =='DomSQ') %>%
+  summarise(total = sum(Value)) %>% unlist %>% unname()
+
+## share of world supply in a sample:
+how.much.meat.in.sample <- oo.total.meat.sample / meat.max.supply * 100
+```
+
+### FBS
+
+We use data on food consumption and population from Food Balance Sheet (https://www.fao.org/faostat/en/#data/FBS)
+provided by the UN Organization for Food and Agriculture (FAO.) 
+
+FBS data on per capita and total of food supply are
+calculated as follows: 
+
+**(production + import + stocks) - (export + feeding/non-food-usage/wastage + closing stocks)**
+
+The difference divided by population is per capita consumption
+
+FBS is divided into hundreds of items (such as pepper or onion) 
+and many item groups (such as Meat or Animal Products.)
+
+Items/Item groups are measured as: 
+
+1. yearly per capita **quantity supply** (kilograms/per capita/year, abbreviated to kg/c/y )
+
+2. daily per capita **energy supply** (**kilocalories/per capita/daily**, kcal/c/d),
+
+3. daily per capita **quantity supply** (grams/per capita/day, g/c/d),
+
+4. yearly total **quantity supply** (1000 tonnes)
+
+We analyze the three groups: **meat**, **total intake** 
+and **total protein supply** (ie animal and plan based protein). 
+**Meat consumption** was measured with 1, 2 and 4;
+**total intake** was measured with 2; and  **total protein supply**
+is measured with 3.
+
+### World Bank
+
+To verify hipothesis on the relation between income and 
+meat/total consumption we use data on GDP from the World Bank, namely we use
+GNI per capita (Atlas method in current USD;
+https://data.worldbank.org/indicator/NY.GNP.PCAP.CD)
+
+World Bank per-capita income groups (2022) are listed in table 1.
+
+Table 1. World Bank income groups
+
+| GNI pc      | Income group |
+|-------------|--------------|
+| 0–1084      | low          |
+| 1085–4254   | lower-middle |
+| 4255–13204  | upper-middle |
+| 13205–      | high         |
+
+Source: https://blogs.worldbank.org/opendata/new-world-bank-country-classifications-income-level-2022-2023
+
+```{r}
+## WB income groups
+##
+gni <- read.csv(file='API_NY.GNP.PCAP.CD_DS2_en_csv_v2_5340976.csv', 
+               sep=',', 
+               ##colClasses=c( CodeM49 ="character"),
+               header=T) %>%
+  select (ISO3=Country.Code, starts_with('X')) %>%
+  pivot_longer(cols = starts_with('X'), names_prefix = 'X', names_to = 'year',
+               values_to = 'GNI') %>%
+  mutate (year = as.numeric(year), GNI=GNI/1000)
+
+gni0 <- gni %>%
+  drop_na() %>%
+  group_by(ISO3) %>%
+  summarise(ISO3 = last(ISO3), year = last(year), GNI = last (GNI))
+
+
+## UNSD nie zawiera taiwanu
+## unsd potrzebny do dodania ISO3
+#unsd <- read.csv(file='m49toIso.csv', sep=';',
+#                 colClasses=c( M49 ="character"), header=T) %>%
+#  select (CountryName, CodeM49=M49, ISO3)
+unsd <- read.csv(file='m49toIso.csv', sep=';',
+                 colClasses=c( M49 ="character"), header=T) %>%
+  select (CountryName, CodeM49=M49, ISO3, UE)
+unsd.ue <- unsd %>% filter (UE == "Y") %>%
+  select (CodeM49) %>% unlist %>% unname()
+
+## Podstawowa baza danych
+## oo - wszystkie kraje bez krajów małych i `mało wiarygodnych' (ok 103)
+o2 <- oo %>% 
+  left_join(unsd, by='CodeM49' ) %>%
+  left_join(gni, by=c('ISO3'='ISO3', 'YearCode'='year')) %>%
+  ##mutate( class=IncomeGroup)
+  mutate (fbs=case_when(YearCode < 2011  ~ "<2011", 
+                        YearCode >= 2011 ~ "2010>",
+                        TRUE ~ NA_character_)) %>%
+  ##
+  mutate( class=case_when( GNI < 1.085 ~ "low",
+                           GNI < 4.255 ~ "lower-middle",
+                           GNI < 13.205 ~ "upper-middle",
+                           GNI >= 13.205 ~ "high",
+                           TRUE ~ NA_character_ ) ) %>%
+  drop_na(class)
+
+## dwa kraje odpadły
+nn1 <- nlevels(as.factor(o2$Area))
+nn_levels_1 <- levels(as.factor(o2$Area))
+
+oo.total.meat.sample.2 <- o2 %>% filter (YearCode == 2020) %>%
+  filter (Item == 'Meat' & Element =='DomSQ') %>%
+  summarise(total = sum(Value)) %>% unlist %>% unname()
+
+### ile światowej konsumpcji mięsa jest w próbie (ramka oo)
+## około 92.3%
+how.much.meat.in.sample.2 <- oo.total.meat.sample.2 / meat.max.supply * 100
+##
+## ostatecznie 90,7%
+##nn0[! (nn_levels_0 %in% nn_levels_1)  ]
+nn_diff <- setdiff(nn_levels_0, nn_levels_1)
+##nn_diff
+```
+
+### The database
+
+The country with population less than 3mln was dropped 
+from the analysis with about 130 countries left in the sample.
+
+The balance is mantained from 1961 but in 2010 there was a methodology change.  
+The new FBS is published from 2010 but for 2010--2013 period FAO published 
+both versions. We computed averages of meat consumption in kg/per capita 
+for this period (ie 2010--2013) for new and old FBS. In case of difference 
+higher then 10%, the data was regarded
+as unreliable and the country was dropped from our panel.
+Only `r nn0` countries left in the sample (the list of countries dropped can
+be found online at our github page) but these countries
+consumed `r sprintf("%.1f%%", how.much.meat.in.sample)` of 
+total world meat supply in 2020.
+
+When combined with GDP data from World Bank it appeared that 
+there is no GDP data for `r length(nn_diff)` countries (`r nn_diff`). 
+Finally our sample contains `r nn1` countries 
+(which nevertheless consumed `r sprintf("%.1f%%", how.much.meat.in.sample.2)` of 
+the total world meat supply in 2020.)
+
+This database is used at exploratory analysis stage. To verify
+income-consumption relation we further restrict our sample.
+As both FBS and World Bank data contains many missing or
+unreliable (political changes) values we decided to use
+data from 1995 onward period. 
+Thus our final panel contains `r nn1` countries for 1995--2020.
+
+## Results
+
+### Exploratory analysis
+
+Both protein and total intake rose steadily over the analysed period
+(cf figure 1). Protein consumption over the period 1961--2010
+rose by `r printprc(prot.index.0)` yearly on average, 
+from `r prot.min.0` to `r prot.max.0` (g/c/d). Slight increase was
+observed over 2010--2020 period. The protein intake
+rose from `r prot.min.1` in 2010 to `r prot.max.1` in 2020
+(`r printprc(prot.index.1)` yearly on average)
+
+As far as **total consumption** is concerned
+it rose by `r printprc(tot.index.0)` yearly on average over the period 1961--2010, 
+from `r tot.min.0` to `r tot.max.0` (kcal/c/d). 
+However over 2010--2020 period  the growth rate decreased. The total intake
+rose from `r tot.min.1` kcal/c/d in 2010 to `r tot.max.1` kcal/c/d in 2020
+(`r printprc(tot.index.1)` yearly on average)
+
+The largest drop in growth was recorded in the **meat consumption**.
+It rose strongly by `r printprc(meat.index.0)` yearly on average over the period 1961--2010, 
+from `r meat.min.0` kcal/c/d to `r meat.max.0` kcal/c/d. 
+However over 2010--2020 period  the growth rate decreased. Meat consumption
+rose from `r meat.min.1` kcal/c/d in 2010 to `r meat.max.1` kcal/c/d in 2020
+(only `r printprc(tot.index.1)` yearly on average)
+
+
+```{r}
+## Porównanie dynamiki (wykres)
+p.total.cons.xx <- oo.total.meat.foodS %>% left_join(oo.total.prot, by='YearCode' ) %>%
+  left_join(oo.total.tot, by='YearCode') %>%
+  select(YearCode, meat=pm, protein=pp, total=pt) %>%
+  pivot_longer(c(meat, protein, total), names_to = 'P', values_to = 'V') %>%
+  ggplot(aes(x=YearCode, y=V, color=P)) +
+  geom_point() +
+  geom_line() +
+  geom_text(aes( x=2009, y=105, label="2010"), size=3, angle=90,
+            color='hotpink4') +
+  geom_vline(xintercept = 2010, colour="hotpink4") +
+  ##facet_wrap(~class, scales = "free") +
+  ylab("%") +
+  xlab("") +
+  labs(colour="") +
+  theme(legend.position="bottom")
+  ##ggtitle("Meat/Protein/Total consumption (1961=100%)")
+
+## konsumpcja mięsa, białka oraz łącznie 1961--2020
+p.total.cons.xx
+ggsave(p.total.cons.xx, file="meat-prot-tot-consumption.png")
+ggsave(p.total.cons.xx, file="meat-prot-tot-consumption.pdf")
+
+```
+
+The patters of growth depends on income of course. Total meat consumption
+by (World Bank) income class is presented in figure 2. Note that the figure shows the **total world consumption** (in kilotonnes) which is the combined result of the growth of individual consumption and the growth of the population. We can observe strong growth in 
+upper-middle class of countries, mild increase in high-income countries while
+decline both in lower-middle and low-income contries. In short the poor eat less,
+the rich eat more in the whole analysed period.
+
+```{r}
+#############################
+oo.total.meat.by.class <- o2 %>% 
+  ##filter (Area == 'World') %>%
+  filter (YearCode > 1979) %>%
+  filter (Item == 'Meat' & Element =='DomSQ') %>%
+  group_by(class, YearCode) %>%
+  summarise(Value=sum(Value)) %>%
+  group_by(class) %>%
+  arrange(class, YearCode)  %>%
+  mutate (ValueP=Value/first(Value) * 100) 
+  
+
+##
+## Meat consumption by income class
+p.total.meat.by.class <- oo.total.meat.by.class %>%
+  ggplot(aes(x=YearCode, y=Value, color=class)) +
+  geom_point() +
+  geom_smooth(method='loess', se=F) +
+  ##ggtitle("Meat consumption (1000 tonnes)") +
+  ylab("1000 tonnes") +
+  xlab("") +
+  annotate("text", x = 1995, y = 170000, colour = "black", size=4, 
+           label="Lines fitted with loess regression") +
+  labs(colour="income class:") +
+  theme(legend.position="bottom")
+
+p.total.meat.by.class
+ggsave(p.total.meat.by.class, file="total_meat_cons_by_gdi_class.png")
+ggsave(p.total.meat.by.class, file="total_meat_cons_by_gdi_class.pdf")
+```
+
+Individual meat consumption (kg/per capita/year) by income classes (as defined in 2022) is 
+analysed in figure 3. We can observe tiny drop in high-income group, significant
+increase in upper-middle group, and stabilization at low level in low-income class.
+The dispersion tends to decrease in all groups.
+
+```{r}
+o2.high <- o2 %>% group_by(Area) %>%
+  summarise(Area=last(Area), class=last(class)) %>%
+  filter (class=='high')
+N.high <- nrow(o2.high)
+
+o2.lm <- o2 %>% group_by(Area) %>%
+  summarise(Area=last(Area), class=last(class)) %>%
+  filter (class=='lower-middle')
+N.lm <- nrow(o2.lm)
+
+o2.um <- o2 %>% group_by(Area) %>%
+  summarise(Area=last(Area), class=last(class)) %>%
+  filter (class=='upper-middle')
+N.um <- nrow(o2.um)
+
+o2.low <- o2 %>% group_by(Area) %>%
+  summarise(Area=last(Area), class=last(class)) %>%
+  filter (class=='low')
+N.low <- nrow(o2.low)
+
+## There is `r N.high` countries in high-income group etc...
+
+## ============================================================
+## Population
+
+p.pop <- o2 %>%
+  filter (Item == 'Population') %>%
+  group_by(class, YearCode) %>%
+  summarise(population = sum(Value, na.rm = T)) %>%
+  group_by(YearCode) %>%
+  mutate(T = sum(population)) %>%
+  group_by(class, YearCode) %>%
+  summarise(p = sum(population) / T * 100 ) 
+
+## Meat Consumption 
+
+p0.meat.cons <- o2 %>% 
+  filter (Item == 'Meat' & Element =='FoodSQ (kg/c/y)' ) %>%
+  filter (YearCode %in% years_sel) %>%
+  mutate(class = dplyr::recode(class, 
+                        "high" = "h", "upper-middle" = "um", 
+                        "lower-middle" = "lm",
+                        "low"='l')) %>%
+  ggplot(aes(x=class, y=Value)) +
+  facet_wrap(~YearCode) +
+  geom_jitter(size=3, alpha=.3, position=position_jitter(0.05)) +
+  geom_boxplot(outlier.shape = NA, alpha=.3, fill='yellow') +
+  ylab("kg/capita/year") +
+  xlab("income class")
+  #ggtitle("Meat consumption (kg/capita/year)", subtitle="")
+
+p0.meat.cons
+ggsave(p0.meat.cons, file="meat_consumption_by_class.png")
+ggsave(p0.meat.cons, file="meat_consumption_by_class.pdf")
+
+```
+
+A more detailed analysis is available online in the supplementary material at 
+author's github repo
+(https://github.com/hrpunio/Papers/tree/main/PSW_2023).
+Detailed analysis of meat consumption over 1961--2011 period can
+be found in Sans and Combris (2013). Finally
+ten-year projection for world food consumption (including meat)
+can be found in OECD and Food and Agriculture Organization of the United Nations.
+
+### Consumption-income relation
+
+#### Environmental Kuznets Curve
+
+The environmental Kuznets curve (EKC) is a hypothesized relationship
+between various indicators
+of environmental degradation and per capita
+income.
+
+In the early stages of economic growth, pollution emissions
+increase and environmental quality declines, but beyond some level
+of per capita income the trend reverses, so that at high income levels,
+economic growth leads to environmental improvement.
+
+https://www.sciencedirect.com/topics/earth-and-planetary-sciences/environmental-kuznets-curve
+
+In case of meat consumption and the most basic form the relation
+can be specified as:
+
+\begin{equation}
+{\rm Meat} = b_0 + b_1 · {\rm GDP} + b_2 · {\rm GDP}^2 
+\tag{1}
+\end{equation}
+
+Equation (1) can be specified as
+
+\begin{equation}
+\ln {\rm Meat} = b_0 + b_1 · \ln {\rm GDP} + b_2 · \ln {\rm GDP}^2 
+\tag{2}
+\end{equation}
+
+
+If a relation between Meat consumption and GDP follows EKC
+it must has a turning point, ie. an income level above which
+the consumption of meat decreases.
+
+Using data from 150 countries for the period 1980--2009 Cole and McCoskey
+(2013) claims that meat consumption follows EKC with turning point
+estimated at 36,4 thousad USD, that only few countries have enjoyed. 
+In another study, Vranken et all (2014) using panel of 120 countries
+for the period 1970--2007
+confirmed that meat consumption--income follows EKC, and
+estimated turning point at 32,0--55,0 thousand USD.
+
+
+#### Engel curve
+
+Alternatively to EKC we can apply another popular theory, ie. **Engel law**
+which assumes that consumption is under-proportional with income. This
+can be formally descibed by the power function with parameter $b$
+which can be interpreted as an elasticity
+
+\begin{equation}
+M = b_0 {\rm GDP}^{b_1}
+\end{equation}
+
+or
+
+\begin{equation}
+\ln M = \ln b_0 + b_1 \cdot \ln {\rm GDP}
+\tag{3}
+\end{equation}
+
+Note that if meat consumption follows Engel law there is no `turning point'
+although meat consumption increase are every year smaller. Note also
+that model (3) is nested in model (2).
+
+### Panel data analysis
+
+
+```{r}
+###########################################################################
+## Meat (kilograms)
+##########################################################################
+
+oom.0 <- o2 %>% filter (Item == 'Meat' & Element =='FoodSQ (kg/c/y)' ) %>%
+  select (CodeM49, Area, Meat=Value, year=YearCode, GNI, class, fbs) %>%
+    mutate (class = as.factor(class))
+
+oom <- oom.0 %>% filter (year > 1995)
+
+
+## Model Engla #######################################################
+model.0.engel <- lm(data=oom, log(Meat) ~ log(GNI)  )
+#summary(model.0.engel)
+
+lmr.meat.0 <- summary(model.0.engel)$adj.r.squared
+lmc_meat.0 <- coef(model.0.engel);
+f_meat <- function(x) lmc_meat.0[1] + x * lmc_meat.0[2]
+
+## EKC (logs) ########################################################
+model.0.ekc <- lm(data=oom, log(Meat) ~ log(GNI) + I(log(GNI)^2) )
+#summary(model.0.ekc)
+lmr.meat.1 <- summary(model.0.ekc)$adj.r.squared
+
+### which is better?
+anova_res <- anova(model.0.engel, model.0.ekc)
+##library("AER")
+##library("car")
+aic1 <- AIC(model.0.engel, model.0.ekc) ## Engel is better
+model.0.engel_aic <- aic1["model.0.engel","AIC"]
+model.0.ekc_aic <- aic1["model.0.ekc","AIC"]
+##
+anova.res <- anova(model.0.ekc)
+
+## EKC cont.
+lmc.model.1 <- coef(model.0.ekc);
+##lmc[3]
+##
+apex <- lmc.model.1[2] / (-2* lmc.model.1[3])
+apex.y <- lmc.model.1[1] + lmc.model.1[2] * apex + lmc.model.1[3] * apex^2
+apex.meat.1 <- exp(apex)
+
+##
+## wykresy
+p1.oom <- oom %>%
+  ggplot(aes(x=GNI, y=Meat, color=as.factor(fbs))) +
+  geom_point(alpha=.5) +
+  ##ggtitle("Meat intake (kcal/c/d)")+
+  ylab("kcal") +
+  labs(colour="") +
+  theme(legend.position="top") +
+  scale_color_manual(values = c("<2011" = "black", "2010>" = "orange"))
+##p1.oom
+
+#
+p.kuznets.meat.0 <- ggplot(oom, aes(log(GNI), log(Meat)) ) + 
+  geom_point(color='red', alpha=.4) +
+  stat_smooth(method = lm, se=F, formula = y ~ poly(x, 2)) +
+  stat_function(fun=f_meat, colour="black", size=1, linetype="dashed") +
+  annotate("point", x = apex, y = apex.y, colour = "black", size=4) +
+  annotate("text", x = apex, y = apex.y, colour = "black", size=4, 
+           label=sprintf ("%.1f", exp(apex)), vjust=2, hjust=0.75)
+
+##p.kuznets.meat.0
+
+##
+## EKC (non-log version)
+##
+model.1.ekc <- lm(data=oom, Meat ~ GNI + I(GNI^2) )
+#summary(model.1.ekc)
+lmr.meat.2 <- summary(model.1.ekc)$adj.r.squared
+#
+lmc.model.2 <- coef(model.1.ekc);
+#lmc[3]
+##
+apex <- lmc.model.2[2] / (-2* lmc.model.2[3])
+apex.y <- lmc.model.2[1] + lmc.model.2[2] * apex + lmc.model.2[3] * apex^2
+apex.meat.2 <- apex
+
+## Arithmetic scale
+p.kuznets.meat.1 <- ggplot(oom, aes(GNI, Meat) ) + 
+  geom_point(color="red", alpha=.4) +
+  stat_smooth(method = lm, se=F, formula = y ~ poly(x, 2)) +
+  annotate("point", x = apex, y = apex.y, colour = "black", size=4) +
+  annotate("text", x = apex, y = apex.y, colour = "black", size=4,
+           label=sprintf ("%.1f", apex), vjust=2, hjust=0.75)
+
+##p.kuznets.meat.1
+
+
+###
+### Protein (czyli białko) ######################################
+###
+
+oop.0 <- o2 %>% filter (Item == 'Grand Total' & Element =='ProtSQ (g/c/d)' ) %>%
+  select (CodeM49, Area, Value, year=YearCode, GNI, class) %>%
+  mutate (class = as.factor(class))
+oop <- oop.0 %>% filter (year > 1995)
+
+## EKC (logs)
+model.0.prot <- lm(data=oop, log(Value) ~ log(GNI) + I(log(GNI)^2) )
+summary <- summary(model.0.prot)
+lmr.prot.0 <- summary(model.0.prot)$r.
+
+lmc <- coef(model.0.prot);
+apex <- lmc[2] / (-2* lmc[3])
+apex.y <- lmc[1] + lmc[2] * apex + lmc[3] * apex^2
+
+p.kuznets.prot.0 <- ggplot(oop, aes(log(GNI), log(Value)) ) + 
+  geom_point(color='red', alpha=.4) +
+  stat_smooth(method = lm, se=F, formula = y ~ poly(x, 2)) +
+  annotate("point", x = apex, y = apex.y, colour = "black", size=4) +
+  annotate("text", x = apex, y = apex.y, colour = "black", size=4, 
+           label=sprintf ("%.1f", exp(apex)), vjust=2, hjust=0.75)
+
+###p.kuznets.prot.0
+
+### EKC (non-logs)
+model.1.prot <- lm(data=oop, Value ~ GNI + I(GNI^2) )
+#summary(model.1.prot)
+lmr.prot.1 <- summary(model.1.prot)$r.squared
+
+lmc <- coef(model.1.prot);
+apex <- lmc[2] / (-2* lmc[3])
+apex.y <- lmc[1] + lmc[2] * apex + lmc[3] * apex^2
+
+p.kuznets.prot.1 <- ggplot(oop, aes(GNI, Value) ) + 
+  geom_point(color='red', alpha=.4) +
+  stat_smooth(method = lm, se=F, formula = y ~ poly(x, 2)) +
+  annotate("point", x = apex, y = apex.y, colour = "black", size=4) +
+  annotate("text", x = apex, y = apex.y, colour = "black", size=4, 
+           label=sprintf ("%.1f", apex), vjust=2)
+##p.kuznets.prot.1
+
+###########################################################################
+### Łącznie p.c.
+###########################################################################
+
+oot.0 <- o2 %>% filter (Item == 'Grand Total' & Element =='FoodS (kcal/c/d)' ) %>%
+  select (CodeM49, Area, Value, year=YearCode, GNI, class, fbs) %>%
+  mutate (class = as.factor(class))
+oot <- oot.0 %>% filter (year > 1995)
+
+p1.oot <- oot %>%
+  ggplot(aes(x=GNI, y=Value, color=as.factor(fbs))) +
+  geom_point(alpha=.5) +
+  ##ggtitle("Total intake (kcal/c/d)") +
+  ylab("kcal") +
+  labs(colour="") +
+  theme(legend.position="top") +
+  scale_color_manual(values = c("<2011" = "black", "2010>" = "orange"))
+##p1.oot
+
+## Engel
+model.tot.0.engel <- lm(data=oot, formula = log(Value) ~ log(GNI))
+
+#summary(model.tot.0.engel)
+lmr.total.0 <- summary(model.tot.0.engel)$adj.r.squared
+
+lmc_total.0 <- coef(model.tot.0.engel);
+f_total <- function(x) lmc_total.0[1] + x * lmc_total.0[2]
+
+## EKC (logs)
+model.tot.ekc <- lm(data=oot, log(Value) ~ log(GNI) + I(log(GNI)^2) )
+#summary(model.tot.ekc)
+lmr_total.1 <- summary(model.tot.ekc)$adj.r.squared
+
+aic2 <- AIC(model.tot.0.engel, model.tot.ekc) ## Engel is better
+model.1.engel_aic <- aic2["model.tot.0.engel","AIC"]
+model.1.ekc_aic <- aic2["model.tot.ekc","AIC"]
+
+lmc_total.1 <- coef(model.tot.ekc);
+apex <- ( lmc_total.1[2] / (-2 * lmc_total.1[3]) )
+apex.y <- lmc_total.1[1] + lmc_total.1[2] * apex + lmc_total.1[3] * apex^2
+apex.total.1 <- exp(apex)
+
+p.kuznets.tot.0 <- ggplot(oot, aes(log(GNI), log(Value)) ) + 
+  geom_point(color='red', alpha=.4) +
+  ylab("log(Total intake)") +
+  stat_smooth(method = lm, se=F, formula = y ~ poly(x, 2)) +
+  stat_function(fun=f_total, colour="black", size=1, linetype="dashed") +
+  annotate("point", x = apex, y = apex.y, colour = "black", size=4) +
+  annotate("text", x = apex, y = apex.y, colour = "black", size=4, 
+           label=sprintf ("%.1f ", exp(apex)), vjust=2, hjust=0.75)
+##p.kuznets.tot.0
+
+## EKC (linear model)
+model.tot.ekc.lin <- lm(data=oot, Value ~ GNI + I(GNI^2) )
+#summary(model.tot.ekc.lin)
+lmr_total.2 <- summary(model.tot.ekc.lin)$r.squared
+
+lmc_total.2 <- coef(model.tot.ekc.lin);
+apex <- lmc_total.2[2] / (-2* lmc_total.2[3])
+apex.y <- lmc_total.2[1] + lmc_total.2[2] * apex + lmc_total.2[3] * apex^2
+apex.total.2 <- apex
+
+p.kuznets.tot.1 <- ggplot(oot, aes(GNI, Value) ) +
+  geom_point(color='red', alpha=.4) +
+  ##geom_point(alpha=.4) +
+  ylab("Total intake") +
+  stat_smooth(method = lm, se=F, formula = y ~ poly(x, 2)) +
+  annotate("point", x = apex, y = apex.y, colour = "black", size=4) +
+  annotate("text", x = apex, y = apex.y, colour = "black", size=4, 
+           label=sprintf ("%.1f ", apex), vjust=2)
+
+##p.kuznets.tot.1
+```
+
+Figure 4 presents
+scatterplots for meat consumption vs income  and
+total intake vs income for our panel of data. (high resolution,
+colour charts are available online in the supplementary material)
+
+```{r}
+p.meat.total.xy <- ggarrange(p1.oom, p1.oot, ncol=2)
+p.meat.total.xy
+ggsave(p.meat.total.xy, file='meat_total_cons_xy.png')
+ggsave(p.meat.total.xy, file='meat_total_cons_xy.pdf')
+## 
+```
+
+We consider model 1--3 for Meat (kg/c/y), and Total intake.
+All models was estimated with pooled OLS using data panel of.
+`r nn1` countries for 1995--2020. Table 2 presents results.
+
+```{r}
+library ("knitr")
+meat.table <- data.frame(Parameter = c("Intercept", "GDP", "GDP²", "ln(GDP)", "ln(GDP)²", "adj. R²", "AIC", "apex"), 
+        M3 = c(lmc_meat.0[1], NA, NA, lmc_meat.0[2], NA, lmr.meat.0,  model.0.engel_aic, NA), 
+        M2 = c(lmc.model.1[1], NA, NA, lmc.model.1[2], lmc.model.1[3], lmr.meat.1,  model.0.ekc_aic, apex.meat.1),
+        M1 = c(lmc.model.2[1], lmc.model.2[2], lmc.model.2[3], NA, NA, lmr.meat.2, NA, apex.meat.2),
+        #####
+        T3 = c(lmc_total.0[1], NA, NA, lmc_total.0[2], NA, lmr.total.0, model.1.engel_aic, NA), 
+        T2 = c(lmc_total.1[1], NA, NA, lmc_total.1[2], lmc_total.1[3], lmr_total.1, model.1.ekc_aic, apex.total.1),
+        T1 = c(lmc_total.2[1], NA, NA, lmc_total.2[2], lmc_total.2[3], lmr_total.2, NA, apex.total.2)
+                       )
+kable(meat.table, digits = 4, 
+      caption="Table 2. Meat consumption (M1--M3) and Total intake (T1--T3)")
+```
+
+All parameters in all models are significant.
+Estimating M1/T1 we have got similar value for apex (aka turning point) as reported by 
+Cole and McCoskey (2013) or Vranken et all (2014). However alternative models M2/T2 shows even
+higher fit (adjusted $R^2$) but apex values are absurdly high and there is no clear argument
+that M1/T1 should be preferred (cf figure 5)
+Is there any *turning point* at all? Models M3/T3 and M2/T2 are nested. There is slight gain
+in adjusted $R^2$ when using M2/T2 (EKC). AIC values are lower for M2 too (but not for T2), 
+thus supporting EKC hypothesis (with ridiculously high apex value of `r apex.meat.1`)
+
+```{r}
+p.ekc.engel.4 <- ggarrange(p.kuznets.meat.0, p.kuznets.meat.1,
+          p.kuznets.tot.0, p.kuznets.tot.1,
+          ncol = 2, nrow = 2)
+p.ekc.engel.4 
+ggsave(p.ekc.engel.4, file='ekc_engel_4.png')
+ggsave(p.ekc.engel.4, file='ekc_engel_4.pdf')
+
+```
+
+
+## Conclusions
+
+On the average world meat consumption do not slow down in 2011--2020 decade
+comparing to earlier period (Sans and Combris (2015).)
+Contrary to results claimed in Cole and McCoskey (2013)  
+or Vrenken et al (2013) we found no solid argument 
+that meat consumption follows EKC. There is no soft-way or
+green growth (Hickel and Kallis (2020))
+
+## Technical remarks
+
+This document is an abridged version of a report
+prepared as R-markdown document.
+The source file and the data are available at author's github repo
+(https://github.com/hrpunio/Papers/tree/main/PSW_2023)
+
+
+## Bibliography
+
+Cole J.R., McCoskey S.,
+*Does global meat consumption follow an environmental Kuznets curve*
+Sustainability: Science, Practice, and Policy 9/2 (2013), pp. 26--36
+https://www.tandfonline.com/doi/abs/10.1080/15487733.2013.11908112
+
+Sans P., Combris P.,
+*World meat consumption patters: An overview of the last fifty years (1961--2011)*
+Meat Science 2015
+
+Stern D.I., *Environmental Kuznets Curve*,
+in *Encyclopedia of Energy*,
+Cutler J. Cleveland (editor)
+Elsevier Science 2004
+https://www.sciencedirect.com/topics/earth-and-planetary-sciences/environmental-kuznets-curve
+
+Stoś K., Rychlik E., Wożniak A., Ołtarzewski M.,
+*Red and Processed Meat Consumption in Poland*,
+Foods 11/2022, 3283
+
+Vrenken L., Avermaete T., Petalios D., Mathijs E.,
+Curbing global meat consumption: Emerging evidence of a second nutrition transition,
+Environmental Science and Policy 39/2014, pp. 95--106
+
+Hickel J., Kallis G.,
+*Is Green Growth Possible?*,
+New Political Economy,
+2020/25 issue 4, pp. 469--486
+
+OECD and Food and Agriculture Organization of the United Nations,
+OECD-FAO Agricultural Outlook 2023-2032
+https://doi.org/10.1787/08801ab7-en
+
+Warlenius R.H.,
+*The limits to degrowth: Economic and climatic consequences of pessimist assumptions on decoupling*
+Ecological Economics
+2023/213
+https://doi.org/10.1016/j.ecolecon.2023.107937
